@@ -1,0 +1,56 @@
+import { MapChange, YDocument } from '@jupyter/ydoc';
+import { JSONObject } from '@lumino/coreutils';
+import { ISignal } from '@lumino/signaling';
+import { IJCadObject, IJCadOptions } from './_interface/jcad';
+import { IDict, IJcadObjectDocChange, IJupyterCadDoc, IJupyterCadDocChange, IPostResult } from './interfaces';
+export declare class JupyterCadDoc extends YDocument<IJupyterCadDocChange> implements IJupyterCadDoc {
+    constructor();
+    dispose(): void;
+    get version(): string;
+    get objects(): Array<IJCadObject>;
+    get options(): JSONObject;
+    get metadata(): JSONObject;
+    get outputs(): JSONObject;
+    get objectsChanged(): ISignal<IJupyterCadDoc, IJcadObjectDocChange>;
+    get optionsChanged(): ISignal<IJupyterCadDoc, MapChange>;
+    getSource(): JSONObject;
+    setSource(source: JSONObject | string): void;
+    get metadataChanged(): ISignal<IJupyterCadDoc, MapChange>;
+    objectExists(name: string): boolean;
+    getObjectByName(name: string): IJCadObject | undefined;
+    getDependants(name: string): string[];
+    removeObjects(names: string[]): void;
+    removeObjectByName(name: string): void;
+    addObject(value: IJCadObject): void;
+    addObjects(value: Array<IJCadObject>): void;
+    updateObjectByName(name: string, payload: {
+        data: {
+            key: string;
+            value: any;
+        };
+        meta?: IDict;
+    }): void;
+    getOption(key: keyof IJCadOptions): IDict | undefined;
+    setOption(key: keyof IJCadOptions, value: IDict): void;
+    setOptions(options: IJCadOptions): void;
+    getMetadata(key: string): string | undefined;
+    setMetadata(key: string, value: string): void;
+    removeMetadata(key: string): void;
+    getOutput(key: string): IPostResult | undefined;
+    setOutput(key: string, value: IPostResult): void;
+    removeOutput(key: string): void;
+    setShapeMeta(name: string, meta?: IDict): void;
+    static create(): IJupyterCadDoc;
+    editable: boolean;
+    private _getObjectAsYMapByName;
+    private _objectsObserver;
+    private _metaObserver;
+    private _optionsObserver;
+    private _objects;
+    private _options;
+    private _metadata;
+    private _outputs;
+    private _metadataChanged;
+    private _optionsChanged;
+    private _objectsChanged;
+}

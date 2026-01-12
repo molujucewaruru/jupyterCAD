@@ -1,0 +1,209 @@
+{
+  "metadata": {},
+  "objects": [
+    {
+      "metadata": null,
+      "name": "Cube",
+      "parameters": {
+        "Color": "#9B59B6",
+        "Height": 40.0,
+        "Length": 40.0,
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -20.0,
+            -20.0,
+            -20.0
+          ]
+        },
+        "Width": 40.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Cyl_X",
+      "parameters": {
+        "Angle": 360.0,
+        "Color": "#808080",
+        "Height": 50.0,
+        "Placement": {
+          "Angle": 90.0,
+          "Axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "Position": [
+            -25.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Radius": 15.0
+      },
+      "shape": "Part::Cylinder",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Cyl_Y",
+      "parameters": {
+        "Angle": 360.0,
+        "Color": "#808080",
+        "Height": 50.0,
+        "Placement": {
+          "Angle": 90.0,
+          "Axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "Position": [
+            0.0,
+            -25.0,
+            0.0
+          ]
+        },
+        "Radius": 15.0
+      },
+      "shape": "Part::Cylinder",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Cyl_Z",
+      "parameters": {
+        "Angle": 360.0,
+        "Color": "#808080",
+        "Height": 50.0,
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            -25.0
+          ]
+        },
+        "Radius": 15.0
+      },
+      "shape": "Part::Cylinder",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Shape_Step1",
+      "parameters": {
+        "Base": "Cube",
+        "Color": "#9B59B6",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Cyl_X"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Shape_Step2",
+      "parameters": {
+        "Base": "Shape_Step1",
+        "Color": "#9B59B6",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Cyl_Y"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Final_Sculpture",
+      "parameters": {
+        "Base": "Shape_Step2",
+        "Color": "#8E44AD",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Cyl_Z"
+      },
+      "shape": "Part::Cut",
+      "visible": true
+    },
+    {
+      "metadata": null,
+      "name": "Core_Sphere",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#F1C40F",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Radius": 10.0
+      },
+      "shape": "Part::Sphere",
+      "visible": true
+    }
+  ],
+  "options": {},
+  "outputs": {},
+  "schemaVersion": "3.0.0"
+}

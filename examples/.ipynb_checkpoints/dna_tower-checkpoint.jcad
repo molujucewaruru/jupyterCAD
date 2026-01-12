@@ -1,0 +1,3141 @@
+{
+  "metadata": {},
+  "objects": [
+    {
+      "metadata": null,
+      "name": "Floor_0",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 1.0,
+        "Length": 37.5,
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Width": 6.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_A_0",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            15.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_B_0",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#E74C3C",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -15.0,
+            1.83697019872103e-15,
+            0.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_Tmp_0",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Node_A_0",
+          "Node_B_0"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_0",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Layer_Tmp_0",
+          "Floor_0"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Floor_1",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 1.0,
+        "Length": 37.5,
+        "Placement": {
+          "Angle": 15.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            4.0
+          ]
+        },
+        "Width": 6.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_A_1",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            14.488887394336025,
+            3.882285676537811,
+            4.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_B_1",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#E74C3C",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -14.488887394336025,
+            -3.882285676537812,
+            4.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_Tmp_1",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Node_A_1",
+          "Node_B_1"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_1",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Layer_Tmp_1",
+          "Floor_1"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Tower_Step_1",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Layer_0",
+          "Layer_1"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Floor_2",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 1.0,
+        "Length": 37.5,
+        "Placement": {
+          "Angle": 30.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            8.0
+          ]
+        },
+        "Width": 6.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_A_2",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            12.99038105676658,
+            7.499999999999999,
+            8.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_B_2",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#E74C3C",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -12.990381056766582,
+            -7.499999999999996,
+            8.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_Tmp_2",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Node_A_2",
+          "Node_B_2"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_2",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Layer_Tmp_2",
+          "Floor_2"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Tower_Step_2",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Tower_Step_1",
+          "Layer_2"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Floor_3",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 1.0,
+        "Length": 37.5,
+        "Placement": {
+          "Angle": 45.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            12.0
+          ]
+        },
+        "Width": 6.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_A_3",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            10.606601717798213,
+            10.606601717798211,
+            12.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_B_3",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#E74C3C",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -10.606601717798215,
+            -10.606601717798211,
+            12.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_Tmp_3",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Node_A_3",
+          "Node_B_3"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_3",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Layer_Tmp_3",
+          "Floor_3"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Tower_Step_3",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Tower_Step_2",
+          "Layer_3"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Floor_4",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 1.0,
+        "Length": 37.5,
+        "Placement": {
+          "Angle": 60.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            16.0
+          ]
+        },
+        "Width": 6.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_A_4",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            7.500000000000002,
+            12.990381056766578,
+            16.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_B_4",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#E74C3C",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -7.500000000000007,
+            -12.990381056766577,
+            16.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_Tmp_4",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Node_A_4",
+          "Node_B_4"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_4",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Layer_Tmp_4",
+          "Floor_4"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Tower_Step_4",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Tower_Step_3",
+          "Layer_4"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Floor_5",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 1.0,
+        "Length": 37.5,
+        "Placement": {
+          "Angle": 75.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            20.0
+          ]
+        },
+        "Width": 6.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_A_5",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            3.882285676537811,
+            14.488887394336025,
+            20.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_B_5",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#E74C3C",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -3.8822856765378093,
+            -14.488887394336025,
+            20.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_Tmp_5",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Node_A_5",
+          "Node_B_5"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_5",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Layer_Tmp_5",
+          "Floor_5"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Tower_Step_5",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Tower_Step_4",
+          "Layer_5"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Floor_6",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 1.0,
+        "Length": 37.5,
+        "Placement": {
+          "Angle": 90.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            24.0
+          ]
+        },
+        "Width": 6.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_A_6",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            9.18485099360515e-16,
+            15.0,
+            24.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_B_6",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#E74C3C",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -2.7554552980815444e-15,
+            -15.0,
+            24.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_Tmp_6",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Node_A_6",
+          "Node_B_6"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_6",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Layer_Tmp_6",
+          "Floor_6"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Tower_Step_6",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Tower_Step_5",
+          "Layer_6"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Floor_7",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 1.0,
+        "Length": 37.5,
+        "Placement": {
+          "Angle": 105.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            28.0
+          ]
+        },
+        "Width": 6.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_A_7",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -3.882285676537813,
+            14.488887394336025,
+            28.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_B_7",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#E74C3C",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            3.8822856765378044,
+            -14.488887394336027,
+            28.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_Tmp_7",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Node_A_7",
+          "Node_B_7"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_7",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Layer_Tmp_7",
+          "Floor_7"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Tower_Step_7",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Tower_Step_6",
+          "Layer_7"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Floor_8",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 1.0,
+        "Length": 37.5,
+        "Placement": {
+          "Angle": 120.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            32.0
+          ]
+        },
+        "Width": 6.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_A_8",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -7.4999999999999964,
+            12.99038105676658,
+            32.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_B_8",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#E74C3C",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            7.49999999999999,
+            -12.990381056766585,
+            32.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_Tmp_8",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Node_A_8",
+          "Node_B_8"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_8",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Layer_Tmp_8",
+          "Floor_8"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Tower_Step_8",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Tower_Step_7",
+          "Layer_8"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Floor_9",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 1.0,
+        "Length": 37.5,
+        "Placement": {
+          "Angle": 135.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            36.0
+          ]
+        },
+        "Width": 6.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_A_9",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -10.606601717798211,
+            10.606601717798213,
+            36.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_B_9",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#E74C3C",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            10.60660171779821,
+            -10.606601717798215,
+            36.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_Tmp_9",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Node_A_9",
+          "Node_B_9"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_9",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Layer_Tmp_9",
+          "Floor_9"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Tower_Step_9",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Tower_Step_8",
+          "Layer_9"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Floor_10",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 1.0,
+        "Length": 37.5,
+        "Placement": {
+          "Angle": 150.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            40.0
+          ]
+        },
+        "Width": 6.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_A_10",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -12.99038105676658,
+            7.499999999999999,
+            40.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_B_10",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#E74C3C",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            12.990381056766582,
+            -7.499999999999995,
+            40.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_Tmp_10",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Node_A_10",
+          "Node_B_10"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_10",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Layer_Tmp_10",
+          "Floor_10"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Tower_Step_10",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Tower_Step_9",
+          "Layer_10"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Floor_11",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 1.0,
+        "Length": 37.5,
+        "Placement": {
+          "Angle": 165.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            44.0
+          ]
+        },
+        "Width": 6.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_A_11",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -14.488887394336023,
+            3.882285676537815,
+            44.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_B_11",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#E74C3C",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            14.488887394336025,
+            -3.88228567653781,
+            44.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_Tmp_11",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Node_A_11",
+          "Node_B_11"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_11",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Layer_Tmp_11",
+          "Floor_11"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Tower_Step_11",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Tower_Step_10",
+          "Layer_11"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Floor_12",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 1.0,
+        "Length": 37.5,
+        "Placement": {
+          "Angle": 180.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            48.0
+          ]
+        },
+        "Width": 6.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_A_12",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -15.0,
+            1.83697019872103e-15,
+            48.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_B_12",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#E74C3C",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            15.0,
+            -3.67394039744206e-15,
+            48.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_Tmp_12",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Node_A_12",
+          "Node_B_12"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_12",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Layer_Tmp_12",
+          "Floor_12"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Tower_Step_12",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Tower_Step_11",
+          "Layer_12"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Floor_13",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 1.0,
+        "Length": 37.5,
+        "Placement": {
+          "Angle": 195.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            52.0
+          ]
+        },
+        "Width": 6.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_A_13",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -14.488887394336025,
+            -3.882285676537812,
+            52.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_B_13",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#E74C3C",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            14.488887394336027,
+            3.8822856765378035,
+            52.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_Tmp_13",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Node_A_13",
+          "Node_B_13"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_13",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Layer_Tmp_13",
+          "Floor_13"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Tower_Step_13",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Tower_Step_12",
+          "Layer_13"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Floor_14",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 1.0,
+        "Length": 37.5,
+        "Placement": {
+          "Angle": 210.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            56.0
+          ]
+        },
+        "Width": 6.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_A_14",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -12.990381056766578,
+            -7.500000000000002,
+            56.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_B_14",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#E74C3C",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            12.990381056766578,
+            7.5,
+            56.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_Tmp_14",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Node_A_14",
+          "Node_B_14"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_14",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Layer_Tmp_14",
+          "Floor_14"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Tower_Step_14",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Tower_Step_13",
+          "Layer_14"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Floor_15",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 1.0,
+        "Length": 37.5,
+        "Placement": {
+          "Angle": 225.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            60.0
+          ]
+        },
+        "Width": 6.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_A_15",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -10.606601717798215,
+            -10.606601717798211,
+            60.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_B_15",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#E74C3C",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            10.606601717798215,
+            10.60660171779821,
+            60.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_Tmp_15",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Node_A_15",
+          "Node_B_15"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_15",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Layer_Tmp_15",
+          "Floor_15"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Tower_Step_15",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Tower_Step_14",
+          "Layer_15"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Floor_16",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 1.0,
+        "Length": 37.5,
+        "Placement": {
+          "Angle": 240.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            64.0
+          ]
+        },
+        "Width": 6.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_A_16",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -7.500000000000007,
+            -12.990381056766577,
+            64.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_B_16",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#E74C3C",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            7.500000000000008,
+            12.990381056766577,
+            64.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_Tmp_16",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Node_A_16",
+          "Node_B_16"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_16",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Layer_Tmp_16",
+          "Floor_16"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Tower_Step_16",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Tower_Step_15",
+          "Layer_16"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Floor_17",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 1.0,
+        "Length": 37.5,
+        "Placement": {
+          "Angle": 255.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            68.0
+          ]
+        },
+        "Width": 6.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_A_17",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -3.8822856765378093,
+            -14.488887394336025,
+            68.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_B_17",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#E74C3C",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            3.882285676537811,
+            14.488887394336025,
+            68.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_Tmp_17",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Node_A_17",
+          "Node_B_17"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_17",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Layer_Tmp_17",
+          "Floor_17"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Tower_Step_17",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Tower_Step_16",
+          "Layer_17"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Floor_18",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 1.0,
+        "Length": 37.5,
+        "Placement": {
+          "Angle": 270.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            72.0
+          ]
+        },
+        "Width": 6.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_A_18",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -2.7554552980815444e-15,
+            -15.0,
+            72.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_B_18",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#E74C3C",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            4.592425496802574e-15,
+            15.0,
+            72.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_Tmp_18",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Node_A_18",
+          "Node_B_18"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_18",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Layer_Tmp_18",
+          "Floor_18"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Tower_Step_18",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Tower_Step_17",
+          "Layer_18"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Floor_19",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 1.0,
+        "Length": 37.5,
+        "Placement": {
+          "Angle": 285.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            76.0
+          ]
+        },
+        "Width": 6.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_A_19",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            3.8822856765378044,
+            -14.488887394336027,
+            76.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Node_B_19",
+      "parameters": {
+        "Angle1": -90.0,
+        "Angle2": 90.0,
+        "Angle3": 360.0,
+        "Color": "#E74C3C",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -3.8822856765378027,
+            14.488887394336027,
+            76.0
+          ]
+        },
+        "Radius": 2.0
+      },
+      "shape": "Part::Sphere",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_Tmp_19",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Node_A_19",
+          "Node_B_19"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Layer_19",
+      "parameters": {
+        "Color": "#3498DB",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Layer_Tmp_19",
+          "Floor_19"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Tower_Step_19",
+      "parameters": {
+        "Color": "#ECF0F1",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Tower_Step_18",
+          "Layer_19"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": true
+    }
+  ],
+  "options": {},
+  "outputs": {},
+  "schemaVersion": "3.0.0"
+}

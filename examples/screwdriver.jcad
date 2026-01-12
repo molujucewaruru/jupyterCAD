@@ -1,29 +1,35 @@
 {
+  "metadata": {},
   "objects": [
     {
-      "shape": "Part::Cylinder",
+      "name": "Cylinder 1",
       "parameters": {
-        "Angle": 360,
-        "Radius": 0.15,
+        "Angle": 360.0,
         "Color": "#808080",
+        "Height": 1.0,
         "Placement": {
+          "Angle": 0.0,
           "Axis": [
-            0,
-            0,
-            1
+            0.0,
+            0.0,
+            1.0
           ],
-          "Angle": 0,
           "Position": [
-            0,
-            0,
-            0
+            0.0,
+            0.0,
+            0.0
           ]
         },
-        "Height": 1
+        "Radius": 0.15
       },
-      "visible": false,
-      "name": "Cylinder 1",
+      "shape": "Part::Cylinder",
       "shapeMetadata": {
+        "centerOfMass": [
+          -1.5338323116625758e-17,
+          1.2547294485306296e-18,
+          0.5000000000000001
+        ],
+        "mass": 0.07068583470577033,
         "matrixOfInertia": [
           [
             2.981555974335136e-19,
@@ -40,46 +46,41 @@
             0.006288094045700816,
             -3.3262906055532766e-21
           ]
-        ],
-        "mass": 0.07068583470577033,
-        "centerOfMass": [
-          -1.5338323116625758e-17,
-          1.2547294485306296e-18,
-          0.5000000000000001
         ]
-      }
+      },
+      "visible": false
     },
     {
-      "shape": "Part::Torus",
+      "name": "Torus 1",
       "parameters": {
+        "Angle1": -180.0,
+        "Angle2": 180.0,
+        "Angle3": 360.0,
+        "Color": "#808080",
         "Placement": {
-          "Position": [
-            0,
-            0,
-            0.8478829763293678
-          ],
-          "Angle": 0,
+          "Angle": 0.0,
           "Axis": [
-            0,
-            0,
-            1
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.8478829763293678
           ]
         },
         "Radius1": 0.15,
-        "Angle2": 180,
-        "Color": "#808080",
-        "Angle3": 360,
-        "Radius2": 0.05,
-        "Angle1": -180
+        "Radius2": 0.05
       },
-      "visible": false,
-      "name": "Torus 1",
+      "shape": "Part::Torus",
       "shapeMetadata": {
         "centerOfMass": [
-          0,
+          0.0,
           1.1620666653634701e-17,
           0.8478829763293678
         ],
+        "mass": 0.007402203300817021,
         "matrixOfInertia": [
           [
             -3.326290605553276e-22,
@@ -87,52 +88,52 @@
             0.0001804287054574149
           ],
           [
-            0.00009484072979171813,
+            9.484072979171813e-05,
             2.4214262098366534e-21,
             -3.326290605553276e-22
           ],
           [
             2.4214262098366534e-21,
-            0.00009484072979171814,
+            9.484072979171814e-05,
             -1.2369188582480424e-37
           ]
-        ],
-        "mass": 0.007402203300817021
-      }
+        ]
+      },
+      "visible": false
     },
     {
-      "shape": "Part::Cut",
-      "parameters": {
-        "Refine": false,
-        "Color": "#808080",
-        "Base": "Cylinder 1",
-        "Tool": "Torus 1",
-        "Placement": {
-          "Position": [
-            0,
-            0,
-            0
-          ],
-          "Axis": [
-            0,
-            0,
-            1
-          ],
-          "Angle": 0
-        }
-      },
-      "visible": false,
-      "name": "Cut 1",
       "dependencies": [
         "Cylinder 1",
         "Torus 1"
       ],
+      "name": "Cut 1",
+      "parameters": {
+        "Base": "Cylinder 1",
+        "Color": "#808080",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Torus 1"
+      },
+      "shape": "Part::Cut",
       "shapeMetadata": {
         "centerOfMass": [
           -1.9272326418024926e-17,
           -4.923328129679891e-18,
           0.48362573733636305
         ],
+        "mass": 0.0675083318309601,
         "matrixOfInertia": [
           [
             4.278794280653803e-19,
@@ -149,44 +150,44 @@
             0.005856219093203063,
             1.1214830433545909e-19
           ]
-        ],
-        "mass": 0.0675083318309601
-      }
+        ]
+      },
+      "visible": false
     },
     {
-      "shape": "Part::Cylinder",
+      "name": "Cylinder 2",
       "parameters": {
+        "Angle": 360.0,
+        "Color": "#808080",
+        "Height": 0.75,
         "Placement": {
-          "Angle": 0,
+          "Angle": 0.0,
           "Axis": [
-            0,
-            0,
-            1
+            0.0,
+            0.0,
+            1.0
           ],
           "Position": [
-            0,
-            0,
-            1
+            0.0,
+            0.0,
+            1.0
           ]
         },
-        "Height": 0.75,
-        "Color": "#808080",
-        "Radius": 0.05,
-        "Angle": 360
+        "Radius": 0.05
       },
-      "visible": false,
-      "name": "Cylinder 2",
+      "shape": "Part::Cylinder",
       "shapeMetadata": {
         "centerOfMass": [
           2.3007484674938634e-18,
           1.357234071825222e-18,
           1.375
         ],
+        "mass": 0.005890486225480862,
         "matrixOfInertia": [
           [
             8.47032947254301e-22,
             1.504632769052528e-36,
-            0.000007363107781851119
+            7.363107781851119e-06
           ],
           [
             0.00027979809571034085,
@@ -198,43 +199,42 @@
             0.00027979809571034063,
             1.504632769052528e-36
           ]
-        ],
-        "mass": 0.005890486225480862
-      }
+        ]
+      },
+      "visible": false
     },
     {
-      "shape": "Part::Fillet",
-      "parameters": {
-        "Placement": {
-          "Position": [
-            0,
-            0,
-            0
-          ],
-          "Angle": 0,
-          "Axis": [
-            0,
-            0,
-            1
-          ]
-        },
-        "Base": "Cut 1",
-        "Radius": 0.05,
-        "Color": "#9ea446",
-        "Edge": 8
-      },
-      "visible": false,
-      "name": "Fillet 1",
       "dependencies": [
         "Cut 1"
       ],
+      "name": "Fillet 1",
+      "parameters": {
+        "Base": "Cut 1",
+        "Color": "#9ea446",
+        "Edge": 8.0,
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Radius": 0.05
+      },
+      "shape": "Part::Fillet",
       "shapeMetadata": {
-        "mass": 0.0670403363604018,
         "centerOfMass": [
           -1.6981004913068975e-17,
           3.421242720490773e-18,
           0.48692126956213216
         ],
+        "mass": 0.0670403363604018,
         "matrixOfInertia": [
           [
             4.756749106581325e-19,
@@ -252,38 +252,38 @@
             1.0699299355209236e-20
           ]
         ]
-      }
+      },
+      "visible": false
     },
     {
-      "shape": "Part::Box",
+      "name": "Box 1",
       "parameters": {
-        "Height": 1,
-        "Width": 0.3,
-        "Length": 1,
         "Color": "#808080",
+        "Height": 1.0,
+        "Length": 1.0,
         "Placement": {
-          "Angle": 5,
+          "Angle": 5.0,
           "Axis": [
             0.9999999999999818,
-            0,
-            0
+            0.0,
+            0.0
           ],
           "Position": [
             -0.5,
             0.07,
-            1
+            1.0
           ]
-        }
+        },
+        "Width": 0.3
       },
-      "visible": false,
-      "name": "Box 1",
+      "shape": "Part::Box",
       "shapeMetadata": {
-        "mass": 0.3,
         "centerOfMass": [
-          0,
+          0.0,
           0.17585133333993275,
           1.5111707104580216
         ],
+        "mass": 0.3,
         "matrixOfInertia": [
           [
             2.7755575615628914e-17,
@@ -292,51 +292,56 @@
           ],
           [
             0.02724999999999994,
-            0,
+            0.0,
             2.7755575615628914e-17
           ],
           [
-            0,
+            0.0,
             0.04982718819051382,
             0.0019752480209613357
           ]
         ]
-      }
+      },
+      "visible": false
     },
     {
-      "shape": "Part::Cut",
-      "parameters": {
-        "Tool": "Box 1",
-        "Color": "#808080",
-        "Refine": false,
-        "Placement": {
-          "Position": [
-            0,
-            0,
-            0
-          ],
-          "Axis": [
-            0,
-            0,
-            1
-          ],
-          "Angle": 0
-        },
-        "Base": "Cylinder 2"
-      },
-      "visible": false,
-      "name": "Cut 2",
       "dependencies": [
         "Cylinder 2",
         "Box 1"
       ],
+      "name": "Cut 2",
+      "parameters": {
+        "Base": "Cylinder 2",
+        "Color": "#808080",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Box 1"
+      },
+      "shape": "Part::Cut",
       "shapeMetadata": {
+        "centerOfMass": [
+          -3.799589527410882e-12,
+          -0.0013138550996967067,
+          1.3652795116781349
+        ],
         "mass": 0.005699568405274087,
         "matrixOfInertia": [
           [
             1.0607683607053174e-13,
-            0.0000022072541053295355,
-            0.0000069938549332441115
+            2.2072541053295355e-06,
+            6.9938549332441115e-06
           ],
           [
             0.00026212003194346634,
@@ -346,103 +351,99 @@
           [
             -7.827304472956552e-15,
             0.0002623714044189471,
-            0.0000022072541053295355
+            2.2072541053295355e-06
           ]
-        ],
-        "centerOfMass": [
-          -3.799589527410882e-12,
-          -0.0013138550996967067,
-          1.3652795116781349
         ]
-      }
+      },
+      "visible": false
     },
     {
-      "shape": "Part::Box",
+      "name": "Box 1 Copy",
       "parameters": {
-        "Width": 0.3,
-        "Height": 1,
-        "Length": 1,
+        "Color": "#808080",
+        "Height": 1.0,
+        "Length": 1.0,
         "Placement": {
+          "Angle": -5.0,
+          "Axis": [
+            0.9999999999999818,
+            0.0,
+            0.0
+          ],
           "Position": [
             -0.5,
             -0.37,
-            1
-          ],
-          "Axis": [
-            0.9999999999999818,
-            0,
-            0
-          ],
-          "Angle": -5
+            1.0
+          ]
         },
-        "Color": "#808080"
+        "Width": 0.3
       },
-      "visible": false,
-      "name": "Box 1 Copy",
+      "shape": "Part::Box",
       "shapeMetadata": {
         "centerOfMass": [
-          0,
+          0.0,
           -0.1769929239124091,
           1.4850239876337241
         ],
+        "mass": 0.3,
         "matrixOfInertia": [
           [
-            0,
+            0.0,
             -0.001975248020961329,
             0.027422811809486122
           ],
           [
             0.027249999999999983,
-            0,
-            0
+            0.0,
+            0.0
           ],
           [
-            0,
+            0.0,
             0.04982718819051382,
             -0.001975248020961329
           ]
-        ],
-        "mass": 0.3
-      }
+        ]
+      },
+      "visible": false
     },
     {
-      "shape": "Part::Cut",
-      "parameters": {
-        "Base": "Cut 2",
-        "Color": "#595959",
-        "Tool": "Box 1 Copy",
-        "Refine": false,
-        "Placement": {
-          "Angle": 0,
-          "Position": [
-            0,
-            0,
-            0
-          ],
-          "Axis": [
-            0,
-            0,
-            1
-          ]
-        }
-      },
-      "visible": true,
-      "name": "Cut 3",
       "dependencies": [
         "Cut 2",
         "Box 1 Copy"
       ],
+      "name": "Cut 3",
+      "parameters": {
+        "Base": "Cut 2",
+        "Color": "#595959",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Box 1 Copy"
+      },
+      "shape": "Part::Cut",
       "shapeMetadata": {
         "centerOfMass": [
           1.2746539539052805e-12,
           0.00025099965808591255,
           1.2944036557988574
         ],
+        "mass": 0.004310591223281775,
         "matrixOfInertia": [
           [
             7.16641819734699e-15,
-            -1.7288177047928958e-7,
-            0.000004918752683372656
+            -1.7288177047928958e-07,
+            4.918752683372656e-06
           ],
           [
             0.00015321597555280862,
@@ -452,41 +453,46 @@
           [
             1.0904160139326963e-16,
             0.0001541546766722409,
-            -1.7288177047928958e-7
+            -1.7288177047928958e-07
           ]
-        ],
-        "mass": 0.004310591223281775
-      }
+        ]
+      },
+      "visible": true
     },
     {
-      "shape": "Part::Cylinder",
+      "name": "Cylinder 3",
       "parameters": {
-        "Radius": 0.1,
+        "Angle": 360.0,
         "Color": "#808080",
-        "Angle": 360,
         "Height": 0.6,
         "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
           "Position": [
             0.2,
-            0,
+            0.0,
             0.1
-          ],
-          "Axis": [
-            0,
-            0,
-            1
-          ],
-          "Angle": 0
-        }
+          ]
+        },
+        "Radius": 0.1
       },
-      "visible": false,
-      "name": "Cylinder 3",
+      "shape": "Part::Cylinder",
       "shapeMetadata": {
+        "centerOfMass": [
+          0.2,
+          5.54092965158614e-19,
+          0.4
+        ],
+        "mass": 0.01884955592153876,
         "matrixOfInertia": [
           [
             8.809142651444728e-21,
             5.031014540899642e-22,
-            0.00009424777960769442
+            9.424777960769442e-05
           ],
           [
             0.0006126105674500097,
@@ -498,59 +504,53 @@
             0.0006126105674500088,
             5.031014540899642e-22
           ]
-        ],
-        "centerOfMass": [
-          0.2,
-          5.54092965158614e-19,
-          0.4
-        ],
-        "mass": 0.01884955592153876
-      }
+        ]
+      },
+      "visible": false
     },
     {
-      "shape": "Part::Cut",
-      "parameters": {
-        "Tool": "Cylinder 3",
-        "Color": "#9ea446",
-        "Placement": {
-          "Axis": [
-            0,
-            0,
-            1
-          ],
-          "Position": [
-            0,
-            0,
-            0
-          ],
-          "Angle": 0
-        },
-        "Base": "Fillet 1",
-        "Refine": false
-      },
-      "visible": false,
-      "name": "Cut 4",
       "dependencies": [
         "Fillet 1",
         "Cylinder 3"
       ],
+      "name": "Cut 4",
+      "parameters": {
+        "Base": "Fillet 1",
+        "Color": "#9ea446",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Cylinder 3"
+      },
+      "shape": "Part::Cut",
       "shapeMetadata": {
-        "mass": 0.0640556486323204,
         "centerOfMass": [
           -0.005873089576148834,
           -4.802806589385973e-19,
           0.49097138617340086
         ],
+        "mass": 0.0640556486323204,
         "matrixOfInertia": [
           [
-            -0.00003422385051499879,
+            -3.422385051499879e-05,
             -2.5189226117428513e-20,
             0.0006784090937213546
           ],
           [
             0.005630185815915935,
             2.1447390388708317e-20,
-            -0.00003422385051499879
+            -3.422385051499879e-05
           ],
           [
             2.1447390388708317e-20,
@@ -558,42 +558,43 @@
             -2.5189226117428513e-20
           ]
         ]
-      }
+      },
+      "visible": false
     },
     {
-      "shape": "Part::Cylinder",
+      "name": "Cylinder 3 Copy",
       "parameters": {
+        "Angle": 360.0,
+        "Color": "#808080",
+        "Height": 0.6,
         "Placement": {
+          "Angle": 0.0,
           "Axis": [
-            0,
-            0,
-            1
+            0.0,
+            0.0,
+            1.0
           ],
           "Position": [
-            0,
+            0.0,
             0.2,
             0.1
-          ],
-          "Angle": 0
+          ]
         },
-        "Angle": 360,
-        "Radius": 0.1,
-        "Height": 0.6,
-        "Color": "#808080"
+        "Radius": 0.1
       },
-      "visible": false,
-      "name": "Cylinder 3 Copy",
+      "shape": "Part::Cylinder",
       "shapeMetadata": {
         "centerOfMass": [
           1.6536629610112144e-17,
           0.2,
           0.4
         ],
+        "mass": 0.01884955592153876,
         "matrixOfInertia": [
           [
             2.0328790734103256e-21,
             4.389487840113997e-20,
-            0.00009424777960769437
+            9.424777960769437e-05
           ],
           [
             0.0006126105674500101,
@@ -605,98 +606,97 @@
             0.0006126105674500088,
             4.389487840113997e-20
           ]
-        ],
-        "mass": 0.01884955592153876
-      }
+        ]
+      },
+      "visible": false
     },
     {
-      "shape": "Part::Cut",
-      "parameters": {
-        "Color": "#9ea446",
-        "Tool": "Cylinder 3 Copy",
-        "Refine": false,
-        "Base": "Cut 4",
-        "Placement": {
-          "Angle": 0,
-          "Position": [
-            0,
-            0,
-            0
-          ],
-          "Axis": [
-            0,
-            0,
-            1
-          ]
-        }
-      },
-      "visible": false,
-      "name": "Cut 5",
       "dependencies": [
         "Cut 4",
         "Cylinder 3 Copy"
       ],
+      "name": "Cut 5",
+      "parameters": {
+        "Base": "Cut 4",
+        "Color": "#9ea446",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Cylinder 3 Copy"
+      },
+      "shape": "Part::Cut",
       "shapeMetadata": {
         "centerOfMass": [
           -0.006160121876350264,
           -0.006160121876350249,
           0.49541738106030053
         ],
+        "mass": 0.06107096090423899,
         "matrixOfInertia": [
           [
-            -0.00003589645407530586,
-            -0.00003589645407530619,
+            -3.589645407530586e-05,
+            -3.589645407530619e-05,
             0.0006248752432146829
           ],
           [
             0.005464563172866836,
-            0.0000023174659540588415,
-            -0.00003589645407530586
+            2.3174659540588415e-06,
+            -3.589645407530586e-05
           ],
           [
-            0.0000023174659540588415,
+            2.3174659540588415e-06,
             0.005464563172866832,
-            -0.00003589645407530619
+            -3.589645407530619e-05
           ]
-        ],
-        "mass": 0.06107096090423899
-      }
+        ]
+      },
+      "visible": false
     },
     {
-      "shape": "Part::Cylinder",
+      "name": "Cylinder 3 Copy Copy",
       "parameters": {
+        "Angle": 360.0,
+        "Color": "#808080",
+        "Height": 0.6,
         "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
           "Position": [
             -0.2,
-            0,
+            0.0,
             0.1
-          ],
-          "Axis": [
-            0,
-            0,
-            1
-          ],
-          "Angle": 0
+          ]
         },
-        "Color": "#808080",
-        "Angle": 360,
-        "Radius": 0.1,
-        "Height": 0.6
+        "Radius": 0.1
       },
-      "visible": false,
-      "name": "Cylinder 3 Copy Copy",
+      "shape": "Part::Cylinder",
       "shapeMetadata": {
-        "mass": 0.01884955592153876,
         "centerOfMass": [
           -0.2,
           9.934913065467751e-19,
           0.4
         ],
+        "mass": 0.01884955592153876,
         "matrixOfInertia": [
           [
             -2.0328790734103256e-21,
             -1.0935180365756082e-21,
-            0.00009424777960769437
+            9.424777960769437e-05
           ],
           [
             0.0006126105674500101,
@@ -709,41 +709,46 @@
             -1.0935180365756082e-21
           ]
         ]
-      }
+      },
+      "visible": false
     },
     {
-      "shape": "Part::Cut",
-      "parameters": {
-        "Base": "Cut 5",
-        "Refine": false,
-        "Color": "#9ea446",
-        "Tool": "Cylinder 3 Copy Copy",
-        "Placement": {
-          "Angle": 0,
-          "Position": [
-            0,
-            0,
-            0
-          ],
-          "Axis": [
-            0,
-            0,
-            1
-          ]
-        }
-      },
-      "visible": false,
-      "name": "Cut 6",
       "dependencies": [
         "Cut 5",
         "Cylinder 3 Copy Copy"
       ],
+      "name": "Cut 6",
+      "parameters": {
+        "Base": "Cut 5",
+        "Color": "#9ea446",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Cylinder 3 Copy Copy"
+      },
+      "shape": "Part::Cut",
       "shapeMetadata": {
+        "centerOfMass": [
+          -8.866053953380547e-18,
+          -0.006476651740679273,
+          0.5003202792963891
+        ],
         "mass": 0.05808627317615761,
         "matrixOfInertia": [
           [
             6.759769321359411e-20,
-            -0.00003774094676009743,
+            -3.774094676009743e-05,
             0.0005759652274979282
           ],
           [
@@ -754,50 +759,46 @@
           [
             4.1824828939006335e-21,
             0.005300912980297686,
-            -0.00003774094676009743
+            -3.774094676009743e-05
           ]
-        ],
-        "centerOfMass": [
-          -8.866053953380547e-18,
-          -0.006476651740679273,
-          0.5003202792963891
         ]
-      }
+      },
+      "visible": false
     },
     {
-      "shape": "Part::Cylinder",
+      "name": "Cylinder 3 Copy Copy Copy",
       "parameters": {
+        "Angle": 360.0,
+        "Color": "#808080",
+        "Height": 0.6,
         "Placement": {
-          "Angle": 0,
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
           "Position": [
-            0,
+            0.0,
             -0.2,
             0.1
-          ],
-          "Axis": [
-            0,
-            0,
-            1
           ]
         },
-        "Radius": 0.1,
-        "Color": "#808080",
-        "Angle": 360,
-        "Height": 0.6
+        "Radius": 0.1
       },
-      "visible": false,
-      "name": "Cylinder 3 Copy Copy Copy",
+      "shape": "Part::Cylinder",
       "shapeMetadata": {
         "centerOfMass": [
           1.6536629610112144e-17,
           -0.2,
           0.4
         ],
+        "mass": 0.01884955592153876,
         "matrixOfInertia": [
           [
             2.0328790734103256e-21,
             3.889546362099337e-20,
-            0.00009424777960769437
+            9.424777960769437e-05
           ],
           [
             0.0006126105674500101,
@@ -809,43 +810,43 @@
             0.0006126105674500088,
             3.889546362099337e-20
           ]
-        ],
-        "mass": 0.01884955592153876
-      }
+        ]
+      },
+      "visible": false
     },
     {
-      "shape": "Part::Cut",
-      "parameters": {
-        "Color": "#9ea446",
-        "Refine": false,
-        "Tool": "Cylinder 3 Copy Copy Copy",
-        "Placement": {
-          "Angle": 0,
-          "Position": [
-            0,
-            0,
-            0
-          ],
-          "Axis": [
-            0,
-            0,
-            1
-          ]
-        },
-        "Base": "Cut 6"
-      },
-      "visible": true,
-      "name": "Cut 7",
       "dependencies": [
         "Cut 6",
         "Cylinder 3 Copy Copy Copy"
       ],
+      "name": "Cut 7",
+      "parameters": {
+        "Base": "Cut 6",
+        "Color": "#9ea446",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Cylinder 3 Copy Copy Copy"
+      },
+      "shape": "Part::Cut",
       "shapeMetadata": {
         "centerOfMass": [
           6.886748489796406e-18,
           -5.296284236862666e-19,
           0.5057543281365224
         ],
+        "mass": 0.055101585448076223,
         "matrixOfInertia": [
           [
             2.7323414239476036e-19,
@@ -862,10 +863,12 @@
             0.005176455193463169,
             -2.77006705403057e-20
           ]
-        ],
-        "mass": 0.055101585448076223
-      }
+        ]
+      },
+      "visible": true
     }
   ],
-  "options": {}
+  "options": {},
+  "outputs": {},
+  "schemaVersion": "3.0.0"
 }

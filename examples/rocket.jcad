@@ -1,0 +1,241 @@
+{
+  "metadata": {},
+  "objects": [
+    {
+      "metadata": null,
+      "name": "Body",
+      "parameters": {
+        "Angle": 360.0,
+        "Color": "#808080",
+        "Height": 60.0,
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Radius": 10.0
+      },
+      "shape": "Part::Cylinder",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Nose",
+      "parameters": {
+        "Angle": 360.0,
+        "Color": "#808080",
+        "Height": 20.0,
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            60.0
+          ]
+        },
+        "Radius1": 10.0,
+        "Radius2": 0.01
+      },
+      "shape": "Part::Cone",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Rocket_Main",
+      "parameters": {
+        "Color": "#808080",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Body",
+          "Nose"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Fin_1",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 15.0,
+        "Length": 40.0,
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -20.0,
+            -1.0,
+            0.0
+          ]
+        },
+        "Width": 2.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Fin_2",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 15.0,
+        "Length": 2.0,
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -1.0,
+            -20.0,
+            0.0
+          ]
+        },
+        "Width": 40.0
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Rocket_Step1",
+      "parameters": {
+        "Color": "#808080",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Rocket_Main",
+          "Fin_1"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Final_Rocket",
+      "parameters": {
+        "Color": "#E74C3C",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Shapes": [
+          "Rocket_Step1",
+          "Fin_2"
+        ]
+      },
+      "shape": "Part::MultiFuse",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Exhaust_Cut",
+      "parameters": {
+        "Angle": 360.0,
+        "Color": "#808080",
+        "Height": 5.0,
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            -1.0
+          ]
+        },
+        "Radius1": 8.0,
+        "Radius2": 4.0
+      },
+      "shape": "Part::Cone",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Rocket_Complete",
+      "parameters": {
+        "Base": "Final_Rocket",
+        "Color": "#E74C3C",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Exhaust_Cut"
+      },
+      "shape": "Part::Cut",
+      "visible": true
+    }
+  ],
+  "options": {},
+  "outputs": {},
+  "schemaVersion": "3.0.0"
+}

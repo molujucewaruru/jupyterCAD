@@ -1,10 +1,12 @@
 from __future__ import annotations
 
+import sys
 import json
 import logging
 import tempfile
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Union
+import math
 
 from pycrdt import Array, Doc, Map, Text
 from pydantic import BaseModel
@@ -33,7 +35,14 @@ from jupytercad_core.schema import (
 from jupytercad_core.schema.interfaces import geomLineSegment, geomCircle
 
 logger = logging.getLogger(__file__)
+if logger.hasHandlers():
+    logger.handlers.clear()
 
+handler = logging.StreamHandler(sys.stdout)
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
 
 class CadDocument(CommWidget):
     """
@@ -111,7 +120,209 @@ class CadDocument(CommWidget):
         with open(path, "w") as f:
             json.dump(content, f, indent=4)
 
-    
+    def export(self, path: str) -> None:
+        """
+        Export the visible objects in the document to a GLB file.
+        """
+        try:
+            from OCC.Core.TDocStd import TDocStd_Document
+            from OCC.Core.XCAFDoc import XCAFDoc_DocumentTool, XCAFDoc_ColorGen
+            from OCC.Core.RWGltf import RWGltf_CafWriter
+            from OCC.Core.TCollection import TCollection_ExtendedString, TCollection_AsciiString
+            from OCC.Core.Quantity import Quantity_Color as Quantities_Color, Quantity_TOC_RGB as Quantities_TOC_RGB
+            from OCC.Core.TColStd import TColStd_IndexedDataMapOfStringString
+            from OCC.Core.Message import Message_ProgressRange
+            # [重要修复] 引入 BRepMesh 用于生成网格
+            from OCC.Core.BRepMesh import BRepMesh_IncrementalMesh
+        except ImportError:
+            logger.error("Export requires pythonocc-core to be installed.")
+            return
+
+        doc = TDocStd_Document(TCollection_ExtendedString("JupyterCAD"))
+        shape_tool = XCAFDoc_DocumentTool.ShapeTool(doc.Main())
+        color_tool = XCAFDoc_DocumentTool.ColorTool(doc.Main())
+        
+        has_shape = False
+        created_shapes = {} # Cache for reconstructed shapes
+
+        # Reconstruct and add visible shapes
+        for name in self.objects:
+             obj = self.get_object(name)
+             if not obj: continue
+
+             # Reconstruct shape (needed for boolean ops even if hidden)
+             shape = self._reconstruct_occ_shape(obj, created_shapes)
+             
+             if shape:
+                 created_shapes[name] = shape
+                 
+                 # Only export if visible
+                 if obj.visible:
+                     # [重要修复] 生成网格 (Triangulation)，GLB 必须包含网格数据
+                     # 0.01 是线性偏差 (Linear Deflection)，越小越平滑
+                     mesh_gen = BRepMesh_IncrementalMesh(shape, 0.01)
+                     mesh_gen.Perform()
+
+                     # Add to XCAF Doc
+                     label = shape_tool.AddShape(shape, False)
+                     has_shape = True
+                     
+                     # Set Color
+                     if hasattr(obj, "parameters") and hasattr(obj.parameters, "Color"):
+                        hex_color = obj.parameters.Color 
+                        if hex_color and hex_color.startswith("#"):
+                            try:
+                                r = int(hex_color[1:3], 16) / 255.0
+                                g = int(hex_color[3:5], 16) / 255.0
+                                b = int(hex_color[5:7], 16) / 255.0
+                                col = Quantities_Color(r, g, b, Quantities_TOC_RGB)
+                                color_tool.SetColor(label, col, XCAFDoc_ColorGen)
+                            except ValueError:
+                                pass
+        
+        if has_shape:
+            writer = RWGltf_CafWriter(TCollection_AsciiString(path), True)
+            # Pass all required arguments for modern pythonocc
+            writer.Perform(doc, TColStd_IndexedDataMapOfStringString(), Message_ProgressRange())
+            logger.info(f"Successfully exported GLB to {path}")
+        else:
+            logger.warning("No visible shapes to export.")
+
+    def _reconstruct_occ_shape(self, obj, existing_shapes) -> Optional[Any]:
+        """
+        Reconstruct the OpenCascade TopoDS_Shape for a given object.
+        """
+        try:
+            from OCC.Core.BRepPrimAPI import (
+                BRepPrimAPI_MakeBox,
+                BRepPrimAPI_MakeCylinder,
+                BRepPrimAPI_MakeSphere,
+                BRepPrimAPI_MakeCone,
+                BRepPrimAPI_MakeTorus,
+            )
+            from OCC.Core.BRepAlgoAPI import BRepAlgoAPI_Cut, BRepAlgoAPI_Fuse, BRepAlgoAPI_Common
+            from OCC.Core.gp import gp_Pnt, gp_Vec, gp_Dir, gp_Ax2, gp_Trsf, gp_Ax1
+            from OCC.Core.BRepBuilderAPI import BRepBuilderAPI_Transform, BRepBuilderAPI_Copy
+            from OCC.Core.ShapeUpgrade import ShapeUpgrade_UnifySameDomain
+        except ImportError:
+            logger.error("Reconstruction requires pythonocc-core.")
+            return None
+        
+        # Helper: Apply Refine (UnifySameDomain)
+        def apply_refine(shape):
+            unif = ShapeUpgrade_UnifySameDomain(shape, True, True, False)
+            unif.Build()
+            return unif.Shape()
+
+        # Helper: Apply Placement (Position, Rotation)
+        def apply_placement(shape, placement):
+            if shape is None: return None
+            
+            pos = placement.Position # [x, y, z]
+            axis = placement.Axis    # [x, y, z]
+            angle = placement.Angle  # degrees
+            
+            trsf = gp_Trsf()
+            
+            # 1. Rotation (around Origin)
+            if axis and (axis[0] != 0 or axis[1] != 0 or axis[2] != 0):
+                 occ_axis = gp_Ax1(gp_Pnt(0,0,0), gp_Dir(axis[0], axis[1], axis[2]))
+                 trsf.SetRotation(occ_axis, math.radians(angle))
+            
+            # 2. Translation (Move the rotated shape to position)
+            if pos:
+                trsf.SetTranslationPart(gp_Vec(pos[0], pos[1], pos[2]))
+            
+            return BRepBuilderAPI_Transform(shape, trsf, True).Shape()
+
+        # Resolve shape type enum to string
+        shape_type = obj.shape.value if hasattr(obj.shape, "value") else str(obj.shape)
+        params = obj.parameters
+        occ_shape = None
+
+        try:
+            if shape_type == "Part::Box":
+                occ_shape = BRepPrimAPI_MakeBox(params.Length, params.Width, params.Height).Shape()
+
+            elif shape_type == "Part::Cylinder":
+                occ_shape = BRepPrimAPI_MakeCylinder(params.Radius, params.Height, math.radians(params.Angle)).Shape()
+            
+            elif shape_type == "Part::Sphere":
+                occ_shape = BRepPrimAPI_MakeSphere(params.Radius, math.radians(params.Angle3)).Shape()
+
+            elif shape_type == "Part::Cone":
+                occ_shape = BRepPrimAPI_MakeCone(params.Radius1, params.Radius2, params.Height, math.radians(params.Angle)).Shape()
+                
+            elif shape_type == "Part::Torus":
+                occ_shape = BRepPrimAPI_MakeTorus(params.Radius1, params.Radius2, math.radians(params.Angle3)).Shape()
+
+            elif shape_type == "Part::Cut":
+                base = existing_shapes.get(params.Base)
+                tool = existing_shapes.get(params.Tool)
+                
+                if base and tool:
+                    # 使用 BRepBuilderAPI_Copy 复制形状，避免修改原始数据
+                    base_copy = BRepBuilderAPI_Copy(base).Shape()
+                    tool_copy = BRepBuilderAPI_Copy(tool).Shape()
+                    
+                    algo = BRepAlgoAPI_Cut(base_copy, tool_copy)
+                    # [关键修复] 设置模糊容差，解决重合面切割失败的问题
+                    algo.SetFuzzyValue(1.e-6) 
+                    algo.Build()
+                    
+                    if algo.IsDone():
+                        occ_shape = algo.Shape()
+                        if hasattr(params, "Refine") and params.Refine:
+                            occ_shape = apply_refine(occ_shape)
+                    else:
+                        logger.warning(f"Cut operation failed for {obj.name}")
+
+            elif shape_type == "Part::MultiFuse":
+                shapes_list = params.Shapes
+                valid_shapes = [existing_shapes.get(s) for s in shapes_list if existing_shapes.get(s)]
+                
+                if len(valid_shapes) >= 2:
+                    current_shape = BRepBuilderAPI_Copy(valid_shapes[0]).Shape()
+                    
+                    for i in range(1, len(valid_shapes)):
+                        next_shape = BRepBuilderAPI_Copy(valid_shapes[i]).Shape()
+                        algo = BRepAlgoAPI_Fuse(current_shape, next_shape)
+                        algo.SetFuzzyValue(1.e-6)
+                        algo.Build()
+                        if algo.IsDone():
+                            current_shape = algo.Shape()
+                    
+                    occ_shape = current_shape
+                    if hasattr(params, "Refine") and params.Refine:
+                        occ_shape = apply_refine(occ_shape)
+
+            elif shape_type == "Part::MultiCommon":
+                shapes_list = params.Shapes
+                valid_shapes = [existing_shapes.get(s) for s in shapes_list if existing_shapes.get(s)]
+                
+                if len(valid_shapes) >= 2:
+                    current_shape = BRepBuilderAPI_Copy(valid_shapes[0]).Shape()
+                    for i in range(1, len(valid_shapes)):
+                        next_shape = BRepBuilderAPI_Copy(valid_shapes[i]).Shape()
+                        algo = BRepAlgoAPI_Common(current_shape, next_shape)
+                        algo.SetFuzzyValue(1.e-6)
+                        algo.Build()
+                        if algo.IsDone():
+                            current_shape = algo.Shape()
+                    
+                    occ_shape = current_shape
+                    if hasattr(params, "Refine") and params.Refine:
+                        occ_shape = apply_refine(occ_shape)
+
+        except Exception as e:
+            logger.error(f"Error reconstructing object {obj.name} ({shape_type}): {e}")
+            return None
+        
+        # Finally, apply the placement
+        if occ_shape and hasattr(params, 'Placement'):
+            occ_shape = apply_placement(occ_shape, params.Placement)
+            
+        return occ_shape
     
     @classmethod
     def _path_to_comm(cls, filePath: Optional[str]) -> Dict:
@@ -144,12 +355,6 @@ class CadDocument(CommWidget):
             return OBJECT_FACTORY.create_object(data, self)
 
     def _get_color(self, shape_id: str | int) -> str:
-        """
-        Retrieve the color of a shape by its name or index.
-
-        :param shape_id: The name or index of the shape.
-        :return: The color of the shape in hex format.
-        """
         shape = self.get_object(shape_id)
         if hasattr(shape, "parameters") and hasattr(shape.parameters, "Color"):
             color = shape.parameters.Color
@@ -158,25 +363,12 @@ class CadDocument(CommWidget):
             return "#808080"
 
     def remove(self, name: str) -> CadDocument:
-        """
-        Remove an object from the document.
-
-        :param name: The name of the object to remove.
-        :return: The document itself.
-        """
         index = self._get_yobject_index_by_name(name)
         if self._objects_array and index != -1:
             self._objects_array.pop(index)
         return self
 
     def rename(self, old_name: str, new_name: str) -> CadDocument:
-        """
-        Rename an object in the document.
-
-        :param old_name: The current name of the object.
-        :param new_name: The new name for the object.
-        :return: The document itself.
-        """
         if new_name == old_name:
             return self
         new_obj = self.get_object(old_name)
@@ -202,15 +394,6 @@ class CadDocument(CommWidget):
         position: Optional[List[float]] = None,
         user: Optional[Dict] = None,
     ) -> Optional[str]:
-        """
-        Add an annotation to the document.
-
-        :param parent: The object which holds the annotation.
-        :param message: The first messages in the annotation.
-        :param position: The position of the annotation.
-        :param user: The user who create this annotation.
-        :return: The id of the annotation if it is created.
-        """
         new_id = f"annotation_${uuid4()}"
         parent_obj = self.get_object(parent)
         if parent_obj is None:
@@ -234,11 +417,6 @@ class CadDocument(CommWidget):
             return new_id
 
     def remove_annotation(self, annotation_id: str) -> None:
-        """
-        Remove an annotation from the document.
-
-        :param annotation_id: The id of the annotation
-        """
         if self._metadata is not None:
             del self._metadata[annotation_id]
 
@@ -285,17 +463,6 @@ class CadDocument(CommWidget):
         rotation_axis: List[float] = [0, 0, 1],
         rotation_angle: float = 0,
     ) -> CadDocument:
-        """
-        Add an OpenCascade TopoDS shape to the document.
-        You need `pythonocc-core` installed in order to use this method.
-
-        :param shape: The Open Cascade shape to add.
-        :param name: The name that will be used for the object in the document.
-        :param position: The shape 3D position.
-        :param rotation_axis: The 3D axis used for the rotation.
-        :param rotation_angle: The shape rotation angle, in degrees.
-        :return: The document itself.
-        """
         try:
             from OCC.Core.BRepTools import breptools
         except ImportError:
@@ -340,19 +507,6 @@ class CadDocument(CommWidget):
         rotation_axis: List[float] = [0, 0, 1],
         rotation_angle: float = 0,
     ) -> CadDocument:
-        """
-        Add a box to the document.
-
-        :param name: The name that will be used for the object in the document.
-        :param length: The length of the box.
-        :param width: The width of the box.
-        :param height: The height of the box.
-        :param color: The color of the box in hex format (e.g., "#FF5733") or RGB float list.
-        :param position: The shape 3D position.
-        :param rotation_axis: The 3D axis used for the rotation.
-        :param rotation_angle: The shape rotation angle, in degrees.
-        :return: The document itself.
-        """
         data = {
             "shape": Parts.Part__Box.value,
             "name": name if name else self._new_name("Box"),
@@ -382,20 +536,6 @@ class CadDocument(CommWidget):
         rotation_axis: List[float] = [0, 0, 1],
         rotation_angle: float = 0,
     ) -> CadDocument:
-        """
-        Add a cone to the document.
-
-        :param name: The name that will be used for the object in the document.
-        :param radius1: The bottom radius of the cone.
-        :param radius2: The top radius of the cone.
-        :param height: The height of the cone.
-        :param angle: The revolution angle of the cone (0: no cone, 180: half cone, 360: full cone).
-        :param color: The color of the cone in hex format (e.g., "#FF5733") or RGB float list.
-        :param position: The shape 3D position.
-        :param rotation_axis: The 3D axis used for the rotation.
-        :param rotation_angle: The shape rotation angle, in degrees.
-        :return: The document itself.
-        """  # noqa 501
         data = {
             "shape": Parts.Part__Cone.value,
             "name": name if name else self._new_name("Cone"),
@@ -425,19 +565,6 @@ class CadDocument(CommWidget):
         rotation_axis: List[float] = [0, 0, 1],
         rotation_angle: float = 0,
     ) -> CadDocument:
-        """
-        Add a cylinder to the document.
-
-        :param name: The name that will be used for the object in the document.
-        :param radius: The radius of the cylinder.
-        :param height: The height of the cylinder.
-        :param angle: The revolution angle of the cylinder (0: no cylinder, 180: half cylinder, 360: full cylinder).
-        :param color: The color of the cylinder in hex format (e.g., "#FF5733") or RGB float list.
-        :param position: The shape 3D position.
-        :param rotation_axis: The 3D axis used for the rotation.
-        :param rotation_angle: The shape rotation angle, in degrees.
-        :return: The document itself.
-        """  # noqa E501
         data = {
             "shape": Parts.Part__Cylinder.value,
             "name": name if name else self._new_name("Cylinder"),
@@ -467,20 +594,6 @@ class CadDocument(CommWidget):
         rotation_axis: List[float] = [0, 0, 1],
         rotation_angle: float = 0,
     ) -> CadDocument:
-        """
-        Add a sphere to the document.
-
-        :param name: The name that will be used for the object in the document.
-        :param radius: The radius of the sphere.
-        :param angle1: The revolution angle of the sphere on the X axis (0: no sphere, 180: half sphere, 360: full sphere).
-        :param angle2: The revolution angle of the sphere on the Y axis (0: no sphere, 180: half sphere, 360: full sphere).
-        :param angle3: The revolution angle of the sphere on the Z axis (0: no sphere, 180: half sphere, 360: full sphere).
-        :param color: The color of the sphere in hex format (e.g., "#FF5733") or RGB float list.
-        :param position: The shape 3D position.
-        :param rotation_axis: The 3D axis used for the rotation.
-        :param rotation_angle: The shape rotation angle, in degrees.
-        :return: The document itself.
-        """  # noqa E501
         data = {
             "shape": Parts.Part__Sphere.value,
             "name": name if name else self._new_name("Sphere"),
@@ -512,21 +625,6 @@ class CadDocument(CommWidget):
         rotation_axis: List[float] = [0, 0, 1],
         rotation_angle: float = 0,
     ) -> CadDocument:
-        """
-        Add a torus to the document.
-
-        :param name: The name that will be used for the object in the document.
-        :param radius1: The outer radius of the torus.
-        :param radius2: The inner radius of the torus.
-        :param angle1: The revolution angle of the torus on the X axis (0: no torus, 180: half torus, 360: full torus).
-        :param angle2: The revolution angle of the torus on the Y axis (0: no torus, 180: half torus, 360: full torus).
-        :param angle3: The revolution angle of the torus on the Z axis (0: no torus, 180: half torus, 360: full torus).
-        :param color: The color of the torus in hex format (e.g., "#FF5733") or RGB float list.
-        :param position: The shape 3D position.
-        :param rotation_axis: The 3D axis used for the rotation.
-        :param rotation_angle: The shape rotation angle, in degrees.
-        :return: The document itself.
-        """  # noqa E501
         data = {
             "shape": Parts.Part__Torus.value,
             "name": name if name else self._new_name("Torus"),
@@ -560,20 +658,6 @@ class CadDocument(CommWidget):
         rotation_axis: List[float] = [0, 0, 1],
         rotation_angle: float = 0,
     ) -> CadDocument:
-        """
-        Add a sketch to the document.
-
-        :param name: The name that will be used for the object in the document.
-        :param geometry: The list of geometries for the sketch.
-        :param attachment_offset_position: The attachment offset 3D position.
-        :param attachment_offset_rotation_axis: The attachment offset 3D axis used for the rotation.
-        :param attachment_offset_rotation_angle: The attachment offset rotation angle, in degrees.
-        :param color: The color of the sketch in hex format (e.g., "#FF5733") or RGB float list.
-        :param position: The shape 3D position.
-        :param rotation_axis: The 3D axis used for the rotation.
-        :param rotation_angle: The shape rotation angle, in degrees.
-        :return: The document itself.
-        """
         data = {
             "shape": Parts.Sketcher__SketchObject.value,
             "name": name if name else self._new_name("Sketch"),
@@ -605,22 +689,8 @@ class CadDocument(CommWidget):
         rotation_axis: List[float] = [0, 0, 1],
         rotation_angle: float = 0,
     ) -> CadDocument:
-        """
-        Apply a cut boolean operation between two objects. If no objects are provided as input, the last two created objects will be used as operands.
-
-        :param name: The name that will be used for the object in the document.
-        :param base: The base object that will be used for the cut. Can be the name of the object or its index in the objects list.
-        :param tool: The tool object that will be used for the cut. Can be the name of the object or its index in the objects list.
-        :param refine: Whether or not to refine the mesh during the cut computation.
-        :param color: The color in hex format (e.g., "#FF5733") or RGB float list. Defaults to the base object's color if None.
-        :param position: The shape 3D position.
-        :param rotation_axis: The 3D axis used for the rotation.
-        :param rotation_angle: The shape rotation angle, in degrees.
-        :return: The document itself.
-        """  # noqa E501
         base, tool = self._get_boolean_operands(base, tool)
 
-        # Use specified color or fall back to the base object's color
         if color is None:
             color = self._get_color(base)
 
@@ -654,22 +724,8 @@ class CadDocument(CommWidget):
         rotation_axis: List[float] = [0, 0, 1],
         rotation_angle: float = 0,
     ) -> CadDocument:
-        """
-        Apply a union boolean operation between two objects. If no objects are provided as input, the last two created objects will be used as operands.
-
-        :param name: The name that will be used for the object in the document.
-        :param shape1: The first object used for the union. Can be the name of the object or its index in the objects list.
-        :param shape2: The first object used for the union. Can be the name of the object or its index in the objects list.
-        :param refine: Whether or not to refine the mesh during the union computation.
-        :param color: The color in hex format (e.g., "#FF5733") or RGB float list. Defaults to the base object's color if None.
-        :param position: The shape 3D position.
-        :param rotation_axis: The 3D axis used for the rotation.
-        :param rotation_angle: The shape rotation angle, in degrees.
-        :return: The document itself.
-        """  # noqa E501
         shape1, shape2 = self._get_boolean_operands(shape1, shape2)
 
-        # Use specified color or fall back to the base object's color
         if color is None:
             color = self._get_color(shape1)
 
@@ -702,23 +758,8 @@ class CadDocument(CommWidget):
         rotation_axis: List[float] = [0, 0, 1],
         rotation_angle: float = 0,
     ) -> CadDocument:
-        """
-        Apply an intersection boolean operation between two objects.
-        If no objects are provided as input, the last two created objects will be used as operands.
-
-        :param name: The name that will be used for the object in the document.
-        :param shape1: The first object used for the intersection. Can be the name of the object or its index in the objects list.
-        :param shape2: The first object used for the intersection. Can be the name of the object or its index in the objects list.
-        :param refine: Whether or not to refine the mesh during the intersection computation.
-        :param color: The color in hex format (e.g., "#FF5733") or RGB float list. Defaults to the base object's color if None.
-        :param position: The shape 3D position.
-        :param rotation_axis: The 3D axis used for the rotation.
-        :param rotation_angle: The shape rotation angle, in degrees.
-        :return: The document itself.
-        """  # noqa E501
         shape1, shape2 = self._get_boolean_operands(shape1, shape2)
 
-        # Use specified color or fall back to the base object's color
         if color is None:
             color = self._get_color(shape1)
 
@@ -753,22 +794,6 @@ class CadDocument(CommWidget):
         rotation_axis: List[float] = [0, 0, 1],
         rotation_angle: float = 0,
     ) -> CadDocument:
-        """
-        Apply an extrusion operation on an object.
-        If no object is provided as input, the last created object will be used as operand.
-
-        :param name: The name that will be used for the object in the document.
-        :param shape: The input object used for the extrusion. Can be the name of the object or its index in the objects list.
-        :param direction: The direction of the extrusion.
-        :param length_fwd: The length of the extrusion.
-        :param length_rev: The length of the extrusion in the reverse direction.
-        :param solid: Whether to create a solid or a shell.
-        :param color: The color in hex format (e.g., "#FF5733") or RGB float list. Defaults to the base object's color if None.
-        :param position: The shape 3D position.
-        :param rotation_axis: The 3D axis used for the rotation.
-        :param rotation_angle: The shape rotation angle, in degrees.
-        :return: The document itself.
-        """
         shape = self._get_operand(shape)
 
         if color is None:
@@ -805,23 +830,8 @@ class CadDocument(CommWidget):
         rotation_axis: List[float] = [0, 0, 1],
         rotation_angle: float = 0,
     ) -> CadDocument:
-        """
-        Apply a chamfer operation on an object.
-        If no objects are provided as input, the last created object will be used as operand.
-
-        :param name: The name that will be used for the object in the document.
-        :param shape: The input object used for the chamfer. Can be the name of the object or its index in the objects list.
-        :param edge: The edge index where to apply chamfer.
-        :param dist: The distance of the chamfer.
-        :param color: The color in hex format (e.g., "#FF5733") or RGB float list. Defaults to the base object's color if None.
-        :param position: The shape 3D position.
-        :param rotation_axis: The 3D axis used for the rotation.
-        :param rotation_angle: The shape rotation angle, in degrees.
-        :return: The document itself.
-        """  # noqa E501
         shape = self._get_operand(shape)
 
-        # Use specified color or fall back to the base object's color
         if color is None:
             color = self._get_color(shape)
 
@@ -854,23 +864,8 @@ class CadDocument(CommWidget):
         rotation_axis: List[float] = [0, 0, 1],
         rotation_angle: float = 0,
     ) -> CadDocument:
-        """
-        Apply a fillet operation on an object.
-        If no objects are provided as input, the last created object will be used as operand.
-
-        :param name: The name that will be used for the object in the document.
-        :param shape: The input object used for the fillet. Can be the name of the object or its index in the objects list.
-        :param edge: The edge index where to apply fillet.
-        :param radius: The radius of the fillet.
-        :param color: The color in hex format (e.g., "#FF5733") or RGB float list. Defaults to the base object's color if None.
-        :param position: The shape 3D position.
-        :param rotation_axis: The 3D axis used for the rotation.
-        :param rotation_angle: The shape rotation angle, in degrees.
-        :return: The document itself.
-        """  # noqa E501
         shape = self._get_operand(shape)
 
-        # Use specified color or fall back to the base object's color
         if color is None:
             color = self._get_color(shape)
 
@@ -915,28 +910,13 @@ class CadDocument(CommWidget):
         return shape1, shape2
 
     def set_visible(self, name: str, value):
-        """
-        Set the visibility of an object.
-
-        :param name: The name of the object.
-        :param value: The visibility value (True or False).
-        """
         obj: Optional[Map] = self._get_yobject_by_name(name)
-
         if obj is None:
             raise RuntimeError(f"No object named {name}")
-
         obj["visible"] = value
 
     def set_color(self, name: str, value: str):
-        """
-        Set the color of an object.
-
-        :param name: The name of the object.
-        :param value: The color in hex format (e.g., "#FF5733").
-        """
         obj: Optional[Map] = self._get_yobject_by_name(name)
-
         if obj is None:
             raise RuntimeError(f"No object named {name}")
         parameters = obj.get("parameters", {})
@@ -980,7 +960,6 @@ class PythonJcadObject(BaseModel):
         extra = "allow"
 
     name: str
-    # 新增 visible 字段
     visible: bool = True
     shape: Parts
     parameters: Union[
@@ -1033,7 +1012,6 @@ class ObjectFactoryManager(metaclass=SingletonMeta):
         object_type = data.get("shape", None)
         name: str = data.get("name", None)
         meta = data.get("shapeMetadata", None)
-        # 获取可见性，默认为 True
         visible = data.get("visible", True)
         
         if object_type and object_type in self._factories:
@@ -1049,6 +1027,7 @@ class ObjectFactoryManager(metaclass=SingletonMeta):
                 shape=object_type,
                 parameters=obj_params,
                 metadata=meta,
+                visible=visible
             )
 
         return None

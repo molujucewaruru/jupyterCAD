@@ -87,18 +87,18 @@ interface ILineIntersection extends THREE.Intersection {
   pointOnLine?: THREE.Vector3;
 }
 
-// // 添加此辅助函数用于触发浏览器下载
-// function downloadGLB(buffer: ArrayBuffer, filename: string) {
-//   const blob = new Blob([buffer], { type: 'model/gltf-binary' });
-//   const url = URL.createObjectURL(blob);
-//   const link = document.createElement('a');
-//   link.href = url;
-//   link.download = filename;
-//   document.body.appendChild(link);
-//   link.click();
-//   document.body.removeChild(link);
-//   URL.revokeObjectURL(url);
-// }
+// 添加此辅助函数用于触发浏览器下载
+function downloadGLB(buffer: ArrayBuffer, filename: string) {
+  const blob = new Blob([buffer], { type: 'model/gltf-binary' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+}
 
 export class MainView extends React.Component<IProps, IStates> {
   constructor(props: IProps) {
@@ -1946,9 +1946,10 @@ export class MainView extends React.Component<IProps, IStates> {
           hiddenObjects.forEach((obj) => obj.visible = true);
 
           if (exported instanceof ArrayBuffer) {
-            const filename = `scene_${new Date().getTime()}.glb`;
+            const filename = `${new Date().getTime()}.glb`;
+            downloadGLB(exported, filename);
+
             this._mainViewModel.emitExportAsGLB(exported, filename);
-            // downloadGLB(exported, filename);
           }
         },
         (error) => {

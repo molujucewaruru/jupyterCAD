@@ -44,7 +44,7 @@ export class JupyterCadDocumentWidget
       new ToolbarButton({
         icon: downloadIcon,
         label: '', // 按钮旁显示的文字，如果只想显示图标可去掉此行
-        tooltip: 'Export Scene as .glb',
+        tooltip: 'Export to .glb',
         onClick: () => {
           // 调用 Panel 中的 exportAsGLB 方法
           if (this.content && (this.content as any).exportAsGLB) {
@@ -65,6 +65,13 @@ export class JupyterCadDocumentWidget
    * Dispose of the resources held by the widget.
    */
   dispose(): void {
+
+    // [新增] 在销毁组件前，调用 Panel 的 exportAsGLB 方法
+    // 这将触发 MainView 监听到变更，从而获取数据并释放 _emitExportAsGLB 信号
+    if (this.content && !this.content.isDisposed && (this.content as any).exportAsGLB) {
+      (this.content as any).exportAsGLB();
+    }
+
     this.content.dispose();
     super.dispose();
   }

@@ -1,0 +1,1 @@
+{"version":3,"file":"titleWidget.js","sourceRoot":"","sources":["../../../../src/app/plugins/mainmenu/titleWidget.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,MAAM,EAAE,MAAM,iBAAiB,CAAC;AAEzC,MAAM,OAAO,QAAS,SAAQ,MAAM;IAClC;QACE,KAAK,EAAE,CAAC;QACR,IAAI,CAAC,QAAQ,CAAC,sBAAsB,CAAC,CAAC;QACtC,IAAI,CAAC,IAAI,CAAC,SAAS,GAAG,YAAY,CAAC;IACrC,CAAC;CACF"}

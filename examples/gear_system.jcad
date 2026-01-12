@@ -1,0 +1,1708 @@
+{
+  "metadata": {},
+  "objects": [
+    {
+      "metadata": null,
+      "name": "Sun_Body",
+      "parameters": {
+        "Angle": 360.0,
+        "Color": "#F39C12",
+        "Height": 10.0,
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Radius": 15.0
+      },
+      "shape": "Part::Cylinder",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Sun_Cut_0",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 5.0,
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            15.0,
+            0.0,
+            -1.0
+          ]
+        },
+        "Width": 3.926990816987241
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Sun_Step_0",
+      "parameters": {
+        "Base": "Sun_Body",
+        "Color": "#F39C12",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Sun_Cut_0"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Sun_Cut_2",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 5.0,
+        "Placement": {
+          "Angle": 60.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            7.500000000000002,
+            12.990381056766578,
+            -1.0
+          ]
+        },
+        "Width": 3.926990816987241
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Sun_Step_2",
+      "parameters": {
+        "Base": "Sun_Step_0",
+        "Color": "#F39C12",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Sun_Cut_2"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Sun_Cut_4",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 5.0,
+        "Placement": {
+          "Angle": 120.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -7.4999999999999964,
+            12.99038105676658,
+            -1.0
+          ]
+        },
+        "Width": 3.926990816987241
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Sun_Step_4",
+      "parameters": {
+        "Base": "Sun_Step_2",
+        "Color": "#F39C12",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Sun_Cut_4"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Sun_Cut_6",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 5.0,
+        "Placement": {
+          "Angle": 180.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -15.0,
+            1.83697019872103e-15,
+            -1.0
+          ]
+        },
+        "Width": 3.926990816987241
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Sun_Step_6",
+      "parameters": {
+        "Base": "Sun_Step_4",
+        "Color": "#F39C12",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Sun_Cut_6"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Sun_Cut_8",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 5.0,
+        "Placement": {
+          "Angle": 240.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -7.500000000000007,
+            -12.990381056766577,
+            -1.0
+          ]
+        },
+        "Width": 3.926990816987241
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Sun_Step_8",
+      "parameters": {
+        "Base": "Sun_Step_6",
+        "Color": "#F39C12",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Sun_Cut_8"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Sun_Cut_10",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 5.0,
+        "Placement": {
+          "Angle": 300.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            7.500000000000002,
+            -12.990381056766578,
+            -1.0
+          ]
+        },
+        "Width": 3.926990816987241
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Sun_Step_10",
+      "parameters": {
+        "Base": "Sun_Step_8",
+        "Color": "#F39C12",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Sun_Cut_10"
+      },
+      "shape": "Part::Cut",
+      "visible": true
+    },
+    {
+      "metadata": null,
+      "name": "Planet_0_Body",
+      "parameters": {
+        "Angle": 360.0,
+        "Color": "#2ECC71",
+        "Height": 10.0,
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            26.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Radius": 10.0
+      },
+      "shape": "Part::Cylinder",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_0_Cut_0",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            36.0,
+            0.0,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_0_Step_0",
+      "parameters": {
+        "Base": "Planet_0_Body",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_0_Cut_0"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_0_Cut_1",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 45.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            33.071067811865476,
+            7.071067811865475,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_0_Step_1",
+      "parameters": {
+        "Base": "Planet_0_Step_0",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_0_Cut_1"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_0_Cut_2",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 90.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            26.0,
+            10.0,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_0_Step_2",
+      "parameters": {
+        "Base": "Planet_0_Step_1",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_0_Cut_2"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_0_Cut_3",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 135.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            18.928932188134524,
+            7.0710678118654755,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_0_Step_3",
+      "parameters": {
+        "Base": "Planet_0_Step_2",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_0_Cut_3"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_0_Cut_4",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 180.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            16.0,
+            1.2246467991473533e-15,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_0_Step_4",
+      "parameters": {
+        "Base": "Planet_0_Step_3",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_0_Cut_4"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_0_Cut_5",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 225.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            18.928932188134524,
+            -7.071067811865475,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_0_Step_5",
+      "parameters": {
+        "Base": "Planet_0_Step_4",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_0_Cut_5"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_0_Cut_6",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 270.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            25.999999999999996,
+            -10.0,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_0_Step_6",
+      "parameters": {
+        "Base": "Planet_0_Step_5",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_0_Cut_6"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_0_Cut_7",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 315.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            33.071067811865476,
+            -7.071067811865477,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_0_Step_7",
+      "parameters": {
+        "Base": "Planet_0_Step_6",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_0_Cut_7"
+      },
+      "shape": "Part::Cut",
+      "visible": true
+    },
+    {
+      "metadata": null,
+      "name": "Planet_1_Body",
+      "parameters": {
+        "Angle": 360.0,
+        "Color": "#2ECC71",
+        "Height": 10.0,
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -12.999999999999995,
+            22.516660498395407,
+            0.0
+          ]
+        },
+        "Radius": 10.0
+      },
+      "shape": "Part::Cylinder",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_1_Cut_0",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -2.9999999999999947,
+            22.516660498395407,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_1_Step_0",
+      "parameters": {
+        "Base": "Planet_1_Body",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_1_Cut_0"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_1_Cut_1",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 45.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -5.928932188134519,
+            29.587728310260882,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_1_Step_1",
+      "parameters": {
+        "Base": "Planet_1_Step_0",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_1_Cut_1"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_1_Cut_2",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 90.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -12.999999999999995,
+            32.51666049839541,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_1_Step_2",
+      "parameters": {
+        "Base": "Planet_1_Step_1",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_1_Cut_2"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_1_Cut_3",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 135.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -20.07106781186547,
+            29.587728310260882,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_1_Step_3",
+      "parameters": {
+        "Base": "Planet_1_Step_2",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_1_Cut_3"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_1_Cut_4",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 180.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -22.999999999999993,
+            22.516660498395407,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_1_Step_4",
+      "parameters": {
+        "Base": "Planet_1_Step_3",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_1_Cut_4"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_1_Cut_5",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 225.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -20.071067811865472,
+            15.445592686529931,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_1_Step_5",
+      "parameters": {
+        "Base": "Planet_1_Step_4",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_1_Cut_5"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_1_Cut_6",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 270.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -12.999999999999996,
+            12.516660498395407,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_1_Step_6",
+      "parameters": {
+        "Base": "Planet_1_Step_5",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_1_Cut_6"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_1_Cut_7",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 315.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -5.928932188134521,
+            15.44559268652993,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_1_Step_7",
+      "parameters": {
+        "Base": "Planet_1_Step_6",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_1_Cut_7"
+      },
+      "shape": "Part::Cut",
+      "visible": true
+    },
+    {
+      "metadata": null,
+      "name": "Planet_2_Body",
+      "parameters": {
+        "Angle": 360.0,
+        "Color": "#2ECC71",
+        "Height": 10.0,
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -13.00000000000001,
+            -22.516660498395396,
+            0.0
+          ]
+        },
+        "Radius": 10.0
+      },
+      "shape": "Part::Cylinder",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_2_Cut_0",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -3.0000000000000107,
+            -22.516660498395396,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_2_Step_0",
+      "parameters": {
+        "Base": "Planet_2_Body",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_2_Cut_0"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_2_Cut_1",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 45.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -5.928932188134535,
+            -15.44559268652992,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_2_Step_1",
+      "parameters": {
+        "Base": "Planet_2_Step_0",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_2_Cut_1"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_2_Cut_2",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 90.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -13.00000000000001,
+            -12.516660498395396,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_2_Step_2",
+      "parameters": {
+        "Base": "Planet_2_Step_1",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_2_Cut_2"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_2_Cut_3",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 135.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -20.071067811865486,
+            -15.44559268652992,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_2_Step_3",
+      "parameters": {
+        "Base": "Planet_2_Step_2",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_2_Cut_3"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_2_Cut_4",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 180.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -23.00000000000001,
+            -22.516660498395396,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_2_Step_4",
+      "parameters": {
+        "Base": "Planet_2_Step_3",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_2_Cut_4"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_2_Cut_5",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 225.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -20.07106781186549,
+            -29.58772831026087,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_2_Step_5",
+      "parameters": {
+        "Base": "Planet_2_Step_4",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_2_Cut_5"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_2_Cut_6",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 270.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -13.000000000000012,
+            -32.516660498395396,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_2_Step_6",
+      "parameters": {
+        "Base": "Planet_2_Step_5",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_2_Cut_6"
+      },
+      "shape": "Part::Cut",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_2_Cut_7",
+      "parameters": {
+        "Color": "#808080",
+        "Height": 12.0,
+        "Length": 3.3333333333333335,
+        "Placement": {
+          "Angle": 315.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            -5.928932188134537,
+            -29.58772831026087,
+            -1.0
+          ]
+        },
+        "Width": 3.9269908169872414
+      },
+      "shape": "Part::Box",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Planet_2_Step_7",
+      "parameters": {
+        "Base": "Planet_2_Step_6",
+        "Color": "#2ECC71",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Planet_2_Cut_7"
+      },
+      "shape": "Part::Cut",
+      "visible": true
+    },
+    {
+      "metadata": null,
+      "name": "Ring_Out",
+      "parameters": {
+        "Angle": 360.0,
+        "Color": "#808080",
+        "Height": 10.0,
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Radius": 42.0
+      },
+      "shape": "Part::Cylinder",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Ring_In",
+      "parameters": {
+        "Angle": 360.0,
+        "Color": "#808080",
+        "Height": 12.0,
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            -1.0
+          ]
+        },
+        "Radius": 37.0
+      },
+      "shape": "Part::Cylinder",
+      "visible": false
+    },
+    {
+      "metadata": null,
+      "name": "Ring_Gear",
+      "parameters": {
+        "Base": "Ring_Out",
+        "Color": "#34495E",
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "Refine": false,
+        "Tool": "Ring_In"
+      },
+      "shape": "Part::Cut",
+      "visible": true
+    },
+    {
+      "metadata": null,
+      "name": "Base_Shaft",
+      "parameters": {
+        "Angle": 360.0,
+        "Color": "#808080",
+        "Height": 30.0,
+        "Placement": {
+          "Angle": 0.0,
+          "Axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "Position": [
+            0.0,
+            0.0,
+            -10.0
+          ]
+        },
+        "Radius": 4.0
+      },
+      "shape": "Part::Cylinder",
+      "visible": true
+    }
+  ],
+  "options": {},
+  "outputs": {},
+  "schemaVersion": "3.0.0"
+}

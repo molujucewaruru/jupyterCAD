@@ -1021,7 +1021,7 @@ const connectExportSignal = (widget: JupyterCadWidget, source: string) => {
 
   // 修改：只需要触发视图逻辑即可
   commands.addCommand(CommandIDs.exportAsGLB, {
-    label: trans.__('Export GLB to Server'),
+    label: trans.__('Export to .glb'),
     isEnabled: () => Boolean(tracker.currentWidget),
     execute: async () => {
       const current = tracker.currentWidget;if (current) {

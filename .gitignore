@@ -1,3 +1,5 @@
-.glb
-.stl
+*.glb
+*.stl
 node_modules/
+.yarn/
+.jupyter_ystore.db

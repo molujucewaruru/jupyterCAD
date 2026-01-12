@@ -1,0 +1,289 @@
+{
+    "schemaVersion": "3.0.0",
+    "objects": [
+        {
+            "name": "Pipe_Vert",
+            "parameters": {
+                "Angle": 360.0,
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Angle": 0.0
+                },
+                "Radius": 10.0,
+                "Color": "#808080",
+                "Height": 60.0
+            },
+            "metadata": null,
+            "shape": "Part::Cylinder",
+            "visible": false
+        },
+        {
+            "parameters": {
+                "Placement": {
+                    "Angle": 90.0,
+                    "Position": [
+                        0.0,
+                        0.0,
+                        30.0
+                    ],
+                    "Axis": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ]
+                },
+                "Radius": 10.0,
+                "Angle": 360.0,
+                "Height": 60.0,
+                "Color": "#808080"
+            },
+            "name": "Pipe_Horiz",
+            "metadata": null,
+            "visible": false,
+            "shape": "Part::Cylinder"
+        },
+        {
+            "shape": "Part::MultiFuse",
+            "visible": false,
+            "metadata": null,
+            "name": "T_Shape",
+            "parameters": {
+                "Color": "#808080",
+                "Shapes": [
+                    "Pipe_Vert",
+                    "Pipe_Horiz"
+                ],
+                "Refine": false,
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0,
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            }
+        },
+        {
+            "visible": false,
+            "metadata": null,
+            "shape": "Part::Cylinder",
+            "name": "Flange_Top",
+            "parameters": {
+                "Height": 5.0,
+                "Radius": 15.0,
+                "Color": "#808080",
+                "Angle": 360.0,
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Position": [
+                        0.0,
+                        0.0,
+                        60.0
+                    ],
+                    "Angle": 0.0
+                }
+            }
+        },
+        {
+            "name": "T_With_Top_Flange",
+            "parameters": {
+                "Refine": false,
+                "Color": "#808080",
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Angle": 0.0
+                },
+                "Shapes": [
+                    "T_Shape",
+                    "Flange_Top"
+                ]
+            },
+            "visible": false,
+            "shape": "Part::MultiFuse",
+            "metadata": null
+        },
+        {
+            "visible": false,
+            "metadata": null,
+            "name": "Flange_Side",
+            "parameters": {
+                "Color": "#808080",
+                "Height": 5.0,
+                "Angle": 360.0,
+                "Radius": 15.0,
+                "Placement": {
+                    "Position": [
+                        30.0,
+                        0.0,
+                        30.0
+                    ],
+                    "Angle": 90.0,
+                    "Axis": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ]
+                }
+            },
+            "shape": "Part::Cylinder"
+        },
+        {
+            "shape": "Part::MultiFuse",
+            "visible": false,
+            "parameters": {
+                "Shapes": [
+                    "T_With_Top_Flange",
+                    "Flange_Side"
+                ],
+                "Color": "#808080",
+                "Placement": {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0
+                },
+                "Refine": false
+            },
+            "metadata": null,
+            "name": "T_Solid"
+        },
+        {
+            "parameters": {
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0,
+                    "Position": [
+                        0.0,
+                        0.0,
+                        -5.0
+                    ]
+                },
+                "Radius": 8.0,
+                "Height": 70.0,
+                "Angle": 360.0,
+                "Color": "#808080"
+            },
+            "metadata": null,
+            "visible": false,
+            "shape": "Part::Cylinder",
+            "name": "Hole_Vert"
+        },
+        {
+            "visible": false,
+            "parameters": {
+                "Tool": "Hole_Vert",
+                "Base": "T_Solid",
+                "Refine": false,
+                "Color": "#808080",
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0,
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            },
+            "metadata": null,
+            "name": "T_Hollow_Vert",
+            "shape": "Part::Cut"
+        },
+        {
+            "visible": false,
+            "metadata": null,
+            "name": "Hole_Horiz",
+            "shape": "Part::Cylinder",
+            "parameters": {
+                "Radius": 8.0,
+                "Angle": 360.0,
+                "Height": 70.0,
+                "Color": "#808080",
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ],
+                    "Position": [
+                        -5.0,
+                        0.0,
+                        30.0
+                    ],
+                    "Angle": 90.0
+                }
+            }
+        },
+        {
+            "shape": "Part::Cut",
+            "parameters": {
+                "Base": "T_Hollow_Vert",
+                "Color": "#E67E22",
+                "Refine": false,
+                "Placement": {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0
+                },
+                "Tool": "Hole_Horiz"
+            },
+            "name": "Final_T_Joint",
+            "metadata": null,
+            "visible": true
+        }
+    ],
+    "options": {},
+    "metadata": {},
+    "outputs": {}
+}
