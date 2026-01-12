@@ -919,7 +919,8 @@ export function addCommands(app, tracker, translator, formSchemaRegistry, worker
                 connectExportSignal(current, 'ExecuteButton');
                 // 2. 触发 Panel 上的导出逻辑
                 if (current.content.exportAsGLB) {
-                    current.content.exportAsGLB();
+                    // 显式传入 true，确保点击按钮时触发下载
+                    current.content.exportAsGLB(true);
                 }
                 else {
                     console.error('[Command] exportAsGLB method missing on panel!');

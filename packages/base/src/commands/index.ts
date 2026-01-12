@@ -1033,7 +1033,8 @@ const connectExportSignal = (widget: JupyterCadWidget, source: string) => {
 
         // 2. 触发 Panel 上的导出逻辑
         if ((current.content as any).exportAsGLB) {
-            (current.content as any).exportAsGLB();
+            // 显式传入 true，确保点击按钮时触发下载
+            (current.content as any).exportAsGLB(true);
         } else {
             console.error('[Command] exportAsGLB method missing on panel!');
         }

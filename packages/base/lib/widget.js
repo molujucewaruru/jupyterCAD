@@ -53,7 +53,7 @@ export class JupyterCadDocumentWidget extends DocumentWidget {
         // [新增] 在销毁组件前，调用 Panel 的 exportAsGLB 方法
         // 这将触发 MainView 监听到变更，从而获取数据并释放 _emitExportAsGLB 信号
         if (this.content && !this.content.isDisposed && this.content.exportAsGLB) {
-            this.content.exportAsGLB();
+            this.content.exportAsGLB(false);
         }
         this.content.dispose();
         super.dispose();
@@ -196,9 +196,14 @@ export class JupyterCadPanel extends SplitPanel {
     // get currentViewModel(): MainViewModel {
     //   return this._view.viewModel; 
     // }
-    exportAsGLB() {
+    // 新增 exportAsGLB 方法，使用 download 参数
+    exportAsGLB(download = true) {
         // 设置一个带有时间戳的随机值来触发 MainView 中的监听器
-        this._view.set('exportAsGLB', new Date().toISOString());
+        // 将 download 状态也传递给 viewSetting
+        this._view.set('exportAsGLB', {
+            timestamp: new Date().toISOString(),
+            download: download
+        });
     }
     get wireframe() {
         return this._view.get('wireframe');

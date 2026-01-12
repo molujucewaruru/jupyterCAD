@@ -499,7 +499,6 @@ if __name__ == "__main__":
     try:
         print("Starting algorithmic generation of complex models...")
         create_v6_engine_block()
-        create_menger_sponge()
         create_ball_bearing()
         create_dna_tower()
         create_planetary_gear()

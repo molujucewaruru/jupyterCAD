@@ -30,6 +30,7 @@ const CELL_OUTPUT_WIDGET_CLASS = 'jcad-cell-output-widget';
 export type JupyterCadWidget =
   | JupyterCadDocumentWidget
   | JupyterCadOutputWidget;
+
 export class JupyterCadDocumentWidget
   extends DocumentWidget<JupyterCadPanel, IJupyterCadModel>
   implements IJupyterCadDocumentWidget
@@ -52,6 +53,7 @@ export class JupyterCadDocumentWidget
           } else {
              console.error('exportAsGLB method not found on content panel');
           }
+          
         }
       })
     );
@@ -69,7 +71,7 @@ export class JupyterCadDocumentWidget
     // [新增] 在销毁组件前，调用 Panel 的 exportAsGLB 方法
     // 这将触发 MainView 监听到变更，从而获取数据并释放 _emitExportAsGLB 信号
     if (this.content && !this.content.isDisposed && (this.content as any).exportAsGLB) {
-      (this.content as any).exportAsGLB();
+      (this.content as any).exportAsGLB(false);
     }
 
     this.content.dispose();
@@ -265,9 +267,14 @@ export class JupyterCadPanel extends SplitPanel {
   //   return this._view.viewModel; 
   // }
 
-  exportAsGLB(): void { // 新增
+  // 新增 exportAsGLB 方法，使用 download 参数
+  exportAsGLB(download: boolean = true): void { 
     // 设置一个带有时间戳的随机值来触发 MainView 中的监听器
-    this._view.set('exportAsGLB', new Date().toISOString());
+    // 将 download 状态也传递给 viewSetting
+    this._view.set('exportAsGLB', { 
+      timestamp: new Date().toISOString(), 
+      download: download 
+    });
   }
 
   get wireframe(): boolean {

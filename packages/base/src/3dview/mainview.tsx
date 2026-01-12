@@ -1652,7 +1652,10 @@ export class MainView extends React.Component<IProps, IStates> {
 
     // 新增
     if (change.key === 'exportAsGLB') {
-      this._exportSceneToGLB();
+      const value = change.newValue as any;
+      // 如果是代码传来的字符串，默认下载；如果是对象，读取 download 属性
+      const shouldDownload = typeof value === 'string' ? true : (value?.download ?? true);
+      this._exportSceneToGLB(shouldDownload);
     }
 
     if (change.key === 'clipView') {
@@ -1921,7 +1924,7 @@ export class MainView extends React.Component<IProps, IStates> {
   }
 
   // 新增
-  private _exportSceneToGLB() {
+  private _exportSceneToGLB(download: boolean) {
     if (this._meshGroup) {
       const exporter = new GLTFExporter();
       const options = {
@@ -1946,10 +1949,13 @@ export class MainView extends React.Component<IProps, IStates> {
           hiddenObjects.forEach((obj) => obj.visible = true);
 
           if (exported instanceof ArrayBuffer) {
+            // 释放信号 (用于保存到后端/本地文件系统)
             const filename = `${new Date().getTime()}.glb`;
-            downloadGLB(exported, filename);
-
             this._mainViewModel.emitExportAsGLB(exported, filename);
+
+            if (download) { // 根据 download 参数决定是否触发浏览器下载
+              downloadGLB(exported, filename);
+            }
           }
         },
         (error) => {

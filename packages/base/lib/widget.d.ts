@@ -64,7 +64,7 @@ export declare class JupyterCadPanel extends SplitPanel {
     get splitScreen(): SplitScreenSettings | undefined;
     set splitScreen(value: SplitScreenSettings | undefined);
     deleteAxes(): void;
-    exportAsGLB(): void;
+    exportAsGLB(download?: boolean): void;
     get wireframe(): boolean;
     set wireframe(value: boolean);
     get transform(): boolean;

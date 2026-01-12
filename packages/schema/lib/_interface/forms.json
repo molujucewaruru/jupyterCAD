@@ -266,80 +266,6 @@
       }
     }
   },
-  "Part::Chamfer": {
-    "type": "object",
-    "required": [
-      "Base",
-      "Edge",
-      "Dist",
-      "Placement"
-    ],
-    "additionalProperties": false,
-    "properties": {
-      "Base": {
-        "type": "string",
-        "description": "The name of input object",
-        "fcType": "App::PropertyLink"
-      },
-      "Edge": {
-        "anyOf": [
-          {
-            "type": "number",
-            "minimum": 0,
-            "description": "The edge index"
-          },
-          {
-            "type": "array",
-            "items": {
-              "type": "number",
-              "minimum": 0
-            },
-            "description": "List of edge indices"
-          }
-        ]
-      },
-      "Dist": {
-        "type": "number",
-        "minimum": 0,
-        "description": "The distance of the symmetric chamfer"
-      },
-      "Color": {
-        "type": "string",
-        "description": "The color of the chamfer",
-        "default": "#808080"
-      },
-      "Placement": {
-        "type": "object",
-        "description": "Placement of the object",
-        "additionalProperties": false,
-        "required": [
-          "Position",
-          "Axis",
-          "Angle"
-        ],
-        "properties": {
-          "Position": {
-            "type": "array",
-            "description": "Position",
-            "items": {
-              "type": "number"
-            }
-          },
-          "Axis": {
-            "type": "array",
-            "description": "Rotation Axis",
-            "items": {
-              "type": "number"
-            }
-          },
-          "Angle": {
-            "type": "number",
-            "description": "Rotation Angle (degrees)"
-          }
-        }
-      }
-    }
-  },
   "Part::Cone": {
     "type": "object",
     "required": [
@@ -531,6 +457,154 @@
       }
     }
   },
+  "Part::Chamfer": {
+    "type": "object",
+    "required": [
+      "Base",
+      "Edge",
+      "Dist",
+      "Placement"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "Base": {
+        "type": "string",
+        "description": "The name of input object",
+        "fcType": "App::PropertyLink"
+      },
+      "Edge": {
+        "anyOf": [
+          {
+            "type": "number",
+            "minimum": 0,
+            "description": "The edge index"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "minimum": 0
+            },
+            "description": "List of edge indices"
+          }
+        ]
+      },
+      "Dist": {
+        "type": "number",
+        "minimum": 0,
+        "description": "The distance of the symmetric chamfer"
+      },
+      "Color": {
+        "type": "string",
+        "description": "The color of the chamfer",
+        "default": "#808080"
+      },
+      "Placement": {
+        "type": "object",
+        "description": "Placement of the object",
+        "additionalProperties": false,
+        "required": [
+          "Position",
+          "Axis",
+          "Angle"
+        ],
+        "properties": {
+          "Position": {
+            "type": "array",
+            "description": "Position",
+            "items": {
+              "type": "number"
+            }
+          },
+          "Axis": {
+            "type": "array",
+            "description": "Rotation Axis",
+            "items": {
+              "type": "number"
+            }
+          },
+          "Angle": {
+            "type": "number",
+            "description": "Rotation Angle (degrees)"
+          }
+        }
+      }
+    }
+  },
+  "Part::Fillet": {
+    "type": "object",
+    "required": [
+      "Base",
+      "Edge",
+      "Radius",
+      "Placement"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "Base": {
+        "type": "string",
+        "description": "The name of input object",
+        "fcType": "App::PropertyLink"
+      },
+      "Edge": {
+        "anyOf": [
+          {
+            "type": "number",
+            "minimum": 0,
+            "description": "The edge index"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "minimum": 0
+            },
+            "description": "List of edge indices"
+          }
+        ]
+      },
+      "Radius": {
+        "type": "number",
+        "exclusiveMinimum": 0,
+        "description": "The radius for the fillet"
+      },
+      "Color": {
+        "type": "string",
+        "description": "The color of the fillet",
+        "default": "#808080"
+      },
+      "Placement": {
+        "type": "object",
+        "description": "Placement of the object",
+        "additionalProperties": false,
+        "required": [
+          "Position",
+          "Axis",
+          "Angle"
+        ],
+        "properties": {
+          "Position": {
+            "type": "array",
+            "description": "Position",
+            "items": {
+              "type": "number"
+            }
+          },
+          "Axis": {
+            "type": "array",
+            "description": "Rotation Axis",
+            "items": {
+              "type": "number"
+            }
+          },
+          "Angle": {
+            "type": "number",
+            "description": "Rotation Angle (degrees)"
+          }
+        }
+      }
+    }
+  },
   "Part::Extrusion": {
     "type": "object",
     "required": [
@@ -686,80 +760,6 @@
       "Color": {
         "type": "string",
         "description": "The color of the intersection",
-        "default": "#808080"
-      },
-      "Placement": {
-        "type": "object",
-        "description": "Placement of the object",
-        "additionalProperties": false,
-        "required": [
-          "Position",
-          "Axis",
-          "Angle"
-        ],
-        "properties": {
-          "Position": {
-            "type": "array",
-            "description": "Position",
-            "items": {
-              "type": "number"
-            }
-          },
-          "Axis": {
-            "type": "array",
-            "description": "Rotation Axis",
-            "items": {
-              "type": "number"
-            }
-          },
-          "Angle": {
-            "type": "number",
-            "description": "Rotation Angle (degrees)"
-          }
-        }
-      }
-    }
-  },
-  "Part::Fillet": {
-    "type": "object",
-    "required": [
-      "Base",
-      "Edge",
-      "Radius",
-      "Placement"
-    ],
-    "additionalProperties": false,
-    "properties": {
-      "Base": {
-        "type": "string",
-        "description": "The name of input object",
-        "fcType": "App::PropertyLink"
-      },
-      "Edge": {
-        "anyOf": [
-          {
-            "type": "number",
-            "minimum": 0,
-            "description": "The edge index"
-          },
-          {
-            "type": "array",
-            "items": {
-              "type": "number",
-              "minimum": 0
-            },
-            "description": "List of edge indices"
-          }
-        ]
-      },
-      "Radius": {
-        "type": "number",
-        "exclusiveMinimum": 0,
-        "description": "The radius for the fillet"
-      },
-      "Color": {
-        "type": "string",
-        "description": "The color of the fillet",
         "default": "#808080"
       },
       "Placement": {
