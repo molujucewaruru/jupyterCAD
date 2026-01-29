@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jupytercad.org/schemas/assemblyFeature.json",
+  "title": "IAssemblyFeature",
+  "description": "Unified geometric feature definition for assembly constraints (compatible with DTEditor Assembly Schema)",
+  "type": "object",
+  "required": ["type", "name"],
+  "additionalProperties": false,
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["Feature::Cylinder", "Feature::Sphere", "Feature::Cone", "Feature::Torus", "Feature::Circle", "Feature::Face", "Feature::Point", "Feature::Edge"],
+      "description": "Feature type for assembly constraints"
+    },
+    "name": {
+      "type": "string",
+      "description": "Feature name/identifier"
+    },
+    "position": {
+      "type": "array",
+      "description": "Position [x, y, z] - for cylinder, cone, torus, point",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "center": {
+      "type": "array",
+      "description": "Center point [x, y, z] - for sphere, circle, face",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "axis": {
+      "type": "array",
+      "description": "Direction axis [x, y, z] (normalized) - for cylinder, cone, torus",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "normal": {
+      "type": "array",
+      "description": "Normal vector [x, y, z] (normalized) - for circle, face",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "radius": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "description": "Radius - for cylinder, sphere, circle"
+    },
+    "radius1": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "description": "First/bottom radius - for cone"
+    },
+    "radius2": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "description": "Second/top radius - for cone"
+    },
+    "tube": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "description": "Tube radius - for torus"
+    },
+    "height": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "description": "Height - for cylinder, cone"
+    },
+    "bounds": {
+      "description": "Bounding information - for face"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional feature metadata (e.g., surfaceFinish, tolerance, fit, material)",
+      "additionalProperties": true
+    }
+  }
+}

@@ -65,6 +65,10 @@ export interface IJCadObject {
     [k: string]: any;
   }[];
   dependencies?: string[];
+  /**
+   * Assembly features extracted from this object (for DTEditor integration)
+   */
+  assemblyFeatures?: IAssemblyFeature[];
 }
 /**
  * This interface was referenced by `IJCadContent`'s JSON-Schema
@@ -76,6 +80,78 @@ export interface IShapeMetadata {
   mass?: number;
   centerOfMass?: number[];
   matrixOfInertia?: number[][];
+}
+/**
+ * Unified geometric feature definition for assembly constraints (compatible with DTEditor Assembly Schema)
+ *
+ * This interface was referenced by `IJCadContent`'s JSON-Schema
+ * via the `definition` "assemblyFeature".
+ */
+export interface IAssemblyFeature {
+  /**
+   * Feature type for assembly constraints
+   */
+  type:
+    | "Feature::Cylinder"
+    | "Feature::Sphere"
+    | "Feature::Cone"
+    | "Feature::Torus"
+    | "Feature::Circle"
+    | "Feature::Face"
+    | "Feature::Point"
+    | "Feature::Edge";
+  /**
+   * Feature name/identifier
+   */
+  name: string;
+  /**
+   * Position [x, y, z] - for cylinder, cone, torus, point
+   */
+  position?: [number, number, number];
+  /**
+   * Center point [x, y, z] - for sphere, circle, face
+   */
+  center?: [number, number, number];
+  /**
+   * Direction axis [x, y, z] (normalized) - for cylinder, cone, torus
+   */
+  axis?: [number, number, number];
+  /**
+   * Normal vector [x, y, z] (normalized) - for circle, face
+   */
+  normal?: [number, number, number];
+  /**
+   * Radius - for cylinder, sphere, circle
+   */
+  radius?: number;
+  /**
+   * First/bottom radius - for cone
+   */
+  radius1?: number;
+  /**
+   * Second/top radius - for cone
+   */
+  radius2?: number;
+  /**
+   * Tube radius - for torus
+   */
+  tube?: number;
+  /**
+   * Height - for cylinder, cone
+   */
+  height?: number;
+  /**
+   * Bounding information - for face
+   */
+  bounds?: {
+    [k: string]: any;
+  };
+  /**
+   * Additional feature metadata (e.g., surfaceFinish, tolerance, fit, material)
+   */
+  metadata?: {
+    [k: string]: any;
+  };
 }
 /**
  * This interface was referenced by `IJCadContent`'s JSON-Schema
