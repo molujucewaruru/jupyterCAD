@@ -2,132 +2,63 @@
     "schemaVersion": "3.0.0",
     "objects": [
         {
+            "name": "Outer_Cyl_Raw",
+            "visible": false,
+            "shape": "Part::Cylinder",
             "parameters": {
-                "Placement": {
-                    "Axis": [
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "Angle": 0.0,
-                    "Position": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ]
-                },
+                "Angle": 360.0,
+                "Color": "#808080",
                 "Height": 20.0,
                 "Radius": 30.0,
-                "Angle": 360.0,
-                "Color": "#808080"
-            },
-            "metadata": null,
-            "shape": "Part::Cylinder",
-            "name": "Outer_Cyl_Raw",
-            "visible": false
-        },
-        {
-            "visible": false,
-            "name": "Outer_Cyl_Hole",
-            "parameters": {
-                "Height": 22.0,
                 "Placement": {
-                    "Axis": [
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "Position": [
-                        0.0,
-                        0.0,
-                        -1.0
-                    ],
-                    "Angle": 0.0
-                },
-                "Color": "#808080",
-                "Radius": 25.0,
-                "Angle": 360.0
-            },
-            "shape": "Part::Cylinder",
-            "metadata": null
-        },
-        {
-            "parameters": {
-                "Base": "Outer_Cyl_Raw",
-                "Tool": "Outer_Cyl_Hole",
-                "Color": "#808080",
-                "Placement": {
-                    "Axis": [
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
                     "Position": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "Angle": 0.0
-                },
-                "Refine": false
-            },
-            "name": "Outer_Ring",
-            "visible": false,
-            "shape": "Part::Cut",
-            "metadata": null
-        },
-        {
-            "parameters": {
-                "Placement": {
+                    "Angle": 0.0,
                     "Axis": [
                         0.0,
                         0.0,
                         1.0
-                    ],
+                    ]
+                }
+            },
+            "metadata": null
+        },
+        {
+            "name": "Outer_Cyl_Hole",
+            "metadata": null,
+            "shape": "Part::Cylinder",
+            "visible": false,
+            "parameters": {
+                "Height": 22.0,
+                "Placement": {
                     "Angle": 0.0,
                     "Position": [
                         0.0,
                         0.0,
-                        0.0
-                    ]
-                },
-                "Angle": 360.0,
-                "Height": 20.0,
-                "Color": "#808080",
-                "Radius": 20.0
-            },
-            "name": "Inner_Cyl_Raw",
-            "metadata": null,
-            "visible": false,
-            "shape": "Part::Cylinder"
-        },
-        {
-            "name": "Inner_Cyl_Hole",
-            "shape": "Part::Cylinder",
-            "metadata": null,
-            "visible": false,
-            "parameters": {
-                "Color": "#808080",
-                "Radius": 15.0,
-                "Height": 22.0,
-                "Angle": 360.0,
-                "Placement": {
-                    "Position": [
-                        0.0,
-                        0.0,
                         -1.0
                     ],
                     "Axis": [
                         0.0,
                         0.0,
                         1.0
-                    ],
-                    "Angle": 0.0
-                }
+                    ]
+                },
+                "Angle": 360.0,
+                "Radius": 25.0,
+                "Color": "#808080"
             }
         },
         {
+            "name": "Outer_Ring",
+            "metadata": null,
+            "shape": "Part::Cut",
             "parameters": {
+                "Tool": "Outer_Cyl_Hole",
+                "Base": "Outer_Cyl_Raw",
+                "Refine": false,
                 "Placement": {
                     "Position": [
                         0.0,
@@ -141,80 +72,969 @@
                     ],
                     "Angle": 0.0
                 },
-                "Tool": "Inner_Cyl_Hole",
-                "Refine": false,
-                "Base": "Inner_Cyl_Raw",
                 "Color": "#808080"
             },
-            "name": "Inner_Ring",
+            "visible": false
+        },
+        {
+            "parameters": {
+                "Radius": 20.0,
+                "Color": "#808080",
+                "Angle": 360.0,
+                "Height": 20.0,
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0,
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            },
+            "shape": "Part::Cylinder",
+            "visible": false,
+            "name": "Inner_Cyl_Raw",
+            "metadata": null
+        },
+        {
+            "parameters": {
+                "Placement": {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        -1.0
+                    ],
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0
+                },
+                "Color": "#808080",
+                "Radius": 15.0,
+                "Height": 22.0,
+                "Angle": 360.0
+            },
             "metadata": null,
-            "shape": "Part::Cut",
+            "name": "Inner_Cyl_Hole",
+            "shape": "Part::Cylinder",
             "visible": false
         },
         {
             "visible": false,
-            "name": "Groove_Tool",
-            "metadata": null,
             "parameters": {
-                "Radius1": 22.5,
                 "Color": "#808080",
-                "Radius2": 7.5,
-                "Angle2": 180.0,
-                "Angle3": 360.0,
                 "Placement": {
                     "Axis": [
                         0.0,
                         0.0,
                         1.0
                     ],
-                    "Position": [
-                        0.0,
-                        0.0,
-                        10.0
-                    ],
-                    "Angle": 0.0
-                },
-                "Angle1": -180.0
-            },
-            "shape": "Part::Torus"
-        },
-        {
-            "name": "Outer_Race_Final",
-            "parameters": {
-                "Base": "Outer_Ring",
-                "Refine": false,
-                "Color": "#BDC3C7",
-                "Tool": "Groove_Tool",
-                "Placement": {
+                    "Angle": 0.0,
                     "Position": [
                         0.0,
                         0.0,
                         0.0
-                    ],
-                    "Axis": [
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "Angle": 0.0
-                }
+                    ]
+                },
+                "Tool": "Inner_Cyl_Hole",
+                "Base": "Inner_Cyl_Raw",
+                "Refine": false
             },
             "metadata": null,
             "shape": "Part::Cut",
-            "visible": true
+            "name": "Inner_Ring"
+        },
+        {
+            "name": "Groove_Tool",
+            "metadata": null,
+            "visible": false,
+            "shape": "Part::Torus",
+            "parameters": {
+                "Radius2": 7.5,
+                "Radius1": 22.5,
+                "Angle1": -180.0,
+                "Angle3": 360.0,
+                "Angle2": 180.0,
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0,
+                    "Position": [
+                        0.0,
+                        0.0,
+                        10.0
+                    ]
+                },
+                "Color": "#808080"
+            }
+        },
+        {
+            "metadata": null,
+            "visible": true,
+            "shape": "Part::Cut",
+            "assemblyFeatures": [
+                {
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "type": "Feature::Circle",
+                    "radius": 30.0,
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "center": [
+                        0.0,
+                        0.0,
+                        9.999999999999998
+                    ],
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low",
+                        "edgeIndex": 1.0
+                    },
+                    "name": "Outer_Race_Final_circle_1"
+                },
+                {
+                    "metadata": {
+                        "pointType": "circle_center",
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut"
+                    },
+                    "position": [
+                        0.0,
+                        0.0,
+                        9.999999999999998
+                    ],
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "name": "Outer_Race_Final_circle_center_1",
+                    "type": "Feature::Point"
+                },
+                {
+                    "name": "Outer_Race_Final_circle_3",
+                    "radius": 30.0,
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "center": [
+                        0.0,
+                        0.0,
+                        20.0
+                    ],
+                    "type": "Feature::Circle",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 3.0,
+                        "featureLevel": "low"
+                    }
+                },
+                {
+                    "type": "Feature::Point",
+                    "position": [
+                        0.0,
+                        0.0,
+                        20.0
+                    ],
+                    "metadata": {
+                        "featureLevel": "low",
+                        "pointType": "circle_center",
+                        "originalShape": "Part::Cut"
+                    },
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "name": "Outer_Race_Final_circle_center_3"
+                },
+                {
+                    "end": [
+                        24.99999999999986,
+                        -6.123233995736732e-15,
+                        17.071067811865525
+                    ],
+                    "endAngle": 1.2309594173407943,
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "radius": 7.5,
+                    "startAngle": 0.0,
+                    "start": [
+                        30.0,
+                        -7.34788079488412e-15,
+                        10.0
+                    ],
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 4.0,
+                        "featureLevel": "low"
+                    },
+                    "name": "Outer_Race_Final_arc_4",
+                    "center": [
+                        22.5,
+                        -5.5109105961630896e-15,
+                        10.0
+                    ],
+                    "type": "Feature::Arc",
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936"
+                },
+                {
+                    "name": "Outer_Race_Final_circle_center_4",
+                    "position": [
+                        22.5,
+                        -5.5109105961630896e-15,
+                        10.0
+                    ],
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "pointType": "arc_center",
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut"
+                    },
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936"
+                },
+                {
+                    "type": "Feature::Circle",
+                    "radius": 25.0,
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 5.0
+                    },
+                    "center": [
+                        0.0,
+                        0.0,
+                        17.071067811865476
+                    ],
+                    "name": "Outer_Race_Final_circle_5",
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "normal": [
+                        -0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                {
+                    "name": "Outer_Race_Final_circle_center_5",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "pointType": "circle_center",
+                        "featureLevel": "low"
+                    },
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "position": [
+                        0.0,
+                        0.0,
+                        17.071067811865476
+                    ],
+                    "type": "Feature::Point"
+                },
+                {
+                    "startAngle": 0.0,
+                    "type": "Feature::Arc",
+                    "endAngle": 1.2309594173407943,
+                    "radius": 7.5,
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 6.0,
+                        "featureLevel": "low"
+                    },
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "end": [
+                        24.99999999999986,
+                        -6.123233995736732e-15,
+                        17.071067811865525
+                    ],
+                    "name": "Outer_Race_Final_arc_6",
+                    "start": [
+                        30.0,
+                        -7.34788079488412e-15,
+                        10.0
+                    ],
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "center": [
+                        22.5,
+                        -5.5109105961630896e-15,
+                        10.0
+                    ]
+                },
+                {
+                    "type": "Feature::Point",
+                    "position": [
+                        22.5,
+                        -5.5109105961630896e-15,
+                        10.0
+                    ],
+                    "name": "Outer_Race_Final_circle_center_6",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "pointType": "arc_center",
+                        "featureLevel": "low"
+                    },
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936"
+                },
+                {
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "type": "Feature::Circle",
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "metadata": {
+                        "edgeIndex": 7.0,
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut"
+                    },
+                    "name": "Outer_Race_Final_circle_7",
+                    "center": [
+                        0.0,
+                        0.0,
+                        9.999999999999998
+                    ],
+                    "radius": 30.0
+                },
+                {
+                    "type": "Feature::Point",
+                    "name": "Outer_Race_Final_circle_center_7",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "pointType": "circle_center",
+                        "featureLevel": "low"
+                    },
+                    "position": [
+                        0.0,
+                        0.0,
+                        9.999999999999998
+                    ],
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936"
+                },
+                {
+                    "name": "Outer_Race_Final_circle_8",
+                    "radius": 30.0,
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 8.0,
+                        "featureLevel": "low"
+                    },
+                    "type": "Feature::Circle",
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "center": [
+                        0.0,
+                        0.0,
+                        20.0
+                    ],
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                {
+                    "name": "Outer_Race_Final_circle_center_8",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "pointType": "circle_center"
+                    },
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "type": "Feature::Point",
+                    "position": [
+                        0.0,
+                        0.0,
+                        20.0
+                    ]
+                },
+                {
+                    "type": "Feature::Circle",
+                    "center": [
+                        0.0,
+                        0.0,
+                        20.0
+                    ],
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 9.0,
+                        "featureLevel": "low"
+                    },
+                    "name": "Outer_Race_Final_circle_9",
+                    "radius": 25.0,
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936"
+                },
+                {
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "pointType": "circle_center",
+                        "featureLevel": "low"
+                    },
+                    "position": [
+                        0.0,
+                        0.0,
+                        20.0
+                    ],
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "name": "Outer_Race_Final_circle_center_9"
+                },
+                {
+                    "type": "Feature::Circle",
+                    "center": [
+                        0.0,
+                        0.0,
+                        17.071067811865476
+                    ],
+                    "radius": 25.0,
+                    "metadata": {
+                        "edgeIndex": 11.0,
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low"
+                    },
+                    "normal": [
+                        -0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "name": "Outer_Race_Final_circle_11"
+                },
+                {
+                    "metadata": {
+                        "featureLevel": "low",
+                        "pointType": "circle_center",
+                        "originalShape": "Part::Cut"
+                    },
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "type": "Feature::Point",
+                    "name": "Outer_Race_Final_circle_center_11",
+                    "position": [
+                        0.0,
+                        0.0,
+                        17.071067811865476
+                    ]
+                },
+                {
+                    "name": "Outer_Race_Final_circle_13",
+                    "radius": 25.0,
+                    "type": "Feature::Circle",
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "center": [
+                        0.0,
+                        0.0,
+                        20.0
+                    ],
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 13.0,
+                        "featureLevel": "low"
+                    },
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936"
+                },
+                {
+                    "position": [
+                        0.0,
+                        0.0,
+                        20.0
+                    ],
+                    "name": "Outer_Race_Final_circle_center_13",
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low",
+                        "pointType": "circle_center"
+                    },
+                    "type": "Feature::Point"
+                },
+                {
+                    "type": "Feature::Circle",
+                    "name": "Outer_Race_Final_circle_14",
+                    "radius": 30.0,
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 14.0
+                    },
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "center": [
+                        0.0,
+                        0.0,
+                        9.999999999999998
+                    ]
+                },
+                {
+                    "type": "Feature::Point",
+                    "name": "Outer_Race_Final_circle_center_14",
+                    "position": [
+                        0.0,
+                        0.0,
+                        9.999999999999998
+                    ],
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "metadata": {
+                        "pointType": "circle_center",
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low"
+                    }
+                },
+                {
+                    "type": "Feature::Circle",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "name": "Outer_Race_Final_circle_16",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 16.0
+                    },
+                    "radius": 30.0
+                },
+                {
+                    "name": "Outer_Race_Final_circle_center_16",
+                    "position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "pointType": "circle_center"
+                    },
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936"
+                },
+                {
+                    "type": "Feature::Arc",
+                    "name": "Outer_Race_Final_arc_18",
+                    "start": [
+                        24.999999999999854,
+                        -6.1232339957367306e-15,
+                        2.928932188134473
+                    ],
+                    "end": [
+                        30.0,
+                        -7.34788079488412e-15,
+                        9.999999999999998
+                    ],
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 18.0
+                    },
+                    "center": [
+                        22.5,
+                        -5.5109105961630896e-15,
+                        10.0
+                    ],
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "endAngle": 6.283185307179586,
+                    "startAngle": 5.052225889838791,
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "radius": 7.5
+                },
+                {
+                    "position": [
+                        22.5,
+                        -5.5109105961630896e-15,
+                        10.0
+                    ],
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "pointType": "arc_center"
+                    },
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "name": "Outer_Race_Final_circle_center_18",
+                    "type": "Feature::Point"
+                },
+                {
+                    "center": [
+                        0.0,
+                        0.0,
+                        2.9289321881345245
+                    ],
+                    "normal": [
+                        -0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "name": "Outer_Race_Final_circle_19",
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "radius": 25.0,
+                    "type": "Feature::Circle",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 19.0
+                    }
+                },
+                {
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "name": "Outer_Race_Final_circle_center_19",
+                    "position": [
+                        0.0,
+                        0.0,
+                        2.9289321881345245
+                    ],
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "pointType": "circle_center"
+                    }
+                },
+                {
+                    "type": "Feature::Arc",
+                    "radius": 7.5,
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "startAngle": 5.052225889838791,
+                    "endAngle": 6.283185307179586,
+                    "center": [
+                        22.5,
+                        -5.5109105961630896e-15,
+                        10.0
+                    ],
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "name": "Outer_Race_Final_arc_20",
+                    "start": [
+                        24.999999999999854,
+                        -6.1232339957367306e-15,
+                        2.928932188134473
+                    ],
+                    "end": [
+                        30.0,
+                        -7.34788079488412e-15,
+                        9.999999999999998
+                    ],
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 20.0,
+                        "featureLevel": "low"
+                    }
+                },
+                {
+                    "name": "Outer_Race_Final_circle_center_20",
+                    "type": "Feature::Point",
+                    "position": [
+                        22.5,
+                        -5.5109105961630896e-15,
+                        10.0
+                    ],
+                    "metadata": {
+                        "pointType": "arc_center",
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low"
+                    },
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936"
+                },
+                {
+                    "name": "Outer_Race_Final_circle_21",
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "center": [
+                        0.0,
+                        0.0,
+                        9.999999999999998
+                    ],
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 21.0,
+                        "featureLevel": "low"
+                    },
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "type": "Feature::Circle",
+                    "radius": 30.0
+                },
+                {
+                    "name": "Outer_Race_Final_circle_center_21",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "pointType": "circle_center"
+                    },
+                    "type": "Feature::Point",
+                    "position": [
+                        0.0,
+                        0.0,
+                        9.999999999999998
+                    ],
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936"
+                },
+                {
+                    "radius": 30.0,
+                    "metadata": {
+                        "edgeIndex": 22.0,
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut"
+                    },
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "type": "Feature::Circle",
+                    "name": "Outer_Race_Final_circle_22",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "type": "Feature::Point",
+                    "position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "name": "Outer_Race_Final_circle_center_22",
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "metadata": {
+                        "pointType": "circle_center",
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut"
+                    }
+                },
+                {
+                    "radius": 25.0,
+                    "type": "Feature::Circle",
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "name": "Outer_Race_Final_circle_23",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 23.0,
+                        "featureLevel": "low"
+                    }
+                },
+                {
+                    "position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "type": "Feature::Point",
+                    "name": "Outer_Race_Final_circle_center_23",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "pointType": "circle_center",
+                        "featureLevel": "low"
+                    }
+                },
+                {
+                    "radius": 25.0,
+                    "name": "Outer_Race_Final_circle_24",
+                    "center": [
+                        0.0,
+                        0.0,
+                        2.9289321881345245
+                    ],
+                    "type": "Feature::Circle",
+                    "normal": [
+                        -0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "metadata": {
+                        "edgeIndex": 24.0,
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low"
+                    },
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936"
+                },
+                {
+                    "position": [
+                        0.0,
+                        0.0,
+                        2.9289321881345245
+                    ],
+                    "type": "Feature::Point",
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "pointType": "circle_center",
+                        "featureLevel": "low"
+                    },
+                    "name": "Outer_Race_Final_circle_center_24"
+                },
+                {
+                    "name": "Outer_Race_Final_circle_26",
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "metadata": {
+                        "edgeIndex": 26.0,
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut"
+                    },
+                    "type": "Feature::Circle",
+                    "radius": 25.0,
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936"
+                },
+                {
+                    "name": "Outer_Race_Final_circle_center_26",
+                    "position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "type": "Feature::Point",
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "pointType": "circle_center",
+                        "featureLevel": "low"
+                    }
+                },
+                {
+                    "name": "Outer_Race_Final_plane_2",
+                    "metadata": {
+                        "bounds": {
+                            "width": 60.0000002,
+                            "height": 2.0000000233721948e-07,
+                            "length": 60.0000002
+                        },
+                        "originalShape": "Part::Cut",
+                        "faceIndex": 2.0,
+                        "featureLevel": "low"
+                    },
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "type": "Feature::Plane",
+                    "center": [
+                        0.0,
+                        0.0,
+                        20.0
+                    ],
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                {
+                    "name": "Outer_Race_Final_plane_6",
+                    "metadata": {
+                        "bounds": {
+                            "width": 60.0000002,
+                            "height": 2e-07,
+                            "length": 60.0000002
+                        },
+                        "faceIndex": 6.0,
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut"
+                    },
+                    "hash": "8b6fa09219a88a8222863f39d3450c71906f241d6c1747a591b806af558b1936",
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "type": "Feature::Plane",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            ],
+            "name": "Outer_Race_Final",
+            "parameters": {
+                "Tool": "Groove_Tool",
+                "Refine": false,
+                "Placement": {
+                    "Angle": 0.0,
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "Base": "Outer_Ring",
+                "Color": "#BDC3C7"
+            }
         },
         {
             "name": "Groove_Tool_2",
+            "shape": "Part::Torus",
+            "metadata": null,
             "visible": false,
             "parameters": {
-                "Angle2": 180.0,
-                "Color": "#808080",
                 "Radius1": 22.5,
-                "Angle1": -180.0,
+                "Color": "#808080",
                 "Radius2": 7.5,
+                "Angle1": -180.0,
                 "Angle3": 360.0,
                 "Placement": {
-                    "Angle": 0.0,
                     "Position": [
                         0.0,
                         0.0,
@@ -224,68 +1044,889 @@
                         0.0,
                         0.0,
                         1.0
-                    ]
-                }
-            },
-            "shape": "Part::Torus",
-            "metadata": null
+                    ],
+                    "Angle": 0.0
+                },
+                "Angle2": 180.0
+            }
         },
         {
-            "visible": true,
-            "name": "Inner_Race_Final",
+            "shape": "Part::Cut",
+            "metadata": null,
             "parameters": {
-                "Refine": false,
-                "Base": "Inner_Ring",
-                "Tool": "Groove_Tool_2",
-                "Color": "#7F8C8D",
                 "Placement": {
+                    "Angle": 0.0,
                     "Position": [
                         0.0,
                         0.0,
                         0.0
                     ],
-                    "Angle": 0.0,
                     "Axis": [
                         0.0,
                         0.0,
                         1.0
                     ]
-                }
+                },
+                "Refine": false,
+                "Tool": "Groove_Tool_2",
+                "Color": "#7F8C8D",
+                "Base": "Inner_Ring"
             },
-            "metadata": null,
-            "shape": "Part::Cut"
-        },
-        {
-            "name": "Ball_0",
-            "metadata": null,
-            "shape": "Part::Sphere",
-            "visible": false,
-            "parameters": {
-                "Radius": 7.0,
-                "Angle2": 90.0,
-                "Color": "#F1C40F",
-                "Angle3": 360.0,
-                "Placement": {
-                    "Axis": [
+            "visible": true,
+            "name": "Inner_Race_Final",
+            "assemblyFeatures": [
+                {
+                    "type": "Feature::Circle",
+                    "normal": [
+                        -0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "center": [
+                        0.0,
+                        0.0,
+                        17.071067811865476
+                    ],
+                    "name": "Inner_Race_Final_circle_1",
+                    "radius": 20.0,
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 1.0,
+                        "featureLevel": "low"
+                    }
+                },
+                {
+                    "metadata": {
+                        "pointType": "circle_center",
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut"
+                    },
+                    "position": [
+                        0.0,
+                        0.0,
+                        17.071067811865476
+                    ],
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "type": "Feature::Point",
+                    "name": "Inner_Race_Final_circle_center_1"
+                },
+                {
+                    "radius": 20.0,
+                    "type": "Feature::Circle",
+                    "center": [
+                        0.0,
+                        0.0,
+                        20.0
+                    ],
+                    "normal": [
                         0.0,
                         0.0,
                         1.0
                     ],
+                    "name": "Inner_Race_Final_circle_3",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 3.0,
+                        "featureLevel": "low"
+                    },
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053"
+                },
+                {
+                    "name": "Inner_Race_Final_circle_center_3",
+                    "position": [
+                        0.0,
+                        0.0,
+                        20.0
+                    ],
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "pointType": "circle_center",
+                        "featureLevel": "low"
+                    }
+                },
+                {
+                    "metadata": {
+                        "edgeIndex": 4.0,
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low"
+                    },
+                    "radius": 20.0,
+                    "type": "Feature::Circle",
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "name": "Inner_Race_Final_circle_4",
+                    "normal": [
+                        -0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "center": [
+                        0.0,
+                        0.0,
+                        17.071067811865476
+                    ]
+                },
+                {
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "pointType": "circle_center",
+                        "featureLevel": "low"
+                    },
+                    "name": "Inner_Race_Final_circle_center_4",
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "type": "Feature::Point",
+                    "position": [
+                        0.0,
+                        0.0,
+                        17.071067811865476
+                    ]
+                },
+                {
+                    "radius": 7.5,
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "endAngle": 3.141592653589793,
+                    "center": [
+                        22.5,
+                        -5.5109105961630896e-15,
+                        10.0
+                    ],
+                    "name": "Inner_Race_Final_arc_5",
+                    "end": [
+                        15.0,
+                        -3.673940397442059e-15,
+                        10.000000000000002
+                    ],
+                    "startAngle": 1.910633236249013,
+                    "start": [
+                        20.00000000000004,
+                        -4.8985871965894225e-15,
+                        17.07106781186549
+                    ],
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 5.0
+                    },
+                    "type": "Feature::Arc"
+                },
+                {
+                    "type": "Feature::Point",
+                    "name": "Inner_Race_Final_circle_center_5",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "pointType": "arc_center"
+                    },
+                    "position": [
+                        22.5,
+                        -5.5109105961630896e-15,
+                        10.0
+                    ],
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053"
+                },
+                {
+                    "metadata": {
+                        "featureLevel": "low",
+                        "edgeIndex": 6.0,
+                        "originalShape": "Part::Cut"
+                    },
+                    "type": "Feature::Circle",
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "center": [
+                        0.0,
+                        0.0,
+                        10.0
+                    ],
+                    "radius": 15.0,
+                    "normal": [
+                        -0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "name": "Inner_Race_Final_circle_6"
+                },
+                {
+                    "type": "Feature::Point",
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "name": "Inner_Race_Final_circle_center_6",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "pointType": "circle_center",
+                        "originalShape": "Part::Cut"
+                    },
+                    "position": [
+                        0.0,
+                        0.0,
+                        10.0
+                    ]
+                },
+                {
+                    "end": [
+                        15.0,
+                        -3.673940397442059e-15,
+                        10.000000000000002
+                    ],
+                    "endAngle": 3.141592653589793,
+                    "type": "Feature::Arc",
+                    "startAngle": 1.910633236249013,
+                    "name": "Inner_Race_Final_arc_7",
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "radius": 7.5,
+                    "start": [
+                        20.00000000000004,
+                        -4.8985871965894225e-15,
+                        17.07106781186549
+                    ],
+                    "center": [
+                        22.5,
+                        -5.5109105961630896e-15,
+                        10.0
+                    ],
+                    "metadata": {
+                        "edgeIndex": 7.0,
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low"
+                    },
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053"
+                },
+                {
+                    "name": "Inner_Race_Final_circle_center_7",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "pointType": "arc_center",
+                        "originalShape": "Part::Cut"
+                    },
+                    "type": "Feature::Point",
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "position": [
+                        22.5,
+                        -5.5109105961630896e-15,
+                        10.0
+                    ]
+                },
+                {
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "type": "Feature::Circle",
+                    "radius": 20.0,
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 8.0,
+                        "featureLevel": "low"
+                    },
+                    "name": "Inner_Race_Final_circle_8",
+                    "center": [
+                        0.0,
+                        0.0,
+                        20.0
+                    ]
+                },
+                {
+                    "type": "Feature::Point",
+                    "position": [
+                        0.0,
+                        0.0,
+                        20.0
+                    ],
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "pointType": "circle_center"
+                    },
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "name": "Inner_Race_Final_circle_center_8"
+                },
+                {
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 9.0
+                    },
+                    "radius": 15.0,
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "type": "Feature::Circle",
+                    "name": "Inner_Race_Final_circle_9",
+                    "center": [
+                        0.0,
+                        0.0,
+                        20.0
+                    ],
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                {
+                    "type": "Feature::Point",
+                    "name": "Inner_Race_Final_circle_center_9",
+                    "metadata": {
+                        "pointType": "circle_center",
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low"
+                    },
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "position": [
+                        0.0,
+                        0.0,
+                        20.0
+                    ]
+                },
+                {
+                    "center": [
+                        0.0,
+                        0.0,
+                        10.0
+                    ],
+                    "type": "Feature::Circle",
+                    "name": "Inner_Race_Final_circle_11",
+                    "normal": [
+                        -0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "radius": 15.0,
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 11.0
+                    }
+                },
+                {
+                    "position": [
+                        0.0,
+                        0.0,
+                        10.0
+                    ],
+                    "name": "Inner_Race_Final_circle_center_11",
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "pointType": "circle_center",
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low"
+                    }
+                },
+                {
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "type": "Feature::Circle",
+                    "name": "Inner_Race_Final_circle_13",
+                    "center": [
+                        0.0,
+                        0.0,
+                        20.0
+                    ],
+                    "radius": 15.0,
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 13.0
+                    }
+                },
+                {
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "pointType": "circle_center",
+                        "featureLevel": "low"
+                    },
+                    "name": "Inner_Race_Final_circle_center_13",
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "position": [
+                        0.0,
+                        0.0,
+                        20.0
+                    ]
+                },
+                {
+                    "name": "Inner_Race_Final_circle_14",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 14.0
+                    },
+                    "radius": 20.0,
+                    "normal": [
+                        -0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "type": "Feature::Circle",
+                    "center": [
+                        0.0,
+                        0.0,
+                        2.9289321881345245
+                    ]
+                },
+                {
+                    "type": "Feature::Point",
+                    "position": [
+                        0.0,
+                        0.0,
+                        2.9289321881345245
+                    ],
+                    "name": "Inner_Race_Final_circle_center_14",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "pointType": "circle_center",
+                        "featureLevel": "low"
+                    },
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053"
+                },
+                {
+                    "type": "Feature::Circle",
+                    "name": "Inner_Race_Final_circle_16",
+                    "radius": 20.0,
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 16.0,
+                        "featureLevel": "low"
+                    },
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053"
+                },
+                {
+                    "name": "Inner_Race_Final_circle_center_16",
+                    "position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low",
+                        "pointType": "circle_center"
+                    },
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "type": "Feature::Point"
+                },
+                {
+                    "name": "Inner_Race_Final_circle_18",
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "center": [
+                        0.0,
+                        0.0,
+                        2.9289321881345245
+                    ],
+                    "normal": [
+                        -0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "radius": 20.0,
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low",
+                        "edgeIndex": 18.0
+                    },
+                    "type": "Feature::Circle"
+                },
+                {
+                    "name": "Inner_Race_Final_circle_center_18",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "pointType": "circle_center",
+                        "featureLevel": "low"
+                    },
+                    "position": [
+                        0.0,
+                        0.0,
+                        2.9289321881345245
+                    ],
+                    "type": "Feature::Point",
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053"
+                },
+                {
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "name": "Inner_Race_Final_arc_19",
+                    "center": [
+                        22.5,
+                        -5.5109105961630896e-15,
+                        10.0
+                    ],
+                    "radius": 7.5,
+                    "endAngle": 4.372552070930573,
+                    "startAngle": 3.141592653589793,
+                    "type": "Feature::Arc",
+                    "start": [
+                        15.0,
+                        -3.673940397442059e-15,
+                        10.000000000000002
+                    ],
+                    "end": [
+                        20.000000000000036,
+                        -4.898587196589422e-15,
+                        2.928932188134511
+                    ],
+                    "metadata": {
+                        "edgeIndex": 19.0,
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut"
+                    },
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053"
+                },
+                {
+                    "position": [
+                        22.5,
+                        -5.5109105961630896e-15,
+                        10.0
+                    ],
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "pointType": "arc_center",
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low"
+                    },
+                    "name": "Inner_Race_Final_circle_center_19",
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053"
+                },
+                {
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 20.0
+                    },
+                    "radius": 15.0,
+                    "center": [
+                        0.0,
+                        0.0,
+                        10.0
+                    ],
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "name": "Inner_Race_Final_circle_20",
+                    "normal": [
+                        -0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "type": "Feature::Circle"
+                },
+                {
+                    "name": "Inner_Race_Final_circle_center_20",
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "metadata": {
+                        "pointType": "circle_center",
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut"
+                    },
+                    "position": [
+                        0.0,
+                        0.0,
+                        10.0
+                    ],
+                    "type": "Feature::Point"
+                },
+                {
+                    "name": "Inner_Race_Final_arc_21",
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "start": [
+                        15.0,
+                        -3.673940397442059e-15,
+                        10.000000000000002
+                    ],
+                    "startAngle": 3.141592653589793,
+                    "end": [
+                        20.000000000000036,
+                        -4.898587196589422e-15,
+                        2.928932188134511
+                    ],
+                    "radius": 7.5,
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 21.0
+                    },
+                    "endAngle": 4.372552070930573,
+                    "type": "Feature::Arc",
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "center": [
+                        22.5,
+                        -5.5109105961630896e-15,
+                        10.0
+                    ]
+                },
+                {
+                    "name": "Inner_Race_Final_circle_center_21",
+                    "position": [
+                        22.5,
+                        -5.5109105961630896e-15,
+                        10.0
+                    ],
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "pointType": "arc_center",
+                        "originalShape": "Part::Cut"
+                    },
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053"
+                },
+                {
+                    "name": "Inner_Race_Final_circle_22",
+                    "type": "Feature::Circle",
+                    "radius": 20.0,
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "metadata": {
+                        "featureLevel": "low",
+                        "edgeIndex": 22.0,
+                        "originalShape": "Part::Cut"
+                    },
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053"
+                },
+                {
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "pointType": "circle_center",
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low"
+                    },
+                    "name": "Inner_Race_Final_circle_center_22",
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "name": "Inner_Race_Final_circle_23",
+                    "radius": 15.0,
+                    "type": "Feature::Circle",
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 23.0,
+                        "featureLevel": "low"
+                    },
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "type": "Feature::Point",
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "name": "Inner_Race_Final_circle_center_23",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "pointType": "circle_center",
+                        "originalShape": "Part::Cut"
+                    }
+                },
+                {
+                    "type": "Feature::Circle",
+                    "center": [
+                        0.0,
+                        0.0,
+                        10.0
+                    ],
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "metadata": {
+                        "edgeIndex": 24.0,
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut"
+                    },
+                    "name": "Inner_Race_Final_circle_24",
+                    "radius": 15.0,
+                    "normal": [
+                        -0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                {
+                    "name": "Inner_Race_Final_circle_center_24",
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "type": "Feature::Point",
+                    "position": [
+                        0.0,
+                        0.0,
+                        10.0
+                    ],
+                    "metadata": {
+                        "pointType": "circle_center",
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low"
+                    }
+                },
+                {
+                    "name": "Inner_Race_Final_circle_26",
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "type": "Feature::Circle",
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "radius": 15.0,
+                    "metadata": {
+                        "edgeIndex": 26.0,
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut"
+                    }
+                },
+                {
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "pointType": "circle_center",
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut"
+                    },
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "name": "Inner_Race_Final_circle_center_26",
+                    "position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low",
+                        "faceIndex": 2.0,
+                        "bounds": {
+                            "width": 40.0000002,
+                            "height": 2.0000000233721948e-07,
+                            "length": 40.0000002
+                        }
+                    },
+                    "type": "Feature::Plane",
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "name": "Inner_Race_Final_plane_2",
+                    "center": [
+                        0.0,
+                        0.0,
+                        20.0
+                    ]
+                },
+                {
+                    "center": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "type": "Feature::Plane",
+                    "hash": "43f118043b5fc74ccbbeae8085d27e070cc7a15900f623cd56f035a887b31053",
+                    "metadata": {
+                        "bounds": {
+                            "width": 40.0000002,
+                            "length": 40.0000002,
+                            "height": 2e-07
+                        },
+                        "originalShape": "Part::Cut",
+                        "faceIndex": 6.0,
+                        "featureLevel": "low"
+                    },
+                    "name": "Inner_Race_Final_plane_6",
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                }
+            ]
+        },
+        {
+            "parameters": {
+                "Radius": 7.0,
+                "Angle2": 90.0,
+                "Angle1": -90.0,
+                "Angle3": 360.0,
+                "Color": "#F1C40F",
+                "Placement": {
                     "Angle": 0.0,
                     "Position": [
                         22.5,
                         0.0,
                         10.0
+                    ],
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
                     ]
-                },
-                "Angle1": -90.0
-            }
+                }
+            },
+            "shape": "Part::Sphere",
+            "visible": false,
+            "metadata": null,
+            "name": "Ball_0"
         },
         {
-            "visible": false,
-            "shape": "Part::Sphere",
             "parameters": {
+                "Angle1": -90.0,
+                "Color": "#F1C40F",
                 "Placement": {
+                    "Angle": 0.0,
                     "Position": [
                         15.90990257669732,
                         15.909902576697318,
@@ -295,21 +1936,20 @@
                         0.0,
                         0.0,
                         1.0
-                    ],
-                    "Angle": 0.0
+                    ]
                 },
-                "Radius": 7.0,
                 "Angle2": 90.0,
                 "Angle3": 360.0,
-                "Color": "#F1C40F",
-                "Angle1": -90.0
+                "Radius": 7.0
             },
+            "shape": "Part::Sphere",
+            "visible": false,
             "metadata": null,
             "name": "Ball_1"
         },
         {
             "parameters": {
-                "Refine": false,
+                "Color": "#F1C40F",
                 "Placement": {
                     "Position": [
                         0.0,
@@ -323,22 +1963,25 @@
                     ],
                     "Angle": 0.0
                 },
+                "Refine": false,
                 "Shapes": [
                     "Ball_0",
                     "Ball_1"
-                ],
-                "Color": "#F1C40F"
+                ]
             },
-            "metadata": null,
-            "name": "Balls_Agg_1",
+            "shape": "Part::MultiFuse",
             "visible": false,
-            "shape": "Part::MultiFuse"
+            "name": "Balls_Agg_1",
+            "metadata": null
         },
         {
-            "name": "Ball_2",
-            "shape": "Part::Sphere",
+            "metadata": null,
             "visible": false,
             "parameters": {
+                "Angle1": -90.0,
+                "Color": "#F1C40F",
+                "Angle2": 90.0,
+                "Radius": 7.0,
                 "Angle3": 360.0,
                 "Placement": {
                     "Position": [
@@ -346,136 +1989,133 @@
                         22.5,
                         10.0
                     ],
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0
+                }
+            },
+            "name": "Ball_2",
+            "shape": "Part::Sphere"
+        },
+        {
+            "name": "Balls_Agg_2",
+            "shape": "Part::MultiFuse",
+            "visible": false,
+            "parameters": {
+                "Refine": false,
+                "Color": "#F1C40F",
+                "Placement": {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
                     "Angle": 0.0,
                     "Axis": [
                         0.0,
                         0.0,
                         1.0
                     ]
-                },
-                "Angle2": 90.0,
-                "Color": "#F1C40F",
-                "Angle1": -90.0,
-                "Radius": 7.0
-            },
-            "metadata": null
-        },
-        {
-            "visible": false,
-            "parameters": {
-                "Refine": false,
-                "Placement": {
-                    "Axis": [
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "Position": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ],
-                    "Angle": 0.0
                 },
                 "Shapes": [
                     "Balls_Agg_1",
                     "Ball_2"
-                ],
-                "Color": "#F1C40F"
+                ]
             },
-            "name": "Balls_Agg_2",
-            "shape": "Part::MultiFuse",
             "metadata": null
         },
         {
             "parameters": {
                 "Placement": {
-                    "Axis": [
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "Angle": 0.0,
                     "Position": [
                         -15.909902576697318,
                         15.90990257669732,
                         10.0
-                    ]
-                },
-                "Radius": 7.0,
-                "Color": "#F1C40F",
-                "Angle3": 360.0,
-                "Angle1": -90.0,
-                "Angle2": 90.0
-            },
-            "metadata": null,
-            "name": "Ball_3",
-            "visible": false,
-            "shape": "Part::Sphere"
-        },
-        {
-            "metadata": null,
-            "name": "Balls_Agg_3",
-            "shape": "Part::MultiFuse",
-            "visible": false,
-            "parameters": {
-                "Refine": false,
-                "Shapes": [
-                    "Balls_Agg_2",
-                    "Ball_3"
-                ],
-                "Color": "#F1C40F",
-                "Placement": {
+                    ],
                     "Axis": [
                         0.0,
                         0.0,
                         1.0
                     ],
-                    "Angle": 0.0,
+                    "Angle": 0.0
+                },
+                "Radius": 7.0,
+                "Angle2": 90.0,
+                "Angle1": -90.0,
+                "Angle3": 360.0,
+                "Color": "#F1C40F"
+            },
+            "metadata": null,
+            "name": "Ball_3",
+            "shape": "Part::Sphere",
+            "visible": false
+        },
+        {
+            "name": "Balls_Agg_3",
+            "parameters": {
+                "Refine": false,
+                "Color": "#F1C40F",
+                "Placement": {
                     "Position": [
                         0.0,
                         0.0,
                         0.0
-                    ]
-                }
-            }
-        },
-        {
-            "visible": false,
-            "shape": "Part::Sphere",
-            "name": "Ball_4",
-            "parameters": {
-                "Radius": 7.0,
-                "Angle1": -90.0,
-                "Angle2": 90.0,
-                "Angle3": 360.0,
-                "Color": "#F1C40F",
-                "Placement": {
-                    "Position": [
-                        -22.5,
-                        2.7554552980815448e-15,
-                        10.0
                     ],
-                    "Angle": 0.0,
                     "Axis": [
                         0.0,
                         0.0,
                         1.0
-                    ]
-                }
+                    ],
+                    "Angle": 0.0
+                },
+                "Shapes": [
+                    "Balls_Agg_2",
+                    "Ball_3"
+                ]
             },
+            "visible": false,
+            "shape": "Part::MultiFuse",
             "metadata": null
         },
         {
-            "metadata": null,
+            "parameters": {
+                "Radius": 7.0,
+                "Angle2": 90.0,
+                "Angle3": 360.0,
+                "Color": "#F1C40F",
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0,
+                    "Position": [
+                        -22.5,
+                        2.7554552980815448e-15,
+                        10.0
+                    ]
+                },
+                "Angle1": -90.0
+            },
+            "name": "Ball_4",
+            "shape": "Part::Sphere",
+            "visible": false,
+            "metadata": null
+        },
+        {
             "shape": "Part::MultiFuse",
             "parameters": {
+                "Refine": false,
+                "Color": "#F1C40F",
                 "Shapes": [
                     "Balls_Agg_3",
                     "Ball_4"
                 ],
                 "Placement": {
-                    "Angle": 0.0,
                     "Position": [
                         0.0,
                         0.0,
@@ -485,78 +2125,28 @@
                         0.0,
                         0.0,
                         1.0
-                    ]
-                },
-                "Color": "#F1C40F",
-                "Refine": false
+                    ],
+                    "Angle": 0.0
+                }
             },
             "name": "Balls_Agg_4",
+            "metadata": null,
             "visible": false
         },
         {
+            "shape": "Part::Sphere",
+            "metadata": null,
             "name": "Ball_5",
             "visible": false,
             "parameters": {
                 "Angle2": 90.0,
                 "Radius": 7.0,
-                "Angle3": 360.0,
                 "Color": "#F1C40F",
-                "Angle1": -90.0,
+                "Angle3": 360.0,
                 "Placement": {
-                    "Axis": [
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
                     "Position": [
                         -15.909902576697323,
                         -15.909902576697318,
-                        10.0
-                    ],
-                    "Angle": 0.0
-                }
-            },
-            "shape": "Part::Sphere",
-            "metadata": null
-        },
-        {
-            "name": "Balls_Agg_5",
-            "visible": false,
-            "metadata": null,
-            "shape": "Part::MultiFuse",
-            "parameters": {
-                "Color": "#F1C40F",
-                "Shapes": [
-                    "Balls_Agg_4",
-                    "Ball_5"
-                ],
-                "Refine": false,
-                "Placement": {
-                    "Axis": [
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
-                    "Angle": 0.0,
-                    "Position": [
-                        0.0,
-                        0.0,
-                        0.0
-                    ]
-                }
-            }
-        },
-        {
-            "metadata": null,
-            "shape": "Part::Sphere",
-            "parameters": {
-                "Angle3": 360.0,
-                "Angle1": -90.0,
-                "Color": "#F1C40F",
-                "Placement": {
-                    "Position": [
-                        -4.133182947122317e-15,
-                        -22.5,
                         10.0
                     ],
                     "Angle": 0.0,
@@ -566,53 +2156,50 @@
                         1.0
                     ]
                 },
-                "Radius": 7.0,
-                "Angle2": 90.0
-            },
-            "name": "Ball_6",
-            "visible": false
+                "Angle1": -90.0
+            }
         },
         {
-            "name": "Balls_Agg_6",
-            "shape": "Part::MultiFuse",
+            "metadata": null,
+            "name": "Balls_Agg_5",
+            "visible": false,
             "parameters": {
                 "Shapes": [
-                    "Balls_Agg_5",
-                    "Ball_6"
+                    "Balls_Agg_4",
+                    "Ball_5"
                 ],
                 "Placement": {
-                    "Axis": [
-                        0.0,
-                        0.0,
-                        1.0
-                    ],
                     "Position": [
                         0.0,
                         0.0,
                         0.0
+                    ],
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
                     ],
                     "Angle": 0.0
                 },
                 "Color": "#F1C40F",
                 "Refine": false
             },
-            "metadata": null,
-            "visible": false
+            "shape": "Part::MultiFuse"
         },
         {
-            "metadata": null,
-            "name": "Ball_7",
+            "name": "Ball_6",
             "visible": false,
-            "shape": "Part::Sphere",
             "parameters": {
+                "Angle1": -90.0,
                 "Radius": 7.0,
-                "Angle3": 360.0,
                 "Color": "#F1C40F",
+                "Angle3": 360.0,
+                "Angle2": 90.0,
                 "Placement": {
                     "Angle": 0.0,
                     "Position": [
-                        15.909902576697315,
-                        -15.909902576697323,
+                        -4.133182947122317e-15,
+                        -22.5,
                         10.0
                     ],
                     "Axis": [
@@ -620,17 +2207,47 @@
                         0.0,
                         1.0
                     ]
-                },
-                "Angle2": 90.0,
-                "Angle1": -90.0
-            }
+                }
+            },
+            "metadata": null,
+            "shape": "Part::Sphere"
         },
         {
-            "shape": "Part::MultiFuse",
-            "name": "Balls_Agg_7",
-            "visible": true,
+            "name": "Balls_Agg_6",
             "parameters": {
+                "Shapes": [
+                    "Balls_Agg_5",
+                    "Ball_6"
+                ],
                 "Color": "#F1C40F",
+                "Placement": {
+                    "Angle": 0.0,
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "Refine": false
+            },
+            "shape": "Part::MultiFuse",
+            "visible": false,
+            "metadata": null
+        },
+        {
+            "name": "Ball_7",
+            "shape": "Part::Sphere",
+            "parameters": {
+                "Angle1": -90.0,
+                "Color": "#F1C40F",
+                "Radius": 7.0,
+                "Angle2": 90.0,
+                "Angle3": 360.0,
                 "Placement": {
                     "Angle": 0.0,
                     "Axis": [
@@ -639,18 +2256,811 @@
                         1.0
                     ],
                     "Position": [
+                        15.909902576697315,
+                        -15.909902576697323,
+                        10.0
+                    ]
+                }
+            },
+            "visible": false,
+            "metadata": null
+        },
+        {
+            "name": "Balls_Agg_7",
+            "assemblyFeatures": [
+                {
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "radius": 7.0,
+                    "center": [
+                        15.909902576697315,
+                        -15.909902576697323,
+                        10.0
+                    ],
+                    "startAngle": 4.71238898038469,
+                    "metadata": {
+                        "edgeIndex": 1.0,
+                        "featureLevel": "low",
+                        "originalShape": "Part::MultiFuse"
+                    },
+                    "endAngle": 7.853981633974483,
+                    "start": [
+                        15.909902576697313,
+                        -15.909902576697323,
+                        3.0
+                    ],
+                    "name": "Balls_Agg_7_arc_1",
+                    "type": "Feature::Arc",
+                    "end": [
+                        15.909902576697316,
+                        -15.909902576697323,
+                        17.0
+                    ]
+                },
+                {
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "position": [
+                        15.909902576697315,
+                        -15.909902576697323,
+                        10.0
+                    ],
+                    "type": "Feature::Point",
+                    "name": "Balls_Agg_7_circle_center_1",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "pointType": "arc_center",
+                        "originalShape": "Part::MultiFuse"
+                    }
+                },
+                {
+                    "metadata": {
+                        "originalShape": "Part::MultiFuse",
+                        "edgeIndex": 3.0,
+                        "featureLevel": "low"
+                    },
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "startAngle": 4.71238898038469,
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "type": "Feature::Arc",
+                    "radius": 7.0,
+                    "center": [
+                        15.909902576697315,
+                        -15.909902576697323,
+                        10.0
+                    ],
+                    "endAngle": 7.853981633974483,
+                    "name": "Balls_Agg_7_arc_3",
+                    "start": [
+                        15.909902576697313,
+                        -15.909902576697323,
+                        3.0
+                    ],
+                    "end": [
+                        15.909902576697316,
+                        -15.909902576697323,
+                        17.0
+                    ]
+                },
+                {
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "position": [
+                        15.909902576697315,
+                        -15.909902576697323,
+                        10.0
+                    ],
+                    "name": "Balls_Agg_7_circle_center_3",
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "pointType": "arc_center",
+                        "featureLevel": "low",
+                        "originalShape": "Part::MultiFuse"
+                    }
+                },
+                {
+                    "start": [
+                        -5.4190620862270374e-15,
+                        -22.5,
+                        3.0
+                    ],
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "startAngle": 4.71238898038469,
+                    "metadata": {
+                        "featureLevel": "low",
+                        "edgeIndex": 5.0,
+                        "originalShape": "Part::MultiFuse"
+                    },
+                    "type": "Feature::Arc",
+                    "center": [
+                        -4.133182947122317e-15,
+                        -22.5,
+                        10.0
+                    ],
+                    "name": "Balls_Agg_7_arc_5",
+                    "radius": 7.0,
+                    "endAngle": 7.853981633974483,
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "end": [
+                        -1.9900510486144485e-15,
+                        -22.5,
+                        17.0
+                    ]
+                },
+                {
+                    "position": [
+                        -4.133182947122317e-15,
+                        -22.5,
+                        10.0
+                    ],
+                    "type": "Feature::Point",
+                    "name": "Balls_Agg_7_circle_center_5",
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "metadata": {
+                        "pointType": "arc_center",
+                        "originalShape": "Part::MultiFuse",
+                        "featureLevel": "low"
+                    }
+                },
+                {
+                    "start": [
+                        -5.4190620862270374e-15,
+                        -22.5,
+                        3.0
+                    ],
+                    "startAngle": 4.71238898038469,
+                    "type": "Feature::Arc",
+                    "metadata": {
+                        "edgeIndex": 7.0,
+                        "originalShape": "Part::MultiFuse",
+                        "featureLevel": "low"
+                    },
+                    "name": "Balls_Agg_7_arc_7",
+                    "endAngle": 7.853981633974483,
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "end": [
+                        -1.9900510486144485e-15,
+                        -22.5,
+                        17.0
+                    ],
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "radius": 7.0,
+                    "center": [
+                        -4.133182947122317e-15,
+                        -22.5,
+                        10.0
+                    ]
+                },
+                {
+                    "name": "Balls_Agg_7_circle_center_7",
+                    "position": [
+                        -4.133182947122317e-15,
+                        -22.5,
+                        10.0
+                    ],
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::MultiFuse",
+                        "pointType": "arc_center"
+                    },
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "type": "Feature::Point"
+                },
+                {
+                    "type": "Feature::Arc",
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "center": [
+                        -15.909902576697323,
+                        -15.909902576697318,
+                        10.0
+                    ],
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "name": "Balls_Agg_7_arc_9",
+                    "startAngle": 4.71238898038469,
+                    "endAngle": 7.853981633974483,
+                    "start": [
+                        -15.909902576697325,
+                        -15.909902576697318,
+                        3.0
+                    ],
+                    "radius": 7.0,
+                    "end": [
+                        -15.909902576697322,
+                        -15.909902576697318,
+                        17.0
+                    ],
+                    "metadata": {
+                        "featureLevel": "low",
+                        "edgeIndex": 9.0,
+                        "originalShape": "Part::MultiFuse"
+                    }
+                },
+                {
+                    "name": "Balls_Agg_7_circle_center_9",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::MultiFuse",
+                        "pointType": "arc_center"
+                    },
+                    "position": [
+                        -15.909902576697323,
+                        -15.909902576697318,
+                        10.0
+                    ],
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "type": "Feature::Point"
+                },
+                {
+                    "start": [
+                        -15.909902576697325,
+                        -15.909902576697318,
+                        3.0
+                    ],
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "metadata": {
+                        "edgeIndex": 11.0,
+                        "originalShape": "Part::MultiFuse",
+                        "featureLevel": "low"
+                    },
+                    "center": [
+                        -15.909902576697323,
+                        -15.909902576697318,
+                        10.0
+                    ],
+                    "endAngle": 7.853981633974483,
+                    "name": "Balls_Agg_7_arc_11",
+                    "startAngle": 4.71238898038469,
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "end": [
+                        -15.909902576697322,
+                        -15.909902576697318,
+                        17.0
+                    ],
+                    "radius": 7.0,
+                    "type": "Feature::Arc"
+                },
+                {
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "position": [
+                        -15.909902576697323,
+                        -15.909902576697318,
+                        10.0
+                    ],
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::MultiFuse",
+                        "pointType": "arc_center"
+                    },
+                    "name": "Balls_Agg_7_circle_center_11"
+                },
+                {
+                    "radius": 7.0,
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "name": "Balls_Agg_7_arc_13",
+                    "startAngle": 4.71238898038469,
+                    "start": [
+                        -22.5,
+                        2.755455298081545e-15,
+                        3.0
+                    ],
+                    "center": [
+                        -22.5,
+                        2.7554552980815448e-15,
+                        10.0
+                    ],
+                    "endAngle": 7.853981633974483,
+                    "end": [
+                        -22.499999999999996,
+                        2.7554552980815444e-15,
+                        17.0
+                    ],
+                    "metadata": {
+                        "edgeIndex": 13.0,
+                        "originalShape": "Part::MultiFuse",
+                        "featureLevel": "low"
+                    },
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "type": "Feature::Arc"
+                },
+                {
+                    "type": "Feature::Point",
+                    "name": "Balls_Agg_7_circle_center_13",
+                    "position": [
+                        -22.5,
+                        2.7554552980815448e-15,
+                        10.0
+                    ],
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::MultiFuse",
+                        "pointType": "arc_center"
+                    },
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f"
+                },
+                {
+                    "center": [
+                        -22.5,
+                        2.7554552980815448e-15,
+                        10.0
+                    ],
+                    "startAngle": 4.71238898038469,
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "radius": 7.0,
+                    "endAngle": 7.853981633974483,
+                    "start": [
+                        -22.5,
+                        2.755455298081545e-15,
+                        3.0
+                    ],
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "name": "Balls_Agg_7_arc_15",
+                    "type": "Feature::Arc",
+                    "metadata": {
+                        "edgeIndex": 15.0,
+                        "featureLevel": "low",
+                        "originalShape": "Part::MultiFuse"
+                    },
+                    "end": [
+                        -22.499999999999996,
+                        2.7554552980815444e-15,
+                        17.0
+                    ]
+                },
+                {
+                    "position": [
+                        -22.5,
+                        2.7554552980815448e-15,
+                        10.0
+                    ],
+                    "type": "Feature::Point",
+                    "name": "Balls_Agg_7_circle_center_15",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::MultiFuse",
+                        "pointType": "arc_center"
+                    },
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f"
+                },
+                {
+                    "end": [
+                        -15.909902576697316,
+                        15.90990257669732,
+                        17.0
+                    ],
+                    "startAngle": 4.71238898038469,
+                    "start": [
+                        -15.90990257669732,
+                        15.90990257669732,
+                        3.0
+                    ],
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "endAngle": 7.853981633974483,
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "type": "Feature::Arc",
+                    "name": "Balls_Agg_7_arc_17",
+                    "center": [
+                        -15.909902576697318,
+                        15.90990257669732,
+                        10.0
+                    ],
+                    "radius": 7.0,
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::MultiFuse",
+                        "edgeIndex": 17.0
+                    }
+                },
+                {
+                    "type": "Feature::Point",
+                    "name": "Balls_Agg_7_circle_center_17",
+                    "position": [
+                        -15.909902576697318,
+                        15.90990257669732,
+                        10.0
+                    ],
+                    "metadata": {
+                        "pointType": "arc_center",
+                        "originalShape": "Part::MultiFuse",
+                        "featureLevel": "low"
+                    },
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f"
+                },
+                {
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "metadata": {
+                        "originalShape": "Part::MultiFuse",
+                        "edgeIndex": 19.0,
+                        "featureLevel": "low"
+                    },
+                    "start": [
+                        -15.90990257669732,
+                        15.90990257669732,
+                        3.0
+                    ],
+                    "radius": 7.0,
+                    "center": [
+                        -15.909902576697318,
+                        15.90990257669732,
+                        10.0
+                    ],
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "startAngle": 4.71238898038469,
+                    "name": "Balls_Agg_7_arc_19",
+                    "type": "Feature::Arc",
+                    "endAngle": 7.853981633974483,
+                    "end": [
+                        -15.909902576697316,
+                        15.90990257669732,
+                        17.0
+                    ]
+                },
+                {
+                    "metadata": {
+                        "originalShape": "Part::MultiFuse",
+                        "featureLevel": "low",
+                        "pointType": "arc_center"
+                    },
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "name": "Balls_Agg_7_circle_center_19",
+                    "type": "Feature::Point",
+                    "position": [
+                        -15.909902576697318,
+                        15.90990257669732,
+                        10.0
+                    ]
+                },
+                {
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "start": [
+                        9.184850993605156e-17,
+                        22.5,
+                        3.0
+                    ],
+                    "name": "Balls_Agg_7_arc_21",
+                    "radius": 7.0,
+                    "startAngle": 4.71238898038469,
+                    "metadata": {
+                        "edgeIndex": 21.0,
+                        "originalShape": "Part::MultiFuse",
+                        "featureLevel": "low"
+                    },
+                    "center": [
+                        1.3777276490407724e-15,
+                        22.5,
+                        10.0
+                    ],
+                    "endAngle": 7.853981633974483,
+                    "type": "Feature::Arc",
+                    "end": [
+                        3.5208595475486406e-15,
+                        22.5,
+                        17.0
+                    ],
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f"
+                },
+                {
+                    "type": "Feature::Point",
+                    "position": [
+                        1.3777276490407724e-15,
+                        22.5,
+                        10.0
+                    ],
+                    "name": "Balls_Agg_7_circle_center_21",
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "metadata": {
+                        "pointType": "arc_center",
+                        "originalShape": "Part::MultiFuse",
+                        "featureLevel": "low"
+                    }
+                },
+                {
+                    "end": [
+                        3.5208595475486406e-15,
+                        22.5,
+                        17.0
+                    ],
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "start": [
+                        9.184850993605156e-17,
+                        22.5,
+                        3.0
+                    ],
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "center": [
+                        1.3777276490407724e-15,
+                        22.5,
+                        10.0
+                    ],
+                    "endAngle": 7.853981633974483,
+                    "name": "Balls_Agg_7_arc_23",
+                    "metadata": {
+                        "originalShape": "Part::MultiFuse",
+                        "featureLevel": "low",
+                        "edgeIndex": 23.0
+                    },
+                    "radius": 7.0,
+                    "type": "Feature::Arc",
+                    "startAngle": 4.71238898038469
+                },
+                {
+                    "name": "Balls_Agg_7_circle_center_23",
+                    "metadata": {
+                        "pointType": "arc_center",
+                        "originalShape": "Part::MultiFuse",
+                        "featureLevel": "low"
+                    },
+                    "type": "Feature::Point",
+                    "position": [
+                        1.3777276490407724e-15,
+                        22.5,
+                        10.0
+                    ],
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f"
+                },
+                {
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "name": "Balls_Agg_7_arc_25",
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "start": [
+                        22.5,
+                        3.149495543589901e-31,
+                        3.0
+                    ],
+                    "metadata": {
+                        "featureLevel": "low",
+                        "edgeIndex": 25.0,
+                        "originalShape": "Part::MultiFuse"
+                    },
+                    "endAngle": 7.853981633974483,
+                    "startAngle": 4.71238898038469,
+                    "radius": 7.0,
+                    "center": [
+                        22.5,
                         0.0,
+                        10.0
+                    ],
+                    "end": [
+                        22.500000000000004,
+                        -5.249159239316502e-31,
+                        17.0
+                    ],
+                    "type": "Feature::Arc"
+                },
+                {
+                    "position": [
+                        22.5,
                         0.0,
+                        10.0
+                    ],
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::MultiFuse",
+                        "pointType": "arc_center"
+                    },
+                    "name": "Balls_Agg_7_circle_center_25",
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f"
+                },
+                {
+                    "end": [
+                        22.500000000000004,
+                        -5.249159239316502e-31,
+                        17.0
+                    ],
+                    "name": "Balls_Agg_7_arc_27",
+                    "metadata": {
+                        "originalShape": "Part::MultiFuse",
+                        "featureLevel": "low",
+                        "edgeIndex": 27.0
+                    },
+                    "center": [
+                        22.5,
+                        0.0,
+                        10.0
+                    ],
+                    "start": [
+                        22.5,
+                        3.149495543589901e-31,
+                        3.0
+                    ],
+                    "radius": 7.0,
+                    "startAngle": 4.71238898038469,
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "endAngle": 7.853981633974483,
+                    "type": "Feature::Arc",
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
                         0.0
                     ]
                 },
-                "Refine": false,
+                {
+                    "position": [
+                        22.5,
+                        0.0,
+                        10.0
+                    ],
+                    "metadata": {
+                        "pointType": "arc_center",
+                        "originalShape": "Part::MultiFuse",
+                        "featureLevel": "low"
+                    },
+                    "name": "Balls_Agg_7_circle_center_27",
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "type": "Feature::Point"
+                },
+                {
+                    "radius": 7.0,
+                    "startAngle": 4.71238898038469,
+                    "start": [
+                        15.909902576697318,
+                        15.909902576697318,
+                        3.0
+                    ],
+                    "name": "Balls_Agg_7_arc_29",
+                    "endAngle": 7.853981633974483,
+                    "end": [
+                        15.909902576697322,
+                        15.909902576697318,
+                        17.0
+                    ],
+                    "type": "Feature::Arc",
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "metadata": {
+                        "edgeIndex": 29.0,
+                        "originalShape": "Part::MultiFuse",
+                        "featureLevel": "low"
+                    },
+                    "center": [
+                        15.90990257669732,
+                        15.909902576697318,
+                        10.0
+                    ]
+                },
+                {
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::MultiFuse",
+                        "pointType": "arc_center"
+                    },
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "position": [
+                        15.90990257669732,
+                        15.909902576697318,
+                        10.0
+                    ],
+                    "type": "Feature::Point",
+                    "name": "Balls_Agg_7_circle_center_29"
+                },
+                {
+                    "center": [
+                        15.90990257669732,
+                        15.909902576697318,
+                        10.0
+                    ],
+                    "endAngle": 7.853981633974483,
+                    "name": "Balls_Agg_7_arc_31",
+                    "startAngle": 4.71238898038469,
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "radius": 7.0,
+                    "normal": [
+                        -2.4492935982947064e-16,
+                        -1.0,
+                        0.0
+                    ],
+                    "start": [
+                        15.909902576697318,
+                        15.909902576697318,
+                        3.0
+                    ],
+                    "type": "Feature::Arc",
+                    "end": [
+                        15.909902576697322,
+                        15.909902576697318,
+                        17.0
+                    ],
+                    "metadata": {
+                        "edgeIndex": 31.0,
+                        "featureLevel": "low",
+                        "originalShape": "Part::MultiFuse"
+                    }
+                },
+                {
+                    "hash": "3bc484acff772a793f718156c9f26a46f79463638f14ab43963002601241cc0f",
+                    "name": "Balls_Agg_7_circle_center_31",
+                    "position": [
+                        15.90990257669732,
+                        15.909902576697318,
+                        10.0
+                    ],
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "pointType": "arc_center",
+                        "featureLevel": "low",
+                        "originalShape": "Part::MultiFuse"
+                    }
+                }
+            ],
+            "visible": true,
+            "metadata": null,
+            "parameters": {
+                "Color": "#F1C40F",
                 "Shapes": [
                     "Balls_Agg_6",
                     "Ball_7"
-                ]
+                ],
+                "Refine": false,
+                "Placement": {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Angle": 0.0,
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                }
             },
-            "metadata": null
+            "shape": "Part::MultiFuse"
         }
     ],
     "options": {},

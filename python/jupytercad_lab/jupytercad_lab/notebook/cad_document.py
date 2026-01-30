@@ -106,12 +106,59 @@ class CadDocument(CommWidget):
 
         return instance
 
-    def save(self, path: str | Path) -> None:
+    def save(
+        self,
+        path: str | Path,
+        extract_features: bool = True,
+        extraction_level: str = "standard",
+        force_recompute: bool = False
+    ) -> None:
         """
         Save the CadDocument to a .jcad file on the local filesystem.
 
         :param path: The path to the file.
+        :param extract_features: Whether to extract low-level geometric features for SolveSpace constraint solver (default: True).
+        :param extraction_level: Feature extraction level - "full", "standard" (default), or "minimal".
+                               - full: Point, Edge, Plane, Circle, Arc, Face
+                               - standard: Circle, Arc, Plane, Point
+                               - minimal: Circle, Plane only
+        :param force_recompute: Force feature recomputation even if cached features exist
         """
+        # Extract features if requested
+        if extract_features:
+            from .feature_extraction import FeatureExtractionService, ExtractionOptions, ExtractionLevel
+
+            # Map string level to ExtractionLevel enum
+            level_map = {
+                "full": ExtractionLevel.FULL,
+                "standard": ExtractionLevel.STANDARD,
+                "minimal": ExtractionLevel.MINIMAL
+            }
+            level = level_map.get(extraction_level, ExtractionLevel.STANDARD)
+
+            options = ExtractionOptions(extraction_level=level)
+            extractor = FeatureExtractionService(self, options=options)
+            results = extractor.extract_all_features(force_recompute=force_recompute)
+
+            # Update objects with extracted features
+            for obj_name, result in results.items():
+                if result.features and result.extraction_method.value != "error":
+                    obj_map = self._get_yobject_by_name(obj_name)
+                    if obj_map:
+                        # Get current object data
+                        obj_data = obj_map.to_py()
+
+                        # Add assemblyFeatures to the object
+                        obj_data["assemblyFeatures"] = result.features
+
+                        # Update the YMap with modified data
+                        for key, value in obj_data.items():
+                            obj_map[key] = value
+
+                        logger.info(f"Extracted {len(result.features)} features for {obj_name} using {result.extraction_method.value} method (level: {extraction_level})")
+                elif result.extraction_method.value == "error":
+                    logger.warning(f"Feature extraction failed for {obj_name}: {result.errors}")
+
         content = {
             "schemaVersion": SCHEMA_VERSION,
             "objects": self._objects_array.to_py(),

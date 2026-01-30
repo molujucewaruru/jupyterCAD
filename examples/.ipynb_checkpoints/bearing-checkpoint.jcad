@@ -1,0 +1,659 @@
+{
+    "schemaVersion": "3.0.0",
+    "objects": [
+        {
+            "parameters": {
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0,
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "Height": 20.0,
+                "Radius": 30.0,
+                "Angle": 360.0,
+                "Color": "#808080"
+            },
+            "metadata": null,
+            "shape": "Part::Cylinder",
+            "name": "Outer_Cyl_Raw",
+            "visible": false
+        },
+        {
+            "visible": false,
+            "name": "Outer_Cyl_Hole",
+            "parameters": {
+                "Height": 22.0,
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Position": [
+                        0.0,
+                        0.0,
+                        -1.0
+                    ],
+                    "Angle": 0.0
+                },
+                "Color": "#808080",
+                "Radius": 25.0,
+                "Angle": 360.0
+            },
+            "shape": "Part::Cylinder",
+            "metadata": null
+        },
+        {
+            "parameters": {
+                "Base": "Outer_Cyl_Raw",
+                "Tool": "Outer_Cyl_Hole",
+                "Color": "#808080",
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Angle": 0.0
+                },
+                "Refine": false
+            },
+            "name": "Outer_Ring",
+            "visible": false,
+            "shape": "Part::Cut",
+            "metadata": null
+        },
+        {
+            "parameters": {
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0,
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "Angle": 360.0,
+                "Height": 20.0,
+                "Color": "#808080",
+                "Radius": 20.0
+            },
+            "name": "Inner_Cyl_Raw",
+            "metadata": null,
+            "visible": false,
+            "shape": "Part::Cylinder"
+        },
+        {
+            "name": "Inner_Cyl_Hole",
+            "shape": "Part::Cylinder",
+            "metadata": null,
+            "visible": false,
+            "parameters": {
+                "Color": "#808080",
+                "Radius": 15.0,
+                "Height": 22.0,
+                "Angle": 360.0,
+                "Placement": {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        -1.0
+                    ],
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0
+                }
+            }
+        },
+        {
+            "parameters": {
+                "Placement": {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0
+                },
+                "Tool": "Inner_Cyl_Hole",
+                "Refine": false,
+                "Base": "Inner_Cyl_Raw",
+                "Color": "#808080"
+            },
+            "name": "Inner_Ring",
+            "metadata": null,
+            "shape": "Part::Cut",
+            "visible": false
+        },
+        {
+            "visible": false,
+            "name": "Groove_Tool",
+            "metadata": null,
+            "parameters": {
+                "Radius1": 22.5,
+                "Color": "#808080",
+                "Radius2": 7.5,
+                "Angle2": 180.0,
+                "Angle3": 360.0,
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Position": [
+                        0.0,
+                        0.0,
+                        10.0
+                    ],
+                    "Angle": 0.0
+                },
+                "Angle1": -180.0
+            },
+            "shape": "Part::Torus"
+        },
+        {
+            "name": "Outer_Race_Final",
+            "parameters": {
+                "Base": "Outer_Ring",
+                "Refine": false,
+                "Color": "#BDC3C7",
+                "Tool": "Groove_Tool",
+                "Placement": {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0
+                }
+            },
+            "metadata": null,
+            "shape": "Part::Cut",
+            "visible": true
+        },
+        {
+            "name": "Groove_Tool_2",
+            "visible": false,
+            "parameters": {
+                "Angle2": 180.0,
+                "Color": "#808080",
+                "Radius1": 22.5,
+                "Angle1": -180.0,
+                "Radius2": 7.5,
+                "Angle3": 360.0,
+                "Placement": {
+                    "Angle": 0.0,
+                    "Position": [
+                        0.0,
+                        0.0,
+                        10.0
+                    ],
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                }
+            },
+            "shape": "Part::Torus",
+            "metadata": null
+        },
+        {
+            "visible": true,
+            "name": "Inner_Race_Final",
+            "parameters": {
+                "Refine": false,
+                "Base": "Inner_Ring",
+                "Tool": "Groove_Tool_2",
+                "Color": "#7F8C8D",
+                "Placement": {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Angle": 0.0,
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                }
+            },
+            "metadata": null,
+            "shape": "Part::Cut"
+        },
+        {
+            "name": "Ball_0",
+            "metadata": null,
+            "shape": "Part::Sphere",
+            "visible": false,
+            "parameters": {
+                "Radius": 7.0,
+                "Angle2": 90.0,
+                "Color": "#F1C40F",
+                "Angle3": 360.0,
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0,
+                    "Position": [
+                        22.5,
+                        0.0,
+                        10.0
+                    ]
+                },
+                "Angle1": -90.0
+            }
+        },
+        {
+            "visible": false,
+            "shape": "Part::Sphere",
+            "parameters": {
+                "Placement": {
+                    "Position": [
+                        15.90990257669732,
+                        15.909902576697318,
+                        10.0
+                    ],
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0
+                },
+                "Radius": 7.0,
+                "Angle2": 90.0,
+                "Angle3": 360.0,
+                "Color": "#F1C40F",
+                "Angle1": -90.0
+            },
+            "metadata": null,
+            "name": "Ball_1"
+        },
+        {
+            "parameters": {
+                "Refine": false,
+                "Placement": {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0
+                },
+                "Shapes": [
+                    "Ball_0",
+                    "Ball_1"
+                ],
+                "Color": "#F1C40F"
+            },
+            "metadata": null,
+            "name": "Balls_Agg_1",
+            "visible": false,
+            "shape": "Part::MultiFuse"
+        },
+        {
+            "name": "Ball_2",
+            "shape": "Part::Sphere",
+            "visible": false,
+            "parameters": {
+                "Angle3": 360.0,
+                "Placement": {
+                    "Position": [
+                        1.3777276490407724e-15,
+                        22.5,
+                        10.0
+                    ],
+                    "Angle": 0.0,
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "Angle2": 90.0,
+                "Color": "#F1C40F",
+                "Angle1": -90.0,
+                "Radius": 7.0
+            },
+            "metadata": null
+        },
+        {
+            "visible": false,
+            "parameters": {
+                "Refine": false,
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Angle": 0.0
+                },
+                "Shapes": [
+                    "Balls_Agg_1",
+                    "Ball_2"
+                ],
+                "Color": "#F1C40F"
+            },
+            "name": "Balls_Agg_2",
+            "shape": "Part::MultiFuse",
+            "metadata": null
+        },
+        {
+            "parameters": {
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0,
+                    "Position": [
+                        -15.909902576697318,
+                        15.90990257669732,
+                        10.0
+                    ]
+                },
+                "Radius": 7.0,
+                "Color": "#F1C40F",
+                "Angle3": 360.0,
+                "Angle1": -90.0,
+                "Angle2": 90.0
+            },
+            "metadata": null,
+            "name": "Ball_3",
+            "visible": false,
+            "shape": "Part::Sphere"
+        },
+        {
+            "metadata": null,
+            "name": "Balls_Agg_3",
+            "shape": "Part::MultiFuse",
+            "visible": false,
+            "parameters": {
+                "Refine": false,
+                "Shapes": [
+                    "Balls_Agg_2",
+                    "Ball_3"
+                ],
+                "Color": "#F1C40F",
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0,
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            }
+        },
+        {
+            "visible": false,
+            "shape": "Part::Sphere",
+            "name": "Ball_4",
+            "parameters": {
+                "Radius": 7.0,
+                "Angle1": -90.0,
+                "Angle2": 90.0,
+                "Angle3": 360.0,
+                "Color": "#F1C40F",
+                "Placement": {
+                    "Position": [
+                        -22.5,
+                        2.7554552980815448e-15,
+                        10.0
+                    ],
+                    "Angle": 0.0,
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                }
+            },
+            "metadata": null
+        },
+        {
+            "metadata": null,
+            "shape": "Part::MultiFuse",
+            "parameters": {
+                "Shapes": [
+                    "Balls_Agg_3",
+                    "Ball_4"
+                ],
+                "Placement": {
+                    "Angle": 0.0,
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "Color": "#F1C40F",
+                "Refine": false
+            },
+            "name": "Balls_Agg_4",
+            "visible": false
+        },
+        {
+            "name": "Ball_5",
+            "visible": false,
+            "parameters": {
+                "Angle2": 90.0,
+                "Radius": 7.0,
+                "Angle3": 360.0,
+                "Color": "#F1C40F",
+                "Angle1": -90.0,
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Position": [
+                        -15.909902576697323,
+                        -15.909902576697318,
+                        10.0
+                    ],
+                    "Angle": 0.0
+                }
+            },
+            "shape": "Part::Sphere",
+            "metadata": null
+        },
+        {
+            "name": "Balls_Agg_5",
+            "visible": false,
+            "metadata": null,
+            "shape": "Part::MultiFuse",
+            "parameters": {
+                "Color": "#F1C40F",
+                "Shapes": [
+                    "Balls_Agg_4",
+                    "Ball_5"
+                ],
+                "Refine": false,
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0,
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            }
+        },
+        {
+            "metadata": null,
+            "shape": "Part::Sphere",
+            "parameters": {
+                "Angle3": 360.0,
+                "Angle1": -90.0,
+                "Color": "#F1C40F",
+                "Placement": {
+                    "Position": [
+                        -4.133182947122317e-15,
+                        -22.5,
+                        10.0
+                    ],
+                    "Angle": 0.0,
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "Radius": 7.0,
+                "Angle2": 90.0
+            },
+            "name": "Ball_6",
+            "visible": false
+        },
+        {
+            "name": "Balls_Agg_6",
+            "shape": "Part::MultiFuse",
+            "parameters": {
+                "Shapes": [
+                    "Balls_Agg_5",
+                    "Ball_6"
+                ],
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Angle": 0.0
+                },
+                "Color": "#F1C40F",
+                "Refine": false
+            },
+            "metadata": null,
+            "visible": false
+        },
+        {
+            "metadata": null,
+            "name": "Ball_7",
+            "visible": false,
+            "shape": "Part::Sphere",
+            "parameters": {
+                "Radius": 7.0,
+                "Angle3": 360.0,
+                "Color": "#F1C40F",
+                "Placement": {
+                    "Angle": 0.0,
+                    "Position": [
+                        15.909902576697315,
+                        -15.909902576697323,
+                        10.0
+                    ],
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "Angle2": 90.0,
+                "Angle1": -90.0
+            }
+        },
+        {
+            "shape": "Part::MultiFuse",
+            "name": "Balls_Agg_7",
+            "visible": true,
+            "parameters": {
+                "Color": "#F1C40F",
+                "Placement": {
+                    "Angle": 0.0,
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "Refine": false,
+                "Shapes": [
+                    "Balls_Agg_6",
+                    "Ball_7"
+                ]
+            },
+            "metadata": null
+        }
+    ],
+    "options": {},
+    "metadata": {},
+    "outputs": {}
+}

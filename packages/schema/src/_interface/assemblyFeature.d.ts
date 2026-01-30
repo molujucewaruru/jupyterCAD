@@ -18,7 +18,9 @@ export interface IAssemblyFeature {
     | "Feature::Cone"
     | "Feature::Torus"
     | "Feature::Circle"
+    | "Feature::Arc"
     | "Feature::Face"
+    | "Feature::Plane"
     | "Feature::Point"
     | "Feature::Edge";
   /**
@@ -26,25 +28,41 @@ export interface IAssemblyFeature {
    */
   name: string;
   /**
-   * Position [x, y, z] - for cylinder, cone, torus, point
+   * Position [x, y, z] - for point, cylinder, cone, torus
    */
   position?: [number, number, number];
   /**
-   * Center point [x, y, z] - for sphere, circle, face
+   * Center point [x, y, z] - for sphere, circle, arc, face, plane
    */
   center?: [number, number, number];
+  /**
+   * Start point [x, y, z] - for edge, arc
+   */
+  start?: [number, number, number];
+  /**
+   * End point [x, y, z] - for edge, arc
+   */
+  end?: [number, number, number];
   /**
    * Direction axis [x, y, z] (normalized) - for cylinder, cone, torus
    */
   axis?: [number, number, number];
   /**
-   * Normal vector [x, y, z] (normalized) - for circle, face
+   * Normal vector [x, y, z] (normalized) - for circle, arc, face, plane
    */
   normal?: [number, number, number];
   /**
-   * Radius - for cylinder, sphere, circle
+   * Radius - for cylinder, sphere, circle, arc
    */
   radius?: number;
+  /**
+   * Start angle in radians - for arc
+   */
+  startAngle?: number;
+  /**
+   * End angle in radians - for arc
+   */
+  endAngle?: number;
   /**
    * First/bottom radius - for cone
    */

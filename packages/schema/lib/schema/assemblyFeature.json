@@ -9,7 +9,7 @@
     "properties": {
         "type": {
             "type": "string",
-            "enum": ["Feature::Cylinder", "Feature::Sphere", "Feature::Cone", "Feature::Torus", "Feature::Circle", "Feature::Face", "Feature::Point", "Feature::Edge"],
+            "enum": ["Feature::Cylinder", "Feature::Sphere", "Feature::Cone", "Feature::Torus", "Feature::Circle", "Feature::Arc", "Feature::Face", "Feature::Plane", "Feature::Point", "Feature::Edge"],
             "description": "Feature type for assembly constraints"
         },
         "name": {
@@ -18,7 +18,7 @@
         },
         "position": {
             "type": "array",
-            "description": "Position [x, y, z] - for cylinder, cone, torus, point",
+            "description": "Position [x, y, z] - for point, cylinder, cone, torus",
             "items": {
                 "type": "number"
             },
@@ -27,7 +27,25 @@
         },
         "center": {
             "type": "array",
-            "description": "Center point [x, y, z] - for sphere, circle, face",
+            "description": "Center point [x, y, z] - for sphere, circle, arc, face, plane",
+            "items": {
+                "type": "number"
+            },
+            "minItems": 3,
+            "maxItems": 3
+        },
+        "start": {
+            "type": "array",
+            "description": "Start point [x, y, z] - for edge, arc",
+            "items": {
+                "type": "number"
+            },
+            "minItems": 3,
+            "maxItems": 3
+        },
+        "end": {
+            "type": "array",
+            "description": "End point [x, y, z] - for edge, arc",
             "items": {
                 "type": "number"
             },
@@ -45,7 +63,7 @@
         },
         "normal": {
             "type": "array",
-            "description": "Normal vector [x, y, z] (normalized) - for circle, face",
+            "description": "Normal vector [x, y, z] (normalized) - for circle, arc, face, plane",
             "items": {
                 "type": "number"
             },
@@ -55,7 +73,15 @@
         "radius": {
             "type": "number",
             "exclusiveMinimum": 0,
-            "description": "Radius - for cylinder, sphere, circle"
+            "description": "Radius - for cylinder, sphere, circle, arc"
+        },
+        "startAngle": {
+            "type": "number",
+            "description": "Start angle in radians - for arc"
+        },
+        "endAngle": {
+            "type": "number",
+            "description": "End angle in radians - for arc"
         },
         "radius1": {
             "type": "number",

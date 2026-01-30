@@ -1,408 +1,1740 @@
 {
-  "metadata": {},
-  "objects": [
-    {
-      "metadata": null,
-      "name": "Engine_Block_Raw",
-      "parameters": {
-        "Color": "#95A5A6",
-        "Height": 60.0,
-        "Length": 100.0,
-        "Placement": {
-          "Angle": 0.0,
-          "Axis": [
-            0.0,
-            0.0,
-            1.0
-          ],
-          "Position": [
-            -50.0,
-            -40.0,
-            0.0
-          ]
+    "schemaVersion": "3.0.0",
+    "objects": [
+        {
+            "visible": false,
+            "shape": "Part::Box",
+            "parameters": {
+                "Width": 80.0,
+                "Color": "#95A5A6",
+                "Placement": {
+                    "Angle": 0.0,
+                    "Position": [
+                        -50.0,
+                        -40.0,
+                        0.0
+                    ],
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "Height": 60.0,
+                "Length": 100.0
+            },
+            "metadata": null,
+            "name": "Engine_Block_Raw"
         },
-        "Width": 80.0
-      },
-      "shape": "Part::Box",
-      "visible": false
-    },
-    {
-      "metadata": null,
-      "name": "V_Cut_Tool",
-      "parameters": {
-        "Color": "#808080",
-        "Height": 40.0,
-        "Length": 110.0,
-        "Placement": {
-          "Angle": 45.0,
-          "Axis": [
-            1.0,
-            0.0,
-            0.0
-          ],
-          "Position": [
-            -52.5,
-            -20.0,
-            60.0
-          ]
+        {
+            "name": "V_Cut_Tool",
+            "visible": true,
+            "metadata": null,
+            "assemblyFeatures": [
+                {
+                    "name": "V_Cut_Tool_corner_bottom_left_back",
+                    "hash": "4fe762de96e9513bf42691a4d29d3d22a45191d87f86bc8321599b1a5880aa8d",
+                    "position": [
+                        -107.5,
+                        -20.000000002585786,
+                        31.71572875278074
+                    ],
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "cornerIndex": 0.0,
+                        "cornerName": "bottom_left_back",
+                        "originalShape": "Part::Box",
+                        "featureLevel": "low"
+                    }
+                },
+                {
+                    "hash": "4fe762de96e9513bf42691a4d29d3d22a45191d87f86bc8321599b1a5880aa8d",
+                    "position": [
+                        2.5,
+                        -20.000000002585786,
+                        31.71572875278074
+                    ],
+                    "name": "V_Cut_Tool_corner_bottom_right_back",
+                    "metadata": {
+                        "cornerIndex": 1.0,
+                        "featureLevel": "low",
+                        "cornerName": "bottom_right_back",
+                        "originalShape": "Part::Box"
+                    },
+                    "type": "Feature::Point"
+                },
+                {
+                    "hash": "4fe762de96e9513bf42691a4d29d3d22a45191d87f86bc8321599b1a5880aa8d",
+                    "position": [
+                        2.5,
+                        8.284271247219259,
+                        59.999999997414214
+                    ],
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "cornerName": "bottom_right_front",
+                        "cornerIndex": 2.0,
+                        "featureLevel": "low",
+                        "originalShape": "Part::Box"
+                    },
+                    "name": "V_Cut_Tool_corner_bottom_right_front"
+                },
+                {
+                    "position": [
+                        -107.5,
+                        8.284271247219259,
+                        59.999999997414214
+                    ],
+                    "hash": "4fe762de96e9513bf42691a4d29d3d22a45191d87f86bc8321599b1a5880aa8d",
+                    "type": "Feature::Point",
+                    "name": "V_Cut_Tool_corner_bottom_left_front",
+                    "metadata": {
+                        "cornerName": "bottom_left_front",
+                        "originalShape": "Part::Box",
+                        "cornerIndex": 3.0,
+                        "featureLevel": "low"
+                    }
+                },
+                {
+                    "position": [
+                        -107.5,
+                        -48.28427124721926,
+                        60.000000002585786
+                    ],
+                    "name": "V_Cut_Tool_corner_top_left_back",
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "cornerName": "top_left_back",
+                        "cornerIndex": 4.0,
+                        "originalShape": "Part::Box",
+                        "featureLevel": "low"
+                    },
+                    "hash": "4fe762de96e9513bf42691a4d29d3d22a45191d87f86bc8321599b1a5880aa8d"
+                },
+                {
+                    "position": [
+                        2.5,
+                        -48.28427124721926,
+                        60.000000002585786
+                    ],
+                    "metadata": {
+                        "originalShape": "Part::Box",
+                        "featureLevel": "low",
+                        "cornerName": "top_right_back",
+                        "cornerIndex": 5.0
+                    },
+                    "hash": "4fe762de96e9513bf42691a4d29d3d22a45191d87f86bc8321599b1a5880aa8d",
+                    "type": "Feature::Point",
+                    "name": "V_Cut_Tool_corner_top_right_back"
+                },
+                {
+                    "hash": "4fe762de96e9513bf42691a4d29d3d22a45191d87f86bc8321599b1a5880aa8d",
+                    "name": "V_Cut_Tool_corner_top_right_front",
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "cornerName": "top_right_front",
+                        "originalShape": "Part::Box",
+                        "cornerIndex": 6.0
+                    },
+                    "position": [
+                        2.5,
+                        -19.999999997414214,
+                        88.28427124721927
+                    ]
+                },
+                {
+                    "position": [
+                        -107.5,
+                        -19.999999997414214,
+                        88.28427124721927
+                    ],
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "originalShape": "Part::Box",
+                        "cornerName": "top_left_front",
+                        "featureLevel": "low",
+                        "cornerIndex": 7.0
+                    },
+                    "name": "V_Cut_Tool_corner_top_left_front",
+                    "hash": "4fe762de96e9513bf42691a4d29d3d22a45191d87f86bc8321599b1a5880aa8d"
+                },
+                {
+                    "name": "V_Cut_Tool_plane_bottom",
+                    "metadata": {
+                        "originalShape": "Part::Box",
+                        "featureLevel": "low",
+                        "faceName": "bottom",
+                        "corners": [
+                            0.0,
+                            1.0,
+                            2.0,
+                            3.0
+                        ],
+                        "bounds": {
+                            "length": 110.0,
+                            "width": 40.0
+                        }
+                    },
+                    "normal": [
+                        0.0,
+                        0.7071067811158368,
+                        -0.7071067812451262
+                    ],
+                    "type": "Feature::Plane",
+                    "hash": "4fe762de96e9513bf42691a4d29d3d22a45191d87f86bc8321599b1a5880aa8d",
+                    "center": [
+                        -52.5,
+                        -5.8578643776832635,
+                        45.85786437509748
+                    ]
+                },
+                {
+                    "metadata": {
+                        "bounds": {
+                            "length": 110.0,
+                            "width": 40.0
+                        },
+                        "featureLevel": "low",
+                        "faceName": "top",
+                        "corners": [
+                            7.0,
+                            6.0,
+                            5.0,
+                            4.0
+                        ],
+                        "originalShape": "Part::Box"
+                    },
+                    "hash": "4fe762de96e9513bf42691a4d29d3d22a45191d87f86bc8321599b1a5880aa8d",
+                    "normal": [
+                        0.0,
+                        -0.7071067811158368,
+                        0.7071067812451262
+                    ],
+                    "type": "Feature::Plane",
+                    "name": "V_Cut_Tool_plane_top",
+                    "center": [
+                        -52.5,
+                        -34.14213562231674,
+                        74.14213562490252
+                    ]
+                },
+                {
+                    "hash": "4fe762de96e9513bf42691a4d29d3d22a45191d87f86bc8321599b1a5880aa8d",
+                    "center": [
+                        -52.5,
+                        -5.857864375097478,
+                        74.14213562231674
+                    ],
+                    "normal": [
+                        0.0,
+                        0.7071067812451262,
+                        0.7071067811158368
+                    ],
+                    "metadata": {
+                        "bounds": {
+                            "length": 110.0,
+                            "height": 40.0
+                        },
+                        "originalShape": "Part::Box",
+                        "faceName": "front",
+                        "corners": [
+                            3.0,
+                            2.0,
+                            6.0,
+                            7.0
+                        ],
+                        "featureLevel": "low"
+                    },
+                    "type": "Feature::Plane",
+                    "name": "V_Cut_Tool_plane_front"
+                },
+                {
+                    "hash": "4fe762de96e9513bf42691a4d29d3d22a45191d87f86bc8321599b1a5880aa8d",
+                    "name": "V_Cut_Tool_plane_back",
+                    "type": "Feature::Plane",
+                    "center": [
+                        -52.5,
+                        -34.14213562490252,
+                        45.85786437768326
+                    ],
+                    "metadata": {
+                        "originalShape": "Part::Box",
+                        "corners": [
+                            1.0,
+                            0.0,
+                            4.0,
+                            5.0
+                        ],
+                        "featureLevel": "low",
+                        "bounds": {
+                            "height": 40.0,
+                            "length": 110.0
+                        },
+                        "faceName": "back"
+                    },
+                    "normal": [
+                        0.0,
+                        -0.7071067812451262,
+                        -0.7071067811158368
+                    ]
+                },
+                {
+                    "metadata": {
+                        "originalShape": "Part::Box",
+                        "featureLevel": "low",
+                        "corners": [
+                            2.0,
+                            1.0,
+                            5.0,
+                            6.0
+                        ],
+                        "faceName": "right",
+                        "bounds": {
+                            "width": 40.0,
+                            "height": 40.0
+                        }
+                    },
+                    "normal": [
+                        1.0,
+                        0.0,
+                        0.0
+                    ],
+                    "name": "V_Cut_Tool_plane_right",
+                    "center": [
+                        2.5,
+                        -20.0,
+                        60.0
+                    ],
+                    "hash": "4fe762de96e9513bf42691a4d29d3d22a45191d87f86bc8321599b1a5880aa8d",
+                    "type": "Feature::Plane"
+                },
+                {
+                    "normal": [
+                        -1.0,
+                        0.0,
+                        0.0
+                    ],
+                    "name": "V_Cut_Tool_plane_left",
+                    "metadata": {
+                        "faceName": "left",
+                        "bounds": {
+                            "height": 40.0,
+                            "width": 40.0
+                        },
+                        "featureLevel": "low",
+                        "corners": [
+                            0.0,
+                            3.0,
+                            7.0,
+                            4.0
+                        ],
+                        "originalShape": "Part::Box"
+                    },
+                    "hash": "4fe762de96e9513bf42691a4d29d3d22a45191d87f86bc8321599b1a5880aa8d",
+                    "center": [
+                        -107.5,
+                        -20.0,
+                        60.0
+                    ],
+                    "type": "Feature::Plane"
+                }
+            ],
+            "shape": "Part::Box",
+            "parameters": {
+                "Height": 40.0,
+                "Color": "#808080",
+                "Width": 40.0,
+                "Length": 110.0,
+                "Placement": {
+                    "Position": [
+                        -52.5,
+                        -20.0,
+                        60.0
+                    ],
+                    "Axis": [
+                        1.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Angle": 45.0
+                }
+            }
         },
-        "Width": 40.0
-      },
-      "shape": "Part::Box",
-      "visible": true
-    },
-    {
-      "metadata": null,
-      "name": "Cyl_L_0",
-      "parameters": {
-        "Angle": 360.0,
-        "Color": "#808080",
-        "Height": 75.0,
-        "Placement": {
-          "Angle": 30.0,
-          "Axis": [
-            1.0,
-            0.0,
-            0.0
-          ],
-          "Position": [
-            -23.333333333333336,
-            -15.0,
-            60.0
-          ]
+        {
+            "metadata": null,
+            "parameters": {
+                "Placement": {
+                    "Axis": [
+                        1.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Position": [
+                        -23.333333333333336,
+                        -15.0,
+                        60.0
+                    ],
+                    "Angle": 30.0
+                },
+                "Radius": 6.0,
+                "Color": "#808080",
+                "Height": 75.0,
+                "Angle": 360.0
+            },
+            "shape": "Part::Cylinder",
+            "name": "Cyl_L_0",
+            "visible": false
         },
-        "Radius": 6.0
-      },
-      "shape": "Part::Cylinder",
-      "visible": false
-    },
-    {
-      "metadata": null,
-      "name": "Block_Cut_L_0",
-      "parameters": {
-        "Base": "Engine_Block_Raw",
-        "Color": "#95A5A6",
-        "Placement": {
-          "Angle": 0.0,
-          "Axis": [
-            0.0,
-            0.0,
-            1.0
-          ],
-          "Position": [
-            0.0,
-            0.0,
-            0.0
-          ]
+        {
+            "name": "Block_Cut_L_0",
+            "shape": "Part::Cut",
+            "visible": false,
+            "parameters": {
+                "Base": "Engine_Block_Raw",
+                "Color": "#95A5A6",
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Angle": 0.0
+                },
+                "Tool": "Cyl_L_0",
+                "Refine": false
+            },
+            "metadata": null
         },
-        "Refine": false,
-        "Tool": "Cyl_L_0"
-      },
-      "shape": "Part::Cut",
-      "visible": false
-    },
-    {
-      "metadata": null,
-      "name": "Cyl_L_1",
-      "parameters": {
-        "Angle": 360.0,
-        "Color": "#808080",
-        "Height": 75.0,
-        "Placement": {
-          "Angle": 30.0,
-          "Axis": [
-            1.0,
-            0.0,
-            0.0
-          ],
-          "Position": [
-            4.666666666666664,
-            -15.0,
-            60.0
-          ]
+        {
+            "visible": false,
+            "name": "Cyl_L_1",
+            "shape": "Part::Cylinder",
+            "parameters": {
+                "Angle": 360.0,
+                "Color": "#808080",
+                "Radius": 6.0,
+                "Height": 75.0,
+                "Placement": {
+                    "Angle": 30.0,
+                    "Position": [
+                        4.666666666666664,
+                        -15.0,
+                        60.0
+                    ],
+                    "Axis": [
+                        1.0,
+                        0.0,
+                        0.0
+                    ]
+                }
+            },
+            "metadata": null
         },
-        "Radius": 6.0
-      },
-      "shape": "Part::Cylinder",
-      "visible": false
-    },
-    {
-      "metadata": null,
-      "name": "Block_Cut_L_1",
-      "parameters": {
-        "Base": "Block_Cut_L_0",
-        "Color": "#95A5A6",
-        "Placement": {
-          "Angle": 0.0,
-          "Axis": [
-            0.0,
-            0.0,
-            1.0
-          ],
-          "Position": [
-            0.0,
-            0.0,
-            0.0
-          ]
+        {
+            "metadata": null,
+            "shape": "Part::Cut",
+            "visible": false,
+            "parameters": {
+                "Refine": false,
+                "Tool": "Cyl_L_1",
+                "Color": "#95A5A6",
+                "Base": "Block_Cut_L_0",
+                "Placement": {
+                    "Angle": 0.0,
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                }
+            },
+            "name": "Block_Cut_L_1"
         },
-        "Refine": false,
-        "Tool": "Cyl_L_1"
-      },
-      "shape": "Part::Cut",
-      "visible": false
-    },
-    {
-      "metadata": null,
-      "name": "Cyl_L_2",
-      "parameters": {
-        "Angle": 360.0,
-        "Color": "#808080",
-        "Height": 75.0,
-        "Placement": {
-          "Angle": 30.0,
-          "Axis": [
-            1.0,
-            0.0,
-            0.0
-          ],
-          "Position": [
-            32.666666666666664,
-            -15.0,
-            60.0
-          ]
+        {
+            "name": "Cyl_L_2",
+            "shape": "Part::Cylinder",
+            "parameters": {
+                "Radius": 6.0,
+                "Placement": {
+                    "Axis": [
+                        1.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Position": [
+                        32.666666666666664,
+                        -15.0,
+                        60.0
+                    ],
+                    "Angle": 30.0
+                },
+                "Color": "#808080",
+                "Angle": 360.0,
+                "Height": 75.0
+            },
+            "metadata": null,
+            "visible": false
         },
-        "Radius": 6.0
-      },
-      "shape": "Part::Cylinder",
-      "visible": false
-    },
-    {
-      "metadata": null,
-      "name": "Block_Cut_L_2",
-      "parameters": {
-        "Base": "Block_Cut_L_1",
-        "Color": "#95A5A6",
-        "Placement": {
-          "Angle": 0.0,
-          "Axis": [
-            0.0,
-            0.0,
-            1.0
-          ],
-          "Position": [
-            0.0,
-            0.0,
-            0.0
-          ]
+        {
+            "shape": "Part::Cut",
+            "parameters": {
+                "Color": "#95A5A6",
+                "Base": "Block_Cut_L_1",
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0,
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "Tool": "Cyl_L_2",
+                "Refine": false
+            },
+            "metadata": null,
+            "name": "Block_Cut_L_2",
+            "visible": false
         },
-        "Refine": false,
-        "Tool": "Cyl_L_2"
-      },
-      "shape": "Part::Cut",
-      "visible": false
-    },
-    {
-      "metadata": null,
-      "name": "Cyl_R_0",
-      "parameters": {
-        "Angle": 360.0,
-        "Color": "#808080",
-        "Height": 75.0,
-        "Placement": {
-          "Angle": -30.0,
-          "Axis": [
-            1.0,
-            0.0,
-            0.0
-          ],
-          "Position": [
-            -23.333333333333336,
-            15.0,
-            60.0
-          ]
+        {
+            "parameters": {
+                "Placement": {
+                    "Position": [
+                        -23.333333333333336,
+                        15.0,
+                        60.0
+                    ],
+                    "Axis": [
+                        1.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Angle": -30.0
+                },
+                "Height": 75.0,
+                "Color": "#808080",
+                "Radius": 6.0,
+                "Angle": 360.0
+            },
+            "name": "Cyl_R_0",
+            "metadata": null,
+            "shape": "Part::Cylinder",
+            "visible": false
         },
-        "Radius": 6.0
-      },
-      "shape": "Part::Cylinder",
-      "visible": false
-    },
-    {
-      "metadata": null,
-      "name": "Block_Cut_R_0",
-      "parameters": {
-        "Base": "Block_Cut_L_2",
-        "Color": "#95A5A6",
-        "Placement": {
-          "Angle": 0.0,
-          "Axis": [
-            0.0,
-            0.0,
-            1.0
-          ],
-          "Position": [
-            0.0,
-            0.0,
-            0.0
-          ]
+        {
+            "name": "Block_Cut_R_0",
+            "parameters": {
+                "Tool": "Cyl_R_0",
+                "Refine": false,
+                "Color": "#95A5A6",
+                "Placement": {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Angle": 0.0,
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "Base": "Block_Cut_L_2"
+            },
+            "metadata": null,
+            "shape": "Part::Cut",
+            "visible": false
         },
-        "Refine": false,
-        "Tool": "Cyl_R_0"
-      },
-      "shape": "Part::Cut",
-      "visible": false
-    },
-    {
-      "metadata": null,
-      "name": "Cyl_R_1",
-      "parameters": {
-        "Angle": 360.0,
-        "Color": "#808080",
-        "Height": 75.0,
-        "Placement": {
-          "Angle": -30.0,
-          "Axis": [
-            1.0,
-            0.0,
-            0.0
-          ],
-          "Position": [
-            4.666666666666664,
-            15.0,
-            60.0
-          ]
+        {
+            "name": "Cyl_R_1",
+            "metadata": null,
+            "shape": "Part::Cylinder",
+            "visible": false,
+            "parameters": {
+                "Angle": 360.0,
+                "Radius": 6.0,
+                "Height": 75.0,
+                "Placement": {
+                    "Axis": [
+                        1.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Angle": -30.0,
+                    "Position": [
+                        4.666666666666664,
+                        15.0,
+                        60.0
+                    ]
+                },
+                "Color": "#808080"
+            }
         },
-        "Radius": 6.0
-      },
-      "shape": "Part::Cylinder",
-      "visible": false
-    },
-    {
-      "metadata": null,
-      "name": "Block_Cut_R_1",
-      "parameters": {
-        "Base": "Block_Cut_R_0",
-        "Color": "#95A5A6",
-        "Placement": {
-          "Angle": 0.0,
-          "Axis": [
-            0.0,
-            0.0,
-            1.0
-          ],
-          "Position": [
-            0.0,
-            0.0,
-            0.0
-          ]
+        {
+            "shape": "Part::Cut",
+            "metadata": null,
+            "name": "Block_Cut_R_1",
+            "visible": false,
+            "parameters": {
+                "Color": "#95A5A6",
+                "Placement": {
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "Angle": 0.0,
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "Base": "Block_Cut_R_0",
+                "Tool": "Cyl_R_1",
+                "Refine": false
+            }
         },
-        "Refine": false,
-        "Tool": "Cyl_R_1"
-      },
-      "shape": "Part::Cut",
-      "visible": false
-    },
-    {
-      "metadata": null,
-      "name": "Cyl_R_2",
-      "parameters": {
-        "Angle": 360.0,
-        "Color": "#808080",
-        "Height": 75.0,
-        "Placement": {
-          "Angle": -30.0,
-          "Axis": [
-            1.0,
-            0.0,
-            0.0
-          ],
-          "Position": [
-            32.666666666666664,
-            15.0,
-            60.0
-          ]
+        {
+            "parameters": {
+                "Color": "#808080",
+                "Angle": 360.0,
+                "Height": 75.0,
+                "Placement": {
+                    "Angle": -30.0,
+                    "Position": [
+                        32.666666666666664,
+                        15.0,
+                        60.0
+                    ],
+                    "Axis": [
+                        1.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "Radius": 6.0
+            },
+            "shape": "Part::Cylinder",
+            "metadata": null,
+            "name": "Cyl_R_2",
+            "visible": false
         },
-        "Radius": 6.0
-      },
-      "shape": "Part::Cylinder",
-      "visible": false
-    },
-    {
-      "metadata": null,
-      "name": "Block_Cut_R_2",
-      "parameters": {
-        "Base": "Block_Cut_R_1",
-        "Color": "#95A5A6",
-        "Placement": {
-          "Angle": 0.0,
-          "Axis": [
-            0.0,
-            0.0,
-            1.0
-          ],
-          "Position": [
-            0.0,
-            0.0,
-            0.0
-          ]
+        {
+            "name": "Block_Cut_R_2",
+            "shape": "Part::Cut",
+            "visible": false,
+            "parameters": {
+                "Refine": false,
+                "Tool": "Cyl_R_2",
+                "Base": "Block_Cut_R_1",
+                "Placement": {
+                    "Angle": 0.0,
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "Color": "#95A5A6"
+            },
+            "metadata": null
         },
-        "Refine": false,
-        "Tool": "Cyl_R_2"
-      },
-      "shape": "Part::Cut",
-      "visible": false
-    },
-    {
-      "metadata": null,
-      "name": "Crank_Tunnel",
-      "parameters": {
-        "Angle": 360.0,
-        "Color": "#808080",
-        "Height": 120.0,
-        "Placement": {
-          "Angle": 90.0,
-          "Axis": [
-            0.0,
-            1.0,
-            0.0
-          ],
-          "Position": [
-            -55.0,
-            0.0,
-            15.0
-          ]
+        {
+            "parameters": {
+                "Angle": 360.0,
+                "Color": "#808080",
+                "Placement": {
+                    "Angle": 90.0,
+                    "Position": [
+                        -55.0,
+                        0.0,
+                        15.0
+                    ],
+                    "Axis": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ]
+                },
+                "Height": 120.0,
+                "Radius": 12.0
+            },
+            "metadata": null,
+            "shape": "Part::Cylinder",
+            "visible": false,
+            "name": "Crank_Tunnel"
         },
-        "Radius": 12.0
-      },
-      "shape": "Part::Cylinder",
-      "visible": false
-    },
-    {
-      "metadata": null,
-      "name": "V6_Engine_Final",
-      "parameters": {
-        "Base": "Block_Cut_R_2",
-        "Color": "#7F8C8D",
-        "Placement": {
-          "Angle": 0.0,
-          "Axis": [
-            0.0,
-            0.0,
-            1.0
-          ],
-          "Position": [
-            0.0,
-            0.0,
-            0.0
-          ]
-        },
-        "Refine": false,
-        "Tool": "Crank_Tunnel"
-      },
-      "shape": "Part::Cut",
-      "visible": true
-    }
-  ],
-  "options": {},
-  "outputs": {},
-  "schemaVersion": "3.0.0"
+        {
+            "parameters": {
+                "Refine": false,
+                "Color": "#7F8C8D",
+                "Tool": "Crank_Tunnel",
+                "Placement": {
+                    "Position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "Angle": 0.0,
+                    "Axis": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "Base": "Block_Cut_R_2"
+            },
+            "metadata": null,
+            "assemblyFeatures": [
+                {
+                    "type": "Feature::Circle",
+                    "center": [
+                        -50.0,
+                        0.0,
+                        15.0
+                    ],
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 4.0
+                    },
+                    "normal": [
+                        1.0,
+                        -0.0,
+                        1.1102230246251565e-16
+                    ],
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "radius": 12.0,
+                    "name": "V6_Engine_Final_circle_4"
+                },
+                {
+                    "name": "V6_Engine_Final_circle_center_4",
+                    "metadata": {
+                        "pointType": "circle_center",
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut"
+                    },
+                    "position": [
+                        -50.0,
+                        0.0,
+                        15.0
+                    ],
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "type": "Feature::Point"
+                },
+                {
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "center": [
+                        50.0,
+                        0.0,
+                        15.000000000000012
+                    ],
+                    "name": "V6_Engine_Final_circle_33",
+                    "radius": 12.0,
+                    "type": "Feature::Circle",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 33.0,
+                        "featureLevel": "low"
+                    },
+                    "normal": [
+                        1.0,
+                        -0.0,
+                        1.1102230246251565e-16
+                    ]
+                },
+                {
+                    "position": [
+                        50.0,
+                        0.0,
+                        15.000000000000012
+                    ],
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "pointType": "circle_center",
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low"
+                    },
+                    "name": "V6_Engine_Final_circle_center_33"
+                },
+                {
+                    "metadata": {
+                        "edgeIndex": 35.0,
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low"
+                    },
+                    "radius": 12.0,
+                    "normal": [
+                        1.0,
+                        -0.0,
+                        1.1102230246251565e-16
+                    ],
+                    "name": "V6_Engine_Final_circle_35",
+                    "center": [
+                        -50.0,
+                        0.0,
+                        15.0
+                    ],
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "type": "Feature::Circle"
+                },
+                {
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "metadata": {
+                        "pointType": "circle_center",
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low"
+                    },
+                    "type": "Feature::Point",
+                    "name": "V6_Engine_Final_circle_center_35",
+                    "position": [
+                        -50.0,
+                        0.0,
+                        15.0
+                    ]
+                },
+                {
+                    "name": "V6_Engine_Final_circle_41",
+                    "center": [
+                        50.0,
+                        0.0,
+                        15.000000000000012
+                    ],
+                    "radius": 12.0,
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "type": "Feature::Circle",
+                    "normal": [
+                        1.0,
+                        -0.0,
+                        1.1102230246251565e-16
+                    ],
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 41.0,
+                        "featureLevel": "low"
+                    }
+                },
+                {
+                    "name": "V6_Engine_Final_circle_center_41",
+                    "metadata": {
+                        "pointType": "circle_center",
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut"
+                    },
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "type": "Feature::Point",
+                    "position": [
+                        50.0,
+                        0.0,
+                        15.000000000000012
+                    ]
+                },
+                {
+                    "start": [
+                        -29.333333333333336,
+                        -15.0,
+                        60.0
+                    ],
+                    "endAngle": 6.283185307179586,
+                    "type": "Feature::Arc",
+                    "radius": 6.0,
+                    "center": [
+                        -23.333333333333336,
+                        -15.0,
+                        60.0
+                    ],
+                    "normal": [
+                        0.0,
+                        -0.49999999999999994,
+                        0.8660254037844387
+                    ],
+                    "end": [
+                        -17.333333333333336,
+                        -15.000000000000002,
+                        60.0
+                    ],
+                    "metadata": {
+                        "featureLevel": "low",
+                        "edgeIndex": 42.0,
+                        "originalShape": "Part::Cut"
+                    },
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "startAngle": 3.141592653589793,
+                    "name": "V6_Engine_Final_arc_42"
+                },
+                {
+                    "type": "Feature::Point",
+                    "name": "V6_Engine_Final_circle_center_42",
+                    "position": [
+                        -23.333333333333336,
+                        -15.0,
+                        60.0
+                    ],
+                    "metadata": {
+                        "pointType": "arc_center",
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low"
+                    },
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7"
+                },
+                {
+                    "startAngle": 3.141592653589793,
+                    "center": [
+                        -23.333333333333336,
+                        -15.0,
+                        60.0
+                    ],
+                    "type": "Feature::Arc",
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "endAngle": 6.283185307179586,
+                    "start": [
+                        -29.333333333333336,
+                        -15.0,
+                        60.0
+                    ],
+                    "metadata": {
+                        "edgeIndex": 44.0,
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut"
+                    },
+                    "normal": [
+                        0.0,
+                        -0.49999999999999994,
+                        0.8660254037844387
+                    ],
+                    "name": "V6_Engine_Final_arc_44",
+                    "radius": 6.0,
+                    "end": [
+                        -17.333333333333336,
+                        -15.000000000000002,
+                        60.0
+                    ]
+                },
+                {
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "type": "Feature::Point",
+                    "position": [
+                        -23.333333333333336,
+                        -15.0,
+                        60.0
+                    ],
+                    "name": "V6_Engine_Final_circle_center_44",
+                    "metadata": {
+                        "pointType": "arc_center",
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low"
+                    }
+                },
+                {
+                    "center": [
+                        4.666666666666664,
+                        -15.0,
+                        60.0
+                    ],
+                    "name": "V6_Engine_Final_arc_46",
+                    "end": [
+                        10.666666666666664,
+                        -15.000000000000002,
+                        60.0
+                    ],
+                    "start": [
+                        -1.3333333333333357,
+                        -15.0,
+                        60.0
+                    ],
+                    "radius": 6.0,
+                    "endAngle": 6.283185307179586,
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 46.0,
+                        "featureLevel": "low"
+                    },
+                    "type": "Feature::Arc",
+                    "normal": [
+                        0.0,
+                        -0.49999999999999994,
+                        0.8660254037844387
+                    ],
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "startAngle": 3.141592653589793
+                },
+                {
+                    "name": "V6_Engine_Final_circle_center_46",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "pointType": "arc_center"
+                    },
+                    "type": "Feature::Point",
+                    "position": [
+                        4.666666666666664,
+                        -15.0,
+                        60.0
+                    ],
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7"
+                },
+                {
+                    "type": "Feature::Arc",
+                    "startAngle": 3.141592653589793,
+                    "normal": [
+                        0.0,
+                        -0.49999999999999994,
+                        0.8660254037844387
+                    ],
+                    "endAngle": 6.283185307179586,
+                    "start": [
+                        -1.3333333333333357,
+                        -15.0,
+                        60.0
+                    ],
+                    "center": [
+                        4.666666666666664,
+                        -15.0,
+                        60.0
+                    ],
+                    "end": [
+                        10.666666666666664,
+                        -15.000000000000002,
+                        60.0
+                    ],
+                    "radius": 6.0,
+                    "name": "V6_Engine_Final_arc_48",
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "metadata": {
+                        "edgeIndex": 48.0,
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut"
+                    }
+                },
+                {
+                    "name": "V6_Engine_Final_circle_center_48",
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "pointType": "arc_center",
+                        "featureLevel": "low"
+                    },
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "position": [
+                        4.666666666666664,
+                        -15.0,
+                        60.0
+                    ]
+                },
+                {
+                    "name": "V6_Engine_Final_arc_50",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low",
+                        "edgeIndex": 50.0
+                    },
+                    "end": [
+                        38.666666666666664,
+                        -15.000000000000002,
+                        60.0
+                    ],
+                    "center": [
+                        32.666666666666664,
+                        -15.0,
+                        60.0
+                    ],
+                    "type": "Feature::Arc",
+                    "endAngle": 6.283185307179586,
+                    "radius": 6.0,
+                    "normal": [
+                        0.0,
+                        -0.49999999999999994,
+                        0.8660254037844387
+                    ],
+                    "startAngle": 3.141592653589793,
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "start": [
+                        26.666666666666664,
+                        -15.0,
+                        60.0
+                    ]
+                },
+                {
+                    "position": [
+                        32.666666666666664,
+                        -15.0,
+                        60.0
+                    ],
+                    "name": "V6_Engine_Final_circle_center_50",
+                    "type": "Feature::Point",
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "pointType": "arc_center",
+                        "featureLevel": "low"
+                    }
+                },
+                {
+                    "center": [
+                        32.666666666666664,
+                        -15.0,
+                        60.0
+                    ],
+                    "metadata": {
+                        "edgeIndex": 52.0,
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low"
+                    },
+                    "start": [
+                        26.666666666666664,
+                        -15.0,
+                        60.0
+                    ],
+                    "startAngle": 3.141592653589793,
+                    "type": "Feature::Arc",
+                    "endAngle": 6.283185307179586,
+                    "radius": 6.0,
+                    "normal": [
+                        0.0,
+                        -0.49999999999999994,
+                        0.8660254037844387
+                    ],
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "name": "V6_Engine_Final_arc_52",
+                    "end": [
+                        38.666666666666664,
+                        -15.000000000000002,
+                        60.0
+                    ]
+                },
+                {
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "position": [
+                        32.666666666666664,
+                        -15.0,
+                        60.0
+                    ],
+                    "name": "V6_Engine_Final_circle_center_52",
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "pointType": "arc_center",
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low"
+                    }
+                },
+                {
+                    "type": "Feature::Arc",
+                    "startAngle": 0.0,
+                    "radius": 6.0,
+                    "metadata": {
+                        "edgeIndex": 55.0,
+                        "originalShape": "Part::Cut",
+                        "featureLevel": "low"
+                    },
+                    "center": [
+                        -23.333333333333336,
+                        15.0,
+                        60.0
+                    ],
+                    "start": [
+                        -17.333333333333336,
+                        15.0,
+                        60.0
+                    ],
+                    "name": "V6_Engine_Final_arc_55",
+                    "normal": [
+                        -0.0,
+                        0.49999999999999994,
+                        0.8660254037844387
+                    ],
+                    "endAngle": 3.141592653589793,
+                    "end": [
+                        -29.333333333333336,
+                        15.0,
+                        60.0
+                    ],
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7"
+                },
+                {
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "pointType": "arc_center",
+                        "originalShape": "Part::Cut"
+                    },
+                    "name": "V6_Engine_Final_circle_center_55",
+                    "position": [
+                        -23.333333333333336,
+                        15.0,
+                        60.0
+                    ],
+                    "type": "Feature::Point"
+                },
+                {
+                    "radius": 6.0,
+                    "start": [
+                        -17.333333333333336,
+                        15.0,
+                        60.0
+                    ],
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "center": [
+                        -23.333333333333336,
+                        15.0,
+                        60.0
+                    ],
+                    "end": [
+                        -29.333333333333336,
+                        15.0,
+                        60.0
+                    ],
+                    "metadata": {
+                        "edgeIndex": 57.0,
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut"
+                    },
+                    "name": "V6_Engine_Final_arc_57",
+                    "normal": [
+                        -0.0,
+                        0.49999999999999994,
+                        0.8660254037844387
+                    ],
+                    "type": "Feature::Arc",
+                    "startAngle": 0.0,
+                    "endAngle": 3.141592653589793
+                },
+                {
+                    "name": "V6_Engine_Final_circle_center_57",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "pointType": "arc_center",
+                        "originalShape": "Part::Cut"
+                    },
+                    "position": [
+                        -23.333333333333336,
+                        15.0,
+                        60.0
+                    ],
+                    "type": "Feature::Point",
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7"
+                },
+                {
+                    "radius": 6.0,
+                    "endAngle": 3.141592653589793,
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "normal": [
+                        -0.0,
+                        0.49999999999999994,
+                        0.8660254037844387
+                    ],
+                    "metadata": {
+                        "featureLevel": "low",
+                        "edgeIndex": 59.0,
+                        "originalShape": "Part::Cut"
+                    },
+                    "center": [
+                        4.666666666666664,
+                        15.0,
+                        60.0
+                    ],
+                    "startAngle": 0.0,
+                    "name": "V6_Engine_Final_arc_59",
+                    "start": [
+                        10.666666666666664,
+                        15.0,
+                        60.0
+                    ],
+                    "type": "Feature::Arc",
+                    "end": [
+                        -1.3333333333333357,
+                        15.0,
+                        60.0
+                    ]
+                },
+                {
+                    "position": [
+                        4.666666666666664,
+                        15.0,
+                        60.0
+                    ],
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "name": "V6_Engine_Final_circle_center_59",
+                    "type": "Feature::Point",
+                    "metadata": {
+                        "pointType": "arc_center",
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut"
+                    }
+                },
+                {
+                    "radius": 6.0,
+                    "startAngle": 0.0,
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "endAngle": 3.141592653589793,
+                    "start": [
+                        10.666666666666664,
+                        15.0,
+                        60.0
+                    ],
+                    "end": [
+                        -1.3333333333333357,
+                        15.0,
+                        60.0
+                    ],
+                    "metadata": {
+                        "edgeIndex": 61.0,
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut"
+                    },
+                    "normal": [
+                        -0.0,
+                        0.49999999999999994,
+                        0.8660254037844387
+                    ],
+                    "center": [
+                        4.666666666666664,
+                        15.0,
+                        60.0
+                    ],
+                    "name": "V6_Engine_Final_arc_61",
+                    "type": "Feature::Arc"
+                },
+                {
+                    "type": "Feature::Point",
+                    "position": [
+                        4.666666666666664,
+                        15.0,
+                        60.0
+                    ],
+                    "metadata": {
+                        "pointType": "arc_center",
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut"
+                    },
+                    "name": "V6_Engine_Final_circle_center_61",
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7"
+                },
+                {
+                    "type": "Feature::Arc",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 63.0,
+                        "featureLevel": "low"
+                    },
+                    "endAngle": 3.141592653589793,
+                    "normal": [
+                        -0.0,
+                        0.49999999999999994,
+                        0.8660254037844387
+                    ],
+                    "end": [
+                        26.666666666666664,
+                        15.0,
+                        60.0
+                    ],
+                    "center": [
+                        32.666666666666664,
+                        15.0,
+                        60.0
+                    ],
+                    "radius": 6.0,
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "start": [
+                        38.666666666666664,
+                        15.0,
+                        60.0
+                    ],
+                    "startAngle": 0.0,
+                    "name": "V6_Engine_Final_arc_63"
+                },
+                {
+                    "type": "Feature::Point",
+                    "name": "V6_Engine_Final_circle_center_63",
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "pointType": "arc_center"
+                    },
+                    "position": [
+                        32.666666666666664,
+                        15.0,
+                        60.0
+                    ]
+                },
+                {
+                    "end": [
+                        26.666666666666664,
+                        15.0,
+                        60.0
+                    ],
+                    "name": "V6_Engine_Final_arc_65",
+                    "center": [
+                        32.666666666666664,
+                        15.0,
+                        60.0
+                    ],
+                    "radius": 6.0,
+                    "endAngle": 3.141592653589793,
+                    "startAngle": 0.0,
+                    "type": "Feature::Arc",
+                    "normal": [
+                        -0.0,
+                        0.49999999999999994,
+                        0.8660254037844387
+                    ],
+                    "start": [
+                        38.666666666666664,
+                        15.0,
+                        60.0
+                    ],
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "edgeIndex": 65.0
+                    }
+                },
+                {
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "position": [
+                        32.666666666666664,
+                        15.0,
+                        60.0
+                    ],
+                    "type": "Feature::Point",
+                    "name": "V6_Engine_Final_circle_center_65",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "pointType": "arc_center",
+                        "originalShape": "Part::Cut"
+                    }
+                },
+                {
+                    "name": "V6_Engine_Final_plane_0",
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "type": "Feature::Plane",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "faceIndex": 0.0,
+                        "bounds": {
+                            "length": 2.0000000233721948e-07,
+                            "height": 60.0000002,
+                            "width": 80.0000002
+                        }
+                    },
+                    "center": [
+                        -50.0,
+                        -40.0,
+                        0.0
+                    ],
+                    "normal": [
+                        1.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "name": "V6_Engine_Final_plane_1",
+                    "center": [
+                        -50.0,
+                        -40.0,
+                        0.0
+                    ],
+                    "normal": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ],
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "faceIndex": 1.0,
+                        "bounds": {
+                            "length": 100.0000002,
+                            "width": 2.0000000233721948e-07,
+                            "height": 60.0000002
+                        }
+                    },
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "type": "Feature::Plane"
+                },
+                {
+                    "name": "V6_Engine_Final_plane_2",
+                    "center": [
+                        -50.0,
+                        -40.0,
+                        60.0
+                    ],
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "type": "Feature::Plane",
+                    "metadata": {
+                        "faceIndex": 2.0,
+                        "originalShape": "Part::Cut",
+                        "bounds": {
+                            "length": 100.0000012,
+                            "width": 80.0000012,
+                            "height": 1.1999999998124622e-06
+                        },
+                        "featureLevel": "low"
+                    },
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7"
+                },
+                {
+                    "name": "V6_Engine_Final_plane_3",
+                    "center": [
+                        -50.0,
+                        -40.0,
+                        0.0
+                    ],
+                    "type": "Feature::Plane",
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "faceIndex": 3.0,
+                        "bounds": {
+                            "width": 80.0000002,
+                            "height": 2e-07,
+                            "length": 100.0000002
+                        },
+                        "featureLevel": "low"
+                    },
+                    "normal": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                {
+                    "center": [
+                        -50.0,
+                        40.0,
+                        0.0
+                    ],
+                    "type": "Feature::Plane",
+                    "name": "V6_Engine_Final_plane_4",
+                    "normal": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ],
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "metadata": {
+                        "faceIndex": 4.0,
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "bounds": {
+                            "width": 2.0000000233721948e-07,
+                            "length": 100.0000002,
+                            "height": 60.0000002
+                        }
+                    }
+                },
+                {
+                    "type": "Feature::Plane",
+                    "name": "V6_Engine_Final_plane_6",
+                    "normal": [
+                        1.0,
+                        0.0,
+                        0.0
+                    ],
+                    "center": [
+                        50.0,
+                        -40.0,
+                        0.0
+                    ],
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "faceIndex": 6.0,
+                        "bounds": {
+                            "length": 2.0000000233721948e-07,
+                            "width": 80.0000002,
+                            "height": 60.0000002
+                        }
+                    },
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7"
+                },
+                {
+                    "metadata": {
+                        "featureLevel": "low",
+                        "originalShape": "Part::Cut",
+                        "faceIndex": 8.0,
+                        "bounds": {
+                            "height": 3.0000012,
+                            "width": 5.196153622706635,
+                            "length": 12.0000012
+                        }
+                    },
+                    "center": [
+                        -23.333333333333336,
+                        -15.0,
+                        60.0
+                    ],
+                    "name": "V6_Engine_Final_plane_8",
+                    "type": "Feature::Plane",
+                    "normal": [
+                        0.0,
+                        -0.49999999999999994,
+                        0.8660254037844387
+                    ],
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7"
+                },
+                {
+                    "type": "Feature::Plane",
+                    "center": [
+                        4.666666666666664,
+                        -15.0,
+                        60.0
+                    ],
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "faceIndex": 10.0,
+                        "bounds": {
+                            "height": 3.0000012,
+                            "length": 12.0000012,
+                            "width": 5.196153622706635
+                        },
+                        "featureLevel": "low"
+                    },
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "name": "V6_Engine_Final_plane_10",
+                    "normal": [
+                        0.0,
+                        -0.49999999999999994,
+                        0.8660254037844387
+                    ]
+                },
+                {
+                    "type": "Feature::Plane",
+                    "metadata": {
+                        "originalShape": "Part::Cut",
+                        "bounds": {
+                            "height": 3.0000012,
+                            "width": 5.196153622706635,
+                            "length": 12.000001200000003
+                        },
+                        "faceIndex": 12.0,
+                        "featureLevel": "low"
+                    },
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "normal": [
+                        0.0,
+                        -0.49999999999999994,
+                        0.8660254037844387
+                    ],
+                    "name": "V6_Engine_Final_plane_12",
+                    "center": [
+                        32.666666666666664,
+                        -15.0,
+                        60.0
+                    ]
+                },
+                {
+                    "name": "V6_Engine_Final_plane_14",
+                    "normal": [
+                        0.0,
+                        0.49999999999999994,
+                        0.8660254037844387
+                    ],
+                    "center": [
+                        -23.333333333333336,
+                        15.0,
+                        60.0
+                    ],
+                    "type": "Feature::Plane",
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "metadata": {
+                        "bounds": {
+                            "length": 12.0000012,
+                            "width": 5.196153622706632,
+                            "height": 3.0000012
+                        },
+                        "originalShape": "Part::Cut",
+                        "faceIndex": 14.0,
+                        "featureLevel": "low"
+                    }
+                },
+                {
+                    "center": [
+                        4.666666666666664,
+                        15.0,
+                        60.0
+                    ],
+                    "name": "V6_Engine_Final_plane_16",
+                    "metadata": {
+                        "faceIndex": 16.0,
+                        "featureLevel": "low",
+                        "bounds": {
+                            "length": 12.0000012,
+                            "height": 3.0000012,
+                            "width": 5.196153622706632
+                        },
+                        "originalShape": "Part::Cut"
+                    },
+                    "type": "Feature::Plane",
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "normal": [
+                        0.0,
+                        0.49999999999999994,
+                        0.8660254037844387
+                    ]
+                },
+                {
+                    "name": "V6_Engine_Final_plane_18",
+                    "metadata": {
+                        "featureLevel": "low",
+                        "faceIndex": 18.0,
+                        "bounds": {
+                            "height": 3.0000012,
+                            "width": 5.196153622706632,
+                            "length": 12.000001200000003
+                        },
+                        "originalShape": "Part::Cut"
+                    },
+                    "type": "Feature::Plane",
+                    "center": [
+                        32.666666666666664,
+                        15.0,
+                        60.0
+                    ],
+                    "hash": "fc6bfa9d7183f1c90038250d2c90537913c8fe02aedc70f6ab66b2b36663cef7",
+                    "normal": [
+                        0.0,
+                        0.49999999999999994,
+                        0.8660254037844387
+                    ]
+                }
+            ],
+            "name": "V6_Engine_Final",
+            "visible": true,
+            "shape": "Part::Cut"
+        }
+    ],
+    "options": {},
+    "metadata": {},
+    "outputs": {}
 }
